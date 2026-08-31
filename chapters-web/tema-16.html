@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tema 16 · El saber científico – Filosofía</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters-web/tema-17.html" rel="next">
+<link href="../chapters-web/tema-15.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-bfbad9f2cf9a191a93f038f4342ff68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-2f07765074423308b81dda0734a95584.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bfbad9f2cf9a191a93f038f4342ff68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../quarto-theme/print.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-3.html">Unidad III · Epistemología</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-16.html"><span class="chapter-title">Tema 16 · El saber científico</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Filosofía</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/eukeni-acebal/filosofia-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Filosofía</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/intro-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · ¿Qué es la Filosofía?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 2 · Del mito al logos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 3 · Las ramas de la filosofía y su vigencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 4 · La filosofía y otros campos del saber</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 5 · Herramientas básicas del filósofo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 6 · La disertación filosófica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Platón y Aristóteles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad II · Antropología</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 7 · La naturaleza humana: evolución y hominización</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 8 · Concepciones filosóficas del ser humano</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 9 · Cultura y sociedad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 10 · La personalidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 11 · La identidad personal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Pico y Darwin</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad III · Epistemología</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 12 · El conocimiento y la verdad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-13.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 13 · Percepción, desinformación y posverdad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-14.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 14 · Las teorías del conocimiento</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-15.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 15 · El razonamiento y la argumentación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-16.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tema 16 · El saber científico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-17.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 17 · Conocimiento, poder e interés</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Descartes y Bacon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad IV · Metafísica</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-18.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-19.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 19 · Unidad y pluralidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-20.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 20 · Mente, cuerpo e inteligencia artificial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-21.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 21 · El tiempo, el cambio y la libertad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-22.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 22 · La existencia de Dios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Epicuro y la carta a Meneceo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad V · Ética</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-23.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-24.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 24 · Psicología de la ética</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-25.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 25 · Éticas de la virtud</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-26.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 26 · La ética estoica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-27.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 27 · Éticas del deber y consecuencialistas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-28.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 28 · La moral amoral de Nietzsche</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-29.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 29 · Éticas del cuidado y ética aplicada</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Aristóteles y el término medio</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad VI · Filosofía política</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-30.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 30 · Los derechos humanos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-31.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 31 · La cuestión filosófica de la justicia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-32.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 32 · El origen del poder político</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-33.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 33 · El contrato social</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-34.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 34 · Democracia y Estado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-35.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 35 · Utopías y distopías</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-36.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 36 · Feminismo y perspectiva de género</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Mill y Campoamor</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad VII · Estética</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-37.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 37 · Arte, belleza y gusto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-38.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 38 · Teorías de la belleza y el arte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Aristóteles y Wilde</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/epilogo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Epílogo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/creditos-imagenes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Créditos de las imágenes</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-61" id="toc-sec-61" class="nav-link active" data-scroll-target="#sec-61">§61 · El prestigio de la ciencia y otros modos de saber</a></li>
+  <li><a href="#sec-62" id="toc-sec-62" class="nav-link" data-scroll-target="#sec-62">§62 · El método científico</a></li>
+  <li><a href="#sec-63" id="toc-sec-63" class="nav-link" data-scroll-target="#sec-63">§63 · Quién ha podido hacer ciencia</a></li>
+  <li><a href="#sec-64" id="toc-sec-64" class="nav-link" data-scroll-target="#sec-64">§64 · Los marcos teóricos y el problema de la demarcación</a></li>
+  <li><a href="#sec-65" id="toc-sec-65" class="nav-link" data-scroll-target="#sec-65">§65 · La pseudociencia</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-3.html">Unidad III · Epistemología</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-16.html"><span class="chapter-title">Tema 16 · El saber científico</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Tema 16 · El saber científico</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>Conocemos la verdad no solo por la razón, sino también por el corazón; es de esta última manera como conocemos los primeros principios, y en vano el razonamiento, que no tiene parte en ello, intenta combatirlos.</p>
+<p>—Blaise Pascal, <em>Pensamientos</em>, 282 · traducción de Claude, del francés</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>El espíritu humano, reconociendo la imposibilidad de obtener nociones absolutas, renuncia a buscar el origen y el destino del universo y a conocer las causas íntimas de los fenómenos, para atenerse únicamente a descubrir, por el uso bien combinado de razonamiento y observación, sus leyes efectivas.</p>
+<p>—Auguste Comte, <em>Curso de filosofía positiva</em>, primera lección · traducción de Claude, del francés</p>
+</blockquote>
+<p>«Está científicamente demostrado». Es, probablemente, la frase que más discusiones cierra en castellano. La dices tú, la dice el anuncio de la crema, la dice tu tío en la comida del domingo, y funciona: quien la escucha calla, o cambia de tema. Fíjate en que casi nunca se le pide la factura.</p>
+<p>Pídesela una vez. En la misma tarde puedes leer que dormir poco acaba pasándote factura en la salud, que el agua guarda memoria de lo que se diluyó en ella y que tu carácter depende de la posición de los astros el día en que naciste. Las tres afirmaciones vienen vestidas igual: con cifras, con palabras técnicas y con alguien detrás que asegura haberlo estudiado. Una es ciencia y las otras dos no lo son. ¿Cómo las distingues tú, que no eres físico, ni médico, ni estadístico, y que no vas a repetir ninguno de esos experimentos en la cocina de tu casa?</p>
+<p>Contestar «me fío de los científicos» no te sirve, porque eso es exactamente lo que hace también quien se fía del homeópata: cambiar una autoridad por otra no es un criterio, es una elección de bando. Necesitas otra cosa: saber qué tiene que cumplir una afirmación para que merezca la pena creerla. Y aquí llega la parte incómoda, la que convierte esto en filosofía y no en una clase de ciencias: los filósofos llevan un siglo discutiendo cuál es ese criterio y no se han puesto de acuerdo, aunque a la hora de juzgar los casos concretos coincidan casi siempre<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Hay una segunda pregunta, y no es menor. Suponiendo que aciertes a separar la ciencia de lo que solo lo parece, ¿te has quedado ya con todo lo que valía la pena saber? ¿O hay cosas que sabes de verdad —sobre ti, sobre quien quieres, sobre lo que te duele— y que ningún experimento va a confirmarte nunca?</p>
+<section id="sec-61" class="level2">
+<h2 class="anchored" data-anchor-id="sec-61">§61 · El prestigio de la ciencia y otros modos de saber</h2>
+<p>El saber científico destaca por su validez y seriedad entre todas las formas de conocimiento de las que disponemos, lo que le concede un estatus de prestigio en nuestra sociedad.</p>
+<p>Sin duda, podemos acceder a dimensiones de la experiencia humana por medio del arte, la filosofía y las experiencias espirituales e incluso los estados alterados de conciencia. La poesía, el teatro, la novela, la música, el ensayo filosófico, la participación en rituales religiosos y la ingesta controlada de sustancias alucinógenas —e incluso los estados de ensoñación— nos pueden conducir a la comprensión de partes de nosotros a las que no podemos acceder por otros medios, incluido el conocimiento científico en general. Son experiencias que son muy difíciles de transmitir y de explicar a otros, al menos a otros que no las hayan vivido por sí mismos de la misma manera. Podrán o no ser explicadas satisfactoriamente por la ciencia, pero cuando esta lo intenta, sentimos que <em>falta algo</em> en esa explicación, que no agota la experiencia, si es que acierta a describirla, al menos, a grandes rasgos.</p>
+<p><strong>Por qué funciona la ciencia.</strong> ¿Por qué tiene, entonces, la ciencia, tanto prestigio? Porque <em>funciona</em>. ¿Cómo que funciona?</p>
+<ul>
+<li><em>Explica</em> satisfactoriamente <em>cómo</em> operan la naturaleza, el ser humano y sus artefactos.</li>
+<li><em>Predice</em> acertadamente los fenómenos naturales sobre los que tiene suficiente conocimiento.</li>
+<li><em>Genera la tecnología</em> que ha hecho que vivamos más tiempo, más cómodamente y con mayor seguridad que en ninguna época histórica precientífica.</li>
+<li><em>Descubre</em> nuevas propiedades de la realidad.</li>
+</ul>
+<p>Fíjate en tu alrededor: en tu casa, en tu calle, en tu ciudad. Seguro que no hay lugar al que puedas mirar en el que no encuentres un ejemplo claro de producto humano fruto de la tecnología y de la ciencia. La electricidad, los coches, las antenas, el frigorífico, el agua corriente. Y el móvil.</p>
+<p>Fíjate ahora en ti mismo. No en la ropa, que también es el resultado de la investigación textil, sino en tu propio cuerpo. ¿Usas gafas o te han operado los ojos? ¿Tienes alguna prótesis o tomas alguna pastilla para regular tu corazón, tu diabetes o tu salud mental? ¿Te has hecho alguna operación de modificación corporal o estética? Muy probablemente sí. Aunque hubieras respondido que no a todas estas preguntas, aquello que comes y que, por lo tanto, es parte de lo que eres, es el resultado de enormes avances en la comprensión y la manipulación de la naturaleza.</p>
+<p>La religión, el arte y la Filosofía no han logrado semejantes resultados en los milenios que llevan existiendo, casi desde que el ser humano es ser humano. Esto no implica que no hayan logrado <em>nada</em>, desde luego. Sus aportaciones pueden ser extremadamente valiosas en algunos ámbitos, pero, <em>en lo que la ciencia hace</em> —explicar cómo funciona el mundo y transformarlo—, la comparación parece una broma, o casi.</p>
+<p>La capacidad de razonar inherente a nuestra especie de la que tanto hablo nos acompaña desde los albores de la humanidad y ha operado siempre en los <em>Homo sapiens</em>. Pero funcionábamos por ensayo-error. Algunas personas especialmente dotadas podían realizar algunos avances mayores, como el tallado de herramientas de piedra, la producción de fuego o la rueda. Cuando se producían las circunstancias adecuadas, en algunas sociedades pasadas han florecido conocimientos protocientíficos en torno a la matemática y la astronomía, por ejemplo, o han inventado el ábaco o la escritura.</p>
+<p>A fin de cuentas, toda sociedad ha necesitado una <em>explicación</em> del mundo: cómo obtener alimento, cómo defenderse del peligro, cómo organizarse socialmente, etc. Además, siempre es ventajoso disponer de un <em>modelo de la realidad</em> que se <em>ajuste mejor</em> a esta. Pero no todas han tenido el mismo éxito.</p>
+<p>No todas las consecuencias del avance del conocimiento científico son positivas. La ciencia y la tecnología son instrumentos humanos en manos humanas, y como tales están sujetas a las mismas pasiones y motivaciones que el resto de actividades humanas: la avaricia, la envidia, el egoísmo, la injusticia, el ansia de poder y la voluntad de dominar a otros. Pero no porque la ciencia y la tecnología tengan enormes consecuencias negativas dejan de ser válidas o verdaderas sus leyes y sus artefactos. En lo que a la <em>epistemología</em> se refiere, no se trata de poner en una balanza las consecuencias buenas y malas de la actividad científica, sino su efectividad en la generación de conocimiento verdadero. De lo otro se ocupa la ética. Ambas son importantes, pero no debemos mezclarlas.</p>
+<p><strong>La razón poética.</strong> Aquello que te decía al principio —que hay comprensiones a las que solo llegamos por el arte, la Filosofía o la experiencia espiritual, y que cuando la ciencia las explica sentimos que le falta algo— tiene nombre, y se lo puso una filósofa española. María Zambrano (1904-1991), que se formó en Madrid con José Ortega y Gasset (1883-1955) y pasó cuarenta y cinco años en el exilio, llamó <em>razón poética</em> a esa manera de conocer que no cabe en el método que vamos a estudiar ahora.</p>
+<p>Su punto de partida es una queja: la Filosofía, desde Grecia, se construyó expulsando a la poesía, y al expulsarla se quedó sin la mitad de la experiencia —lo que sentimos, lo que padecemos, lo que no se deja definir sin evaporarse—. «En la poesía encontramos directamente al hombre concreto, individual. En la filosofía al hombre en su historia universal», escribió<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. No propone sustituir la razón por el sentimiento, que sería la caricatura fácil: propone una razón que no se defienda de aquello que quiere conocer, que se acerque a su objeto sin trocearlo antes de mirarlo.</p>
+<p>Y fíjate en que esto no es un adorno literario, sino una tesis epistemológica y perfectamente discutible. Sostiene que hay verdades a las que solo se llega por una vía que no es la demostración —la novela que te explica a tu padre mejor que un manual de psicología, el poema que nombra algo que llevabas años sin saber decir— y que descartarlas por no ser científicas no es rigor, sino estrechez. Puedes rechazar la tesis; lo que no puedes es rechazarla sin argumentos, porque entonces no estarás haciendo ciencia, sino cientificismo.</p>
+</section>
+<section id="sec-62" class="level2">
+<h2 class="anchored" data-anchor-id="sec-62">§62 · El método científico</h2>
+<p>El gran secreto del éxito de la ciencia estriba en su método: el método científico. En un sentido podemos decir que la ciencia no es más que la aplicación sistemática del método científico a toda aquella incógnita a cuya resolución puede aplicársele.</p>
+<p>La ciencia (del latín <em>scientia</em>, ‘conocimiento’) es un conjunto de conocimientos sistemáticos comprobables que estudian, explican y predicen los fenómenos sociales, artificiales y naturales.</p>
+<p>El método científico, por su parte, <em>no es más que un conjunto de reglas sobre cómo observar la realidad y extraer conclusiones válidas, comprobables y universales de dicha observación</em>. Nada más, pero tampoco nada menos.</p>
+<p>Veamos las principales fases y etapas del método científico.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/t16-metodo-cientifico.jpg" class="img-fluid figure-img"></p>
+<figcaption>Diagrama del método científico. || Atribución: «Método científico 2021», de Transparentar, CC BY-SA 4.0 / Wikimedia Commons.</figcaption>
+</figure>
+</div>
+<p><strong>El desconocimiento.</strong> Todo comienza con la ignorancia. Nos encontramos con un fenómeno que <em>no sabemos explicar</em> o un objetivo que no sabemos cómo lograr. De ahí proviene nuestra curiosidad por saber en qué consiste o cómo lograrlo. ¿Por qué llueve? ¿Por qué enfermamos? ¿Cómo podemos atravesar ese río o ese mar?</p>
+<p><strong>Observación.</strong> El primer paso es observar ese fenómeno desconocido. La observación debe ser metódica y sistemática. No se trata tan solo de sentarse a mirar las nubes, personas enfermas o el paso del agua, sino de observar todas las versiones posibles del fenómeno, medir las distintas variables que acontecen, tratar de describirlo con precisión y medirlo.</p>
+<p>¿Cuándo llueve y cuándo no? ¿Cuánto llueve cuando llueve? ¿Qué otras cosas pasan cuando llueve? ¿Qué momento del día es, qué mes, qué temperatura hay, qué humedad y qué presión atmosférica? ¿Hay viento?</p>
+<p><strong>Formulación de hipótesis.</strong> Una vez que hayamos estudiado exhaustivamente el fenómeno iremos detectando <em>patrones</em>, sucesos que se repiten.</p>
+<p>Vaya, parece que llueve más en primavera que en invierno. Mira, en las zonas tropicales llueve más que en el desierto y en las costas más que en el interior. Si hace mucho frío no llueve, nieva.</p>
+<p>Y esos sucesos que se repiten provocarán en nuestra mente intentos de explicación: ¿y si fuera tal o cual cosa lo que está pasando? ¿Y si el sol, la latitud y la temperatura estuvieran relacionados con la lluvia? Por otro lado, parece que sacar o no al santo en procesión no afecta a que llueva y acabe la sequía.</p>
+<p>Así, cuando observemos y registremos una enorme cantidad de sucesos llegaremos a un punto en que se repiten las observaciones y que no parece haber ya nada nuevo. Entonces formularemos una hipótesis, que no es más que una explicación posible del fenómeno que estamos investigando: «llueve porque <em>x</em>».</p>
+<p>Estupendo, quizás tengamos ya una explicación causal del fenómeno que originalmente ignorábamos. Pero ¿podemos estar seguros?</p>
+<p><strong>Experimentación.</strong> Para asegurarnos de que nuestra explicación es correcta, válida, diseñaremos experimentos. Un experimento no es más que una situación especial en la que controlamos muchas de las variables del fenómeno. En un laboratorio puedes comprobar la temperatura, la presión y la humedad, por lo que puedes investigar un fenómeno sin que estas variables sean cambiantes e influyan en él. Puedo calentar agua para ver cuándo comienza a evaporarse, a qué velocidad lo hace y cuánta energía necesito para vaciar de agua todo el recipiente, por ejemplo. Como puedo controlar las circunstancias de mi experimento, puedo volver a evaporar agua, pero esta vez con una menor presión atmosférica, como si hubiera ascendido a una montaña. ¿Se repiten las observaciones? ¿Hierve el agua a la misma temperatura al nivel del mar que a 5000 m de altura, en la montaña? Ya te adelanto que no.</p>
+<p>Así, iremos descartando variables que no influyen en el fenómeno que estamos estudiando y encontraremos otras que sí; podremos aislar las que influyen y medir en qué grado lo hacen y cómo interactúan entre ellas. Lo iremos registrando todo sistemáticamente y controlando que nuestros instrumentos de medida funcionan bien y miden lo que deben y como deben.</p>
+<p><strong>Análisis de los resultados.</strong> Una vez hechos tantos experimentos sobre nuestra hipótesis que se nos repiten los resultados y tienden a parecerse mucho, analizaremos todo el conjunto de observaciones y experimentos y concluiremos si nuestra hipótesis es cierta o no.</p>
+<p>Si nuestra conclusión es positiva, estaremos <em>verificando</em> la hipótesis. De todas formas, el trabajo no acaba aquí. La realidad es extremadamente compleja, con una cantidad casi infinita de variables y de interacciones entre ellas. Puede que mañana suceda un evento que vaya en contra de nuestra explicación.</p>
+<p>Lo más habitual, sin embargo, es que nuestra hipótesis falle, que encontremos algún caso que no pueda explicar, alguna combinación de variables, que no prediga correctamente un suceso o que lo prediga solo parcialmente. Entonces habremos <em>falsado</em> la hipótesis.</p>
+<p>De todas formas, para cuando llegamos a este punto, normalmente la hipótesis no es un fiasco, sino que falla parcialmente. Si hubiera sido muy desacertada la hubiéramos descartado mucho antes, o no la hubiéramos formulado siquiera. Entonces deberemos observar más casos y <em>reconstruir</em> la hipótesis, mejorarla para que abarque los casos antiguos y los del nuevo tipo.</p>
+<p>Con la nueva hipótesis volvemos a la fase de experimentación y al análisis de los resultados, e iremos ajustando nuestra hipótesis y repitiendo la observación hasta quedar satisfechos con la capacidad explicativa y predictiva de nuestra hipótesis.</p>
+<p><strong>Leyes naturales.</strong> Las hipótesis que tienen un enorme respaldo observacional y experimental, aquellas que realmente explican con gran seguridad cómo funciona la realidad y nos permiten predecir cómo se comportará, adquieren el rango de leyes naturales. Piensa en los principios de la termodinámica o en la ley de la gravedad.</p>
+<p><strong>El problema de la inducción.</strong> Aquí conviene parar, porque en ese ascenso hay una trampa. De «esto ha ocurrido así todas las veces que lo hemos mirado» a «esto ocurre así siempre y en todas partes» hay un paso que ningún experimento da: por muchos casos que acumules siguen siendo casos, y la ley habla de todos. A esa forma de razonar, de lo observado a la regla general, la llamamos <em>inducción</em> (<a href="chapters-web/tema-15.html#sec-60">§60</a>), y quien mejor la puso en apuros fue David Hume (1711-1776).</p>
+<p>Hume lo hace en dos movimientos. Primero, la causalidad. Cuando dices que el fuego calienta el agua, ¿qué has visto exactamente? Has visto el fuego, has visto después el agua caliente y las has visto juntas muchas veces. Lo que no has visto nunca es la <em>conexión</em> entre las dos, porque no hay nada que ver: la necesidad no está en el mundo, está en tu costumbre de esperarla. Segundo, la inducción misma. Para pasar de lo que has observado a lo que no, hace falta suponer que la naturaleza es uniforme, que lo no visto se parecerá a lo visto. Y ese supuesto no se puede demostrar —imaginar un mañana distinto no encierra ninguna contradicción— ni se puede probar por experiencia, porque probarlo por experiencia sería usar una inducción para justificar la inducción<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>Fíjate en lo que esto le hace a lo que acabas de leer. Las leyes naturales no quedan <em>demostradas</em> por muchos experimentos que las respalden: quedan bien corroboradas, que no es lo mismo. Un solo caso contrario basta para tumbar una ley; ningún número de casos favorables basta para probarla. De ahí que lo interesante no sea verificar una hipótesis, sino intentar <em>falsarla</em>, como veíamos hace un momento, y de ahí también que la provisionalidad sea en la ciencia una norma y no un accidente<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p>Como ves, el método científico requiere la <em>observación</em> metódica, exhaustiva y medida de los fenómenos; <em>creatividad</em> para proponer hipótesis de las causas de dichos fenómenos; <em>tenacidad</em> para acometer todo el proceso sin saltarse los principios que lo regulan y llegar a conclusiones válidas, universales y replicables por cualquier otro científico con suficientes medios.</p>
+<p>Es parte inextricable del método científico —pero sobre todo del espíritu científico— cambiar de idea cuando hay explicaciones mejores y, cuando no las hay, crearlas activamente.</p>
+</section>
+<section id="sec-63" class="level2">
+<h2 class="anchored" data-anchor-id="sec-63">§63 · Quién ha podido hacer ciencia</h2>
+<p>Ten en cuenta que la que acabamos de exponer es una <em>versión simplificada e idealizada del método</em>, un esquema.</p>
+<p><strong>Los factores personales y sociales.</strong> La actividad investigadora del científico es muchísimo más compleja y no sucede en el vacío o aislado del mundo y de la sociedad, por mucho que un laboratorio pueda parecer un búnker. Existen toda clase de factores personales y sociales que afectan a la investigación científica y a la aplicación del método: desde la capacidad cognitiva y perspicacia del científico hasta sus colegas, su acceso a financiación, la calidad del equipo de experimentación de que disponga o el interés que tengan los órganos de investigación en aprobar los experimentos sobre esos fenómenos. Por no hablar de los prejuicios al respecto, sean estos individuales o colectivos.</p>
+<p>Hay un factor más, que no está en esa lista y conviene mirar de frente. Durante casi toda la historia, el método científico solo pudieron aplicarlo unos pocos: hacer ciencia ha exigido siempre tiempo libre, instrucción, instrumentos y alguien que lo pagara, y eso dejó fuera a la inmensa mayoría de los seres humanos, varones incluidos. El campesino analfabeto del siglo XVII no estaba más cerca de un laboratorio que su mujer.</p>
+<p><strong>Pero hubo una barrera distinta de las demás.</strong> La pobreza y la falta de instrucción excluyen por <em>carencia</em>: quien reunía los medios, entraba. A las mujeres se les cerró la puerta además por <em>regla</em>, y una regla no se abre con dinero ni con talento. En España, hasta la Real Orden del 8 de marzo de 1910 ninguna mujer podía matricularse en la universidad sin un permiso individual de la autoridad<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. La Royal Society, fundada en 1660, no eligió a sus dos primeras socias hasta 1945<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Fíjate en la diferencia, porque es toda la cuestión: una mujer con biblioteca, maestro y fortuna seguía sin poder matricularse ni entrar en una academia. Cuando estudiemos las dos libertades (<a href="chapters-web/tema-31.html#sec-126">§126</a>) tendrás el nombre exacto de lo que las separa: a casi todo el mundo le faltó la libertad <em>positiva</em> —los medios—; a ellas se les negó, encima, la <em>negativa</em>, que es que no te lo prohíban.</p>
+<p><strong>El efecto Matilda.</strong> Y para quien entraba quedaba un segundo filtro, este ya dentro de la ciencia: el reconocimiento. La historiadora Margaret Rossiter (1944-2025) lo llamó <em>efecto Matilda</em>, por contraste con el <em>efecto Mateo</em> —«al que tiene, se le dará»—: el mérito de una investigación tiende a acumularse en el colega de más rango, y cuando quien firmaba era una mujer el reconocimiento tendió a irse a otra parte<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. No es un reproche moral a los científicos de antaño: es un dato sobre cómo se reparte el crédito, y se sigue midiendo hoy. Caso por caso, eso sí, conviene ir con calma<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p>
+<p><strong>Y esto es epistemología, no un añadido de buenas intenciones.</strong> Un método que presume de valer para cualquiera lo aplicó durante siglos un grupo pequeño y muy parecido entre sí. Eso no invalida lo que descubrieron —los resultados se comprueban, y en eso consiste la gracia del método—, pero sí explica algo que importa: cuando dejas fuera a la mayoría de la población, pierdes cabezas. Las del campesino y las de la mujer culta. Abrir la puerta no es una concesión que la ciencia le haga a nadie: es la manera más barata que tiene de dejar de perder buenas preguntas.</p>
+<p><strong>¿Y hoy?</strong> Esa barrera formal ya no existe entre nosotros. Ninguna ley española te impide matricularte en lo que quieras, y las mujeres son hoy mayoría en la universidad, aunque el reparto por carreras siga siendo muy desigual<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. Pero no confundas «aquí» con «en todas partes»: en Afganistán las mujeres tienen prohibido el acceso a la enseñanza secundaria y a la universidad, y en agosto de 2026 la UNESCO lo describía como el único país del mundo que prohíbe formalmente la educación de las niñas y las mujeres más allá del nivel primario<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>. La prohibición expresa no es una antigualla que la historia dejara atrás: es una decisión política, y se toma o no se toma.</p>
+<p><strong>Y aquí te dejo la pregunta, que es tuya y no mía.</strong> La barrera legal cayó, ¿cayó con ella todo lo demás? Antes de contestar, vuelve a los porcentajes de la nota y fíjate en que un dato no es una explicación. Que menos de una de cada cinco estudiantes de Informática sea mujer<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> admite explicaciones muy distintas, y varias de ellas se excluyen entre sí. Averiguar cuál se sostiene exige investigar, no elegir la que ya nos gustaba. Eso es filosofía de la ciencia, y es exactamente lo que estás haciendo en este tema.</p>
+</section>
+<section id="sec-64" class="level2">
+<h2 class="anchored" data-anchor-id="sec-64">§64 · Los marcos teóricos y el problema de la demarcación</h2>
+<p><strong>Los marcos teóricos.</strong> La investigación tampoco sucede en un vacío teórico. Los fenómenos nuevos, a estas alturas, no surgen de la experiencia cotidiana, sino que son el resultado de hipótesis previas. Cuando Albert Einstein (1879-1955) propuso la Teoría de la relatividad general, lo hizo apoyado en todo el conocimiento de la física y las matemáticas de la época, aunque tuviera que ampliarlas para poder describir nuevos fenómenos que él previó que debían darse. El resto de físicos no eran capaces ni siquiera de observar dichos fenómenos; no porque fueran tontos, que no lo eran, sino porque no disponían aún de las ideas con las que era posible visualizar o ver dichos fenómenos.</p>
+<p>Así, el conjunto de hipótesis, teorías<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> o leyes científicas vigentes son el marco en el que los científicos se basan para ulteriores investigaciones y que sirve a la vez para entender los fenómenos y para explorar nuevas explicaciones. Los científicos operan en <em>marcos teóricos</em> y ellos también tienen <em>modelos mentales</em> sobre cómo funciona el mundo, modelos que les permiten investigar, pero que si son demasiado estrechos les impedirán explicar nuevos fenómenos.</p>
+<p><strong>El problema de la demarcación.</strong> Con la importancia que estamos dando al método científico como criterio para distinguir la ciencia de lo que no lo es, debería resultar fácil distinguirla. A esto llamamos el problema de la demarcación.</p>
+<p>¿Estamos aplicando el método científico para investigar un fenómeno? Es ciencia. ¿No lo estamos utilizando? No es ciencia.</p>
+<p>Pero no es algo tan fácil ni sencillo. Nuevamente, te recuerdo que la realidad es extremadamente compleja y esta opción dicotómica de investigación de acuerdo o no con el método es demasiado simple como para abarcarla toda. Si un científico propone una hipótesis o una teoría tan sofisticada que no hay forma de realizar experimentos sobre ella, ¿es ciencia?</p>
+<p>Fíjate en el ejemplo de Einstein: cuando propuso sus hipótesis no existía la tecnología para verificarlas. Hubo que esperar a que maduraran ciertos conceptos e instrumentos de medida —el reloj atómico, que mide el tiempo con ultraprecisión; el LIGO, que detecta ondas gravitacionales; los aceleradores de partículas—. Si esos avances no se hubieran producido, no se les podría haber aplicado la mitad del método científico. ¿Ves el problema? Nadie duda de que Einstein fue uno de los más grandes científicos de la historia, pero si sus teorías no se fueran contrastando, tendría la misma validez científica que un vendedor de humo.</p>
+<p>¿Pero creer en que las investigaciones de Einstein eran científicas no hubiera sido más que un acto de fe, de no estar siendo apoyadas por las observaciones actuales? No, en absoluto, porque Einstein no estaba proponiendo cosas que no pudieran ser comprobadas, sino cosas que <em>aún</em> no pudieran serlo. ¿Pero esto no se aplica a quien dice que algún día quizás podamos detectar y observar espíritus o fantasmas? No, porque a diferencia de estos casos, Einstein explicó muy claramente <em>qué era necesario para poder validar experimentalmente sus teorías</em>. Simplificando mucho, dijo: «cuando tengamos un cronógrafo o un telescopio un poco más potente, podremos observar este fenómeno que predigo».</p>
+<p><strong>Los límites de lo que la ciencia puede explicar.</strong> Pero discutir sobre relatividad o mecánica cuántica está fuera de nuestro alcance y del de la mayoría de pseudocientíficos. El problema de la demarcación suele manifestarse en los límites de lo que la ciencia puede explicar, que no lo es todo. El propio método científico impone esos límites: debemos poder observar, medir y experimentar los fenómenos. Así que todo lo que no es observable por cualquiera; medible objetiva y consistentemente; o experimentable de forma reproducible, cae fuera del dominio de la ciencia. Y eso sucede con muchos ámbitos importantes de la vida humana: nuestros sueños y esperanzas, nuestras experiencias íntimas y personales, nuestras intuiciones y convicciones son casi siempre no-investigables con el método científico, lo que no resta un ápice de su importancia, al menos para nosotros.</p>
+<p>Quizás ni siquiera sea posible o incluso deseable que la ciencia lo explique todo. Pero no es necesario siempre y en todo momento dar una explicación en términos de leyes naturales. El amor o la amistad, la elevación ante un cuadro o una pieza musical, el deleite de comer un buen plato preparado por tu abuela o un juego que te retrotraiga a la infancia feliz pueden ser quizás estudiados <em>parcialmente</em> por la ciencia. A fin de cuentas tenemos hormonas que influyen mucho en nuestro comportamiento; toda una teoría del color, de su percepción y de cómo nos afecta; sabemos cómo funcionan el gusto y el olfato hasta nivel molecular. Pero <em>eso no es todo</em> lo que conforman esas experiencias: hay <em>algo más</em>, quizás <em>mucho más</em>. Pero es tan íntimo y personal que la ciencia —que necesita enormes cantidades de datos, repetición y consistencia— no puede estudiarlo. Y quizás ni haga falta. Siempre que nos provea de las explicaciones universales, que exista un ámbito privado, íntimo y personal es parte de la experiencia humana.</p>
+</section>
+<section id="sec-65" class="level2">
+<h2 class="anchored" data-anchor-id="sec-65">§65 · La pseudociencia</h2>
+<p>Que haya un ámbito valioso de experiencia íntima y personal no quiere decir que cualquier cosa que me suceda, se me ocurra o que crea que existe, exista verdaderamente o sea tal y como me la figuro. Que algunos extremos de la ciencia de vanguardia <em>parezcan</em> saltarse las reglas del método científico es muy distinto de justificar cualquier cosa apelando a que, como no se sabe, es posible o, peor aún, cierto. Que no podamos conocerlo todo, o que no lo hagamos aún, no implica que cualquier afirmación que no se haya demostrado falsa sea verdadera.</p>
+<p><strong>Qué hace pseudocientífica a una afirmación.</strong> Combinaciones de todos estos y otros factores hacen que proliferen afirmaciones que tienen <em>apariencia</em> de científicas, pero que no lo son. Utilizan términos como energía, cuántica y vibración, pero no definen suficientemente estos términos y no proveen instrumentos para medirlos, por lo que no significan lo que significan para la ciencia estándar. Apelan a la experiencia personal, pero a una experiencia que no es reproducible en condiciones experimentales o de laboratorio, de forma que sobreponen la subjetividad a la objetividad e incluso a la intersubjetividad.</p>
+<p>Precisamente porque no son disciplinas, teorías o explicaciones científicas pero pretenden ser igualmente válidas o aún más, las consideramos <em>pseudo</em>ciencias. Es decir, <em>falsa</em> ciencia; o, mejor aún, no-ciencia. Abusan de lo que la ciencia aún no puede explicar para inventar fenómenos sin base empírica alguna. Y lo que es peor, incluso «crean» tecnología que pretende curar.</p>
+<p>A algunos farsantes no les vale con moverse en los resquicios de la ciencia, en la ambigüedad de sus propias afirmaciones o con la ventaja de no tener que demostrar científicamente sus afirmaciones; directamente se atreven a negar explicaciones palmariamente establecidas y comprobadas por la ciencia.</p>
+<p><strong>Ejemplos de pseudociencia.</strong> Aquí tienes algunos ejemplos de pseudociencias o de afirmaciones pseudocientíficas, no pocas de las cuales suponen negocios millonarios para sus adalides:</p>
+<ul>
+<li><em>Terraplanismo</em>. La ciencia ha demostrado por activa y por pasiva la esfericidad de la Tierra <em>y</em> ha desmontado falsas creencias al respecto de que sea plana. No suele afectar a la vida cotidiana de las personas, y menos aún a quienes no defendemos estas ideas.</li>
+<li><em>Movimiento antivacunas</em>, sobre todo basado en la creencia de que las vacunas producen enfermedades como el autismo. Esta idea, ampliamente desmentida y basada en un artículo cuyos errores han sido inequívocamente detectados y refutados por la ciencia, sí que es tremendamente peligrosa, porque si los padres no vacunan a sus hijos, estos pueden enfermar de patologías evitables, contagiar a otros e incluso destruir la inmunidad de grupo para esas enfermedades. Esto no implica que las vacunas sean perfectamente efectivas para todos en todo momento y situación o que no tengan efectos secundarios. Pero mejoran continuamente.</li>
+<li><em>Cristaloterapia</em> o la idea de que se pueden sanar las enfermedades —o simplemente mejorar el bienestar— si manipulamos cristales, lo que carece de respaldo científico.</li>
+<li><em>Homeopatía</em>. Es la creencia de que ciertas sustancias, afines a la enfermedad, diluidas hasta la casi desaparición del supuesto principio activo, curan. No existe evidencia de esto. Son curiosas las refutaciones de la homeopatía consistentes en <em>suicidios homeopáticos</em>.</li>
+<li><em>Astrología</em>. Quizás la más antigua de las pseudociencias, que afirma que las posiciones relativas de los astros en el momento del nacimiento afectan a la personalidad y los eventos de la vida de las personas.</li>
+<li><em>Pensamiento positivo</em>. No es que una actitud positiva no tenga efecto en nuestro bienestar psicológico y en nuestro estado de ánimo, que lo tiene, sino confiar en que el pensamiento positivo por sí mismo puede curar patologías tan graves como un cáncer.</li>
+<li><em>Misticismo cuántico</em>. Pretender explicar fenómenos espirituales en términos científicos que no dicen nada sobre dichos fenómenos espirituales.</li>
+</ul>
+<p>Seguro que se te ocurren otros ejemplos.</p>
+<p><strong>En resumen.</strong> ¿Puede la ciencia investigar científicamente la vida después de la muerte? No, porque no es observable y menos aún mensurable. Esto no significa que automáticamente tengan razón los espiritistas, los que creen en la transmigración de las almas o quienes defiendan que conocen vidas pasadas. Pero tampoco niega su existencia. La ciencia se detiene allí donde ya no puede decir más. Ir más allá, aunque fuera para negar ciertas ideas, sería anticientífico. <em>Pero</em> la actitud científica nos pide que actuemos ante las supuestas realidades no explicadas científicamente <em>como si no existieran</em>. Es decir, que no sería razonable basar mis decisiones en las comunicaciones espirituales mediante la ouija con mi difunta bisabuela, por sabia que fuera esta. Y si estoy particularmente interesado en verificar y validar la comunicación con los muertos, puedo tratar de inventar los medios con que hacerlo siguiendo los criterios del método científico. Sería una enorme aportación a la humanidad, de producirse. Y si no puedo, no puedo.</p>
+<p>Admitir que existen ámbitos de la realidad que no podemos comprender causalmente, es decir, científicamente, es difícil. Nuestra mente, humana, tiende a rellenar los huecos de ignorancia con toda clase de invenciones con el objetivo de no sentirlos. Pero admitir la ignorancia y saber vivir con la incertidumbre de lo desconocido <em>también son partes de la experiencia</em> humana. Y son una parte importante, porque es la admisión de esa ignorancia la que, precisamente, origina la curiosidad científica… ¡y la propia Filosofía!</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Hansson, S. O. (2025). Science and Pseudo-Science. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Fall 2025). https://plato.stanford.edu/archives/fall2025/entries/pseudo-science/ La entrada resume así la situación: hay mucho más acuerdo sobre los casos particulares que sobre los criterios generales.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Zambrano, M. (1939). <em>Filosofía y poesía</em>. Universidad Michoacana. Lo escribió el año en que cruzó los Pirineos camino del exilio; la formulación madura de la razón poética está en <em>Claros del bosque</em> (1977). En 1988 fue la primera mujer que recibió el Premio Cervantes.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>El argumento está en Hume, D. (1748). <em>Investigación sobre el entendimiento humano</em>, secciones IV y VII, y antes en el <em>Tratado de la naturaleza humana</em> (1739-1740), I, iii. La reconstrucción en dos cuernos —ni demostrativo ni probable— es la de Henderson, L. (2024). The Problem of Induction. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Winter 2024). https://plato.stanford.edu/archives/win2024/entries/induction-problem/<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>La salida falsacionista es de Karl Popper (1902-1994), en <em>La lógica de la investigación científica</em> (1934): la asimetría entre verificar y falsar le permite a la ciencia convivir con el problema de Hume sin haberlo resuelto. Reaparecerá enseguida, en el problema de la demarcación.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>En España, la Real Orden del 8 de marzo de 1910 autorizó por fin la matrícula «en enseñanza oficial o no oficial» sin consultar a la superioridad. Antes, cada mujer necesitaba un permiso concreto, y las pioneras asistían a clase sentadas junto al profesor y acompañadas al entrar y al salir. SINC · Servicio de Información y Noticias Científicas (FECYT). <em>1910: las españolas por fin van a la universidad</em>. https://www.agenciasinc.es/Visual/Ilustraciones/1910-Las-espanolas-por-fin-van-a-la-universidad<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Fueron la cristalógrafa Kathleen Lonsdale (1903-1971) y la bioquímica Marjory Stephenson (1885-1948). Cuando en 1902 se propuso a la física e ingeniera Hertha Ayrton (1854-1923), se la rechazó alegando que los estatutos no admitían a mujeres casadas. The Royal Society. <em>Women in the Royal Society</em>. Science in the Making. https://makingscience.royalsociety.org/in-focus/women-in-the-royal-society<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Rossiter, M. W. (1993). The Matthew Matilda Effect in Science. <em>Social Studies of Science</em>, 23(2), 325-341. El nombre juega con el «efecto Mateo» de Robert K. Merton (1910-2003). Para el panorama general, Crasnow, S. (2025). Feminist Perspectives on Science. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Fall 2025). https://plato.stanford.edu/archives/fall2025/entries/feminist-science/<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Una advertencia de método, y vale en las dos direcciones. Algunas historias muy repetidas circulan en versiones que los historiadores discuten; por eso aquí van episodios documentados y con fecha. Y una aportación se mide por lo que aportó, no por quién la firmó: agrandar un mérito pequeño comete el error del efecto Matilda con el signo cambiado. La propia filosofía feminista de la ciencia llama <em>women worthies</em> al rescate de nombres y, como indica Sandra Harding, no basta.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>En el curso 2024-2025 las mujeres eran el 57,1 % del alumnado de grado en España, pero el reparto por ramas es muy desigual: 72,8 % en Ciencias de la Salud, 63,7 % en Artes y Humanidades, 61,5 % en Ciencias Sociales y Jurídicas y 51,3 % en Ciencias, mientras que en Ingeniería y Arquitectura son el 28,8 %. Este último dato la fuente lo publica del revés, como porcentaje de hombres —el 71,2 %—, y aquí se da su complemento para que los cinco midan lo mismo y se puedan comparar. Ministerio de Ciencia, Innovación y Universidades. 2025. <em>Datos y cifras del Sistema Universitario Español. Curso 2025/26</em>.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>El cierre de la secundaria se dictó en marzo de 2022 y el de la universidad en diciembre de ese mismo año; los dos seguían vigentes en agosto de 2026, según la fuente que sigue. UNESCO. 11 de agosto de 2026. <em>Five years on: UNESCO calls for the full restoration of the right to education for Afghan girls and women</em>. https://www.unesco.org/en/articles/five-years-unesco-calls-full-restoration-right-education-afghan-girls-and-women<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Ellas son el 17,7 % en el curso 2024-2025; la fuente lo escribe al revés, diciendo que los hombres son el 82,3 %. Ministerio de Ciencia, Innovación y Universidades. 2025. <em>Estadística de Estudiantes Universitarios. Curso 2024-2025, avance</em>. Esta fuente clasifica por ámbitos de estudio y la anterior por ramas de conocimiento, así que no sumes las dos listas.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>A nuestros efectos, una <em>teoría científica</em> no es más que un conjunto ordenado e interrelacionado de hipótesis que explican más que un fenómeno: un ámbito de la realidad.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eukeni-acebal\.github\.io\/filosofia-manual\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters-web/tema-15.html" class="pagination-link" aria-label="Tema 15 · El razonamiento y la argumentación">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Tema 15 · El razonamiento y la argumentación</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters-web/tema-17.html" class="pagination-link" aria-label="Tema 17 · Conocimiento, poder e interés">
+        <span class="nav-page-text"><span class="chapter-title">Tema 17 · Conocimiento, poder e interés</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

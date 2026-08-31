@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tema 27 · Éticas del deber y consecuencialistas – Filosofía</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters-web/tema-28.html" rel="next">
+<link href="../chapters-web/tema-26.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-bfbad9f2cf9a191a93f038f4342ff68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-2f07765074423308b81dda0734a95584.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bfbad9f2cf9a191a93f038f4342ff68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../quarto-theme/print.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-5.html">Unidad V · Ética</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-27.html"><span class="chapter-title">Tema 27 · Éticas del deber y consecuencialistas</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Filosofía</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/eukeni-acebal/filosofia-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Filosofía</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/intro-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · ¿Qué es la Filosofía?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 2 · Del mito al logos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 3 · Las ramas de la filosofía y su vigencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 4 · La filosofía y otros campos del saber</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 5 · Herramientas básicas del filósofo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 6 · La disertación filosófica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Platón y Aristóteles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad II · Antropología</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 7 · La naturaleza humana: evolución y hominización</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 8 · Concepciones filosóficas del ser humano</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 9 · Cultura y sociedad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 10 · La personalidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 11 · La identidad personal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Pico y Darwin</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad III · Epistemología</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 12 · El conocimiento y la verdad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-13.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 13 · Percepción, desinformación y posverdad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-14.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 14 · Las teorías del conocimiento</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-15.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 15 · El razonamiento y la argumentación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-16.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 16 · El saber científico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-17.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 17 · Conocimiento, poder e interés</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Descartes y Bacon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad IV · Metafísica</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-18.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-19.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 19 · Unidad y pluralidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-20.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 20 · Mente, cuerpo e inteligencia artificial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-21.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 21 · El tiempo, el cambio y la libertad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-22.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 22 · La existencia de Dios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Epicuro y la carta a Meneceo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad V · Ética</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-23.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-24.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 24 · Psicología de la ética</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-25.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 25 · Éticas de la virtud</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-26.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 26 · La ética estoica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-27.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tema 27 · Éticas del deber y consecuencialistas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-28.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 28 · La moral amoral de Nietzsche</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-29.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 29 · Éticas del cuidado y ética aplicada</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Aristóteles y el término medio</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad VI · Filosofía política</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-30.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 30 · Los derechos humanos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-31.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 31 · La cuestión filosófica de la justicia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-32.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 32 · El origen del poder político</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-33.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 33 · El contrato social</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-34.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 34 · Democracia y Estado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-35.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 35 · Utopías y distopías</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-36.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 36 · Feminismo y perspectiva de género</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Mill y Campoamor</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad VII · Estética</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-37.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 37 · Arte, belleza y gusto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-38.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 38 · Teorías de la belleza y el arte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Aristóteles y Wilde</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/epilogo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Epílogo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/creditos-imagenes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Créditos de las imágenes</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-103" id="toc-sec-103" class="nav-link active" data-scroll-target="#sec-103">§103 · Éticas del deber o éticas deontológicas</a></li>
+  <li><a href="#sec-104" id="toc-sec-104" class="nav-link" data-scroll-target="#sec-104">§104 · Teoría de los derechos: John Locke</a></li>
+  <li><a href="#sec-105" id="toc-sec-105" class="nav-link" data-scroll-target="#sec-105">§105 · El imperativo categórico kantiano</a></li>
+  <li><a href="#sec-106" id="toc-sec-106" class="nav-link" data-scroll-target="#sec-106">§106 · Éticas consecuencialistas o teleológicas</a></li>
+  <li><a href="#sec-107" id="toc-sec-107" class="nav-link" data-scroll-target="#sec-107">§107 · El utilitarismo: Bentham y Mill</a></li>
+  <li><a href="#sec-108" id="toc-sec-108" class="nav-link" data-scroll-target="#sec-108">§108 · Egoísmo ético y teoría del contrato social</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-5.html">Unidad V · Ética</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-27.html"><span class="chapter-title">Tema 27 · Éticas del deber y consecuencialistas</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Tema 27 · Éticas del deber y consecuencialistas</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>Obra de tal modo que uses la humanidad, tanto en tu persona como en la persona de cualquier otro, siempre al mismo tiempo como fin y nunca solamente como medio.</p>
+<p>—Immanuel Kant, <em>Fundamentación de la metafísica de las costumbres</em>, AA IV, 429 · traducción de Claude, del alemán</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Súmense todos los valores de todos los placeres de un lado y los de todos los dolores del otro. Si el balance cae del lado del placer, dará la buena tendencia del acto en conjunto; si cae del lado del dolor, la mala.</p>
+<p>—Jeremy Bentham, <em>Introducción a los principios de la moral y la legislación</em>, IV, 5 · traducción de Claude, del inglés</p>
+</blockquote>
+<section id="sec-103" class="level2">
+<h2 class="anchored" data-anchor-id="sec-103">§103 · Éticas del deber o éticas deontológicas</h2>
+<p>Las teorías éticas del deber establecen uno o varios criterios como fundamento del comportamiento moral<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, los <em>deberes</em> u <em>obligaciones</em>. El deber dicta qué acciones debemos realizar y cuáles no, con (cierta) independencia de las consecuencias de dichas acciones, puesto que para las éticas deontológicas <em>las acciones tienen valor por sí mismas</em>, produzcan más o menos bien. Estudiaremos dos aproximaciones distintas al deber, la concepción de los derechos del filósofo empirista británico John Locke y el imperativo categórico kantiano.</p>
+<p><strong>Prohibiciones y permisos.</strong> Conviene que veas la forma que tiene una ética así, porque no es una lista de mandatos y ya está. Tiene dos piezas muy distintas: unas mandan y otras dejan. Unas son <em>prohibiciones</em>: cosas que no puedes hacer pase lo que pase, como matar a un inocente o torturar a alguien. Y otras son <em>permisos</em>: no estás obligado a dedicar cada minuto de tu vida a producir el mayor bien posible, así que puedes estudiar lo que te guste, cuidar de los tuyos antes que de los demás y tener proyectos propios. Fíjate en que ese segundo grupo es justamente lo que las éticas consecuencialistas tienen difícil conceder, y es una de las razones por las que la deontología resulta atractiva: te deja hacer tu vida.</p>
+<p><strong>La paradoja del deber.</strong> Ahora viene el problema, y es serio. Si matar a un inocente es malo, ¿no serán peores cinco asesinatos que uno? Y si lo son, ¿por qué no puedo matar a un inocente para impedir que otro mate a cinco? La deontología dice que no puedo, y tiene que explicar por qué sin volverse consecuencialista al hacerlo. Su respuesta es que las prohibiciones no son metas que haya que maximizar, sino límites de lo que a <em>ti</em> te está permitido hacer: el mal que yo cometo no es intercambiable con el que comete otro, aunque en la cuenta total sumen lo mismo. Por eso a las éticas del deber que razonan así se las llama <em>centradas en el agente</em>. No son las únicas: hay otra familia que pone el foco en la víctima y no en quien actúa —lo que cuenta es tu derecho a no ser usado como medio, lo mande quien lo mande—, y es la que vas a ver ahora con Locke.</p>
+<p><strong>Lo que haces y lo que dejas que pase.</strong> De ahí sale una distinción que usas a diario sin darte cuenta: no es lo mismo empujar a alguien a la vía que no tirarle una cuerda cuando ya ha caído. En ambos casos muere, y sin embargo casi todo el mundo juzga las dos cosas de manera distinta. Emparentada con ella está la <em>doctrina del doble efecto</em>, que permite un daño previsto pero no buscado —el piloto que bombardea una fábrica de armamento sabiendo que morirán vecinos— y prohíbe exactamente el mismo daño cuando es el medio elegido, como el que bombardea el barrio <em>para</em> que los muertos quiebren la moral del enemigo. Mismo número de muertos, y casi nadie juzga los dos casos igual.</p>
+<p><strong>Y la objeción que hay que contestar.</strong> ¿Y si mentir salvara a mil personas? Mantener la prohibición cueste lo que cueste parece fanatismo. Kant lo dijo sin pestañear: <em>hágase justicia aunque perezca el mundo</em>. Y sus críticos le devuelven que eso es preocuparse más por tener las manos limpias que por lo que le pase a la gente. Caben dos respuestas. Una, aceptar la consecuencia trágica: hay cosas que no se hacen, y punto, que es la vía de Kant. Otra, la llamada <em>deontología del umbral</em>: las prohibiciones valen hasta que las consecuencias alcanzan cierta magnitud, y a partir de ahí ceden. Suena razonable, hasta que preguntas dónde está exactamente el umbral. Nadie lo ha sabido decir<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+</section>
+<section id="sec-104" class="level2">
+<h2 class="anchored" data-anchor-id="sec-104">§104 · Teoría de los derechos: John Locke</h2>
+<p>John Locke (1632-1704) defendía que Dios había establecido los derechos naturales de vida, libertad y propiedad privada, de forma que las personas no debemos perjudicar la vida, salud, libertad o las posesiones de nadie. Locke influyó enormemente en la relación de derechos recogida en la <em>Declaración de Independencia</em> de los EUA, escrita por Thomas Jefferson, que recogió los derechos fundamentales de vida, libertad y prosecución de la felicidad. Jefferson y otros teóricos de los derechos consideraban que de los derechos establecidos por Locke podían deducirse otros tales como el derecho de movimiento, libertad de expresión y expresión religiosa.</p>
+<p>Las teorías de los derechos suelen tener estas características:</p>
+<ol type="1">
+<li>Los derechos son <em>naturales</em>, pues no los ha inventado ninguna sociedad ni gobierno alguno.</li>
+<li>Son <em>universales</em>, porque no cambian de un país a otro.</li>
+<li>Son <em>iguales para todos</em>, con independencia de su sexo, raza o minusvalías.</li>
+<li>Son <em>inalienables</em>, es decir, que no podemos decidir rechazarlos o cedérselos a otra persona. Por ejemplo: no puedo venderme a otra persona como esclavo.</li>
+</ol>
+<p><strong>De dónde salen esos derechos.</strong> La pregunta obvia es por qué habría de haber derechos anteriores a cualquier ley, y Locke tiene una respuesta que hoy resulta incómoda: los hay porque existe una <em>ley natural</em>, un conjunto de verdades morales que valen para todo el mundo, en cualquier lugar y sin necesidad de que nadie las promulgue, y que descubrimos con la sola razón, aunque conviene saber que él nunca llegó a deducirla entera y que admitió por escrito que nadie lo había conseguido todavía. ¿Y de dónde saca la ley natural su fuerza? De que somos obra de Dios y, por tanto, propiedad suya: por eso no podemos destruirnos a nosotros mismos ni destruir a otros, igual que no puedes romper lo que no es tuyo. De ahí se siguen, según Locke, cuatro deberes: conservar tu vida y no abandonarla por tu voluntad; conservar la de los demás cuando no esté en juego la tuya; no quitar la vida a nadie, con una excepción que él escribe expresamente, hacer justicia con quien ha delinquido; y no dañar la libertad, la salud, la integridad ni los bienes de otro.</p>
+<p><strong>La propiedad, y sus dos límites.</strong> El derecho que Locke desarrolla con más detalle es el tercero, y su argumento es sencillo y potente: la tierra y sus frutos son de todos, pero tu cuerpo es tuyo, luego también lo es el trabajo de tu cuerpo; y cuando mezclas tu trabajo con algo común —recoges una manzana, aras un campo—, lo sacas del montón común y lo haces tuyo. Ahora bien, no puedes apropiarte de todo. Locke pone dos condiciones, o tres si se cuenta la evidente, que el trabajo sea tuyo y no de otro. La primera es que no se te pudra: nadie tiene derecho a acaparar más de lo que puede usar. La segunda, más exigente, es que quede <em>bastante e igual de bueno</em> para los demás. Fíjate en lo que pasa con la primera en cuanto se inventa el dinero, porque es el punto en que su teoría deja de proteger lo que parecía proteger: el oro no se pudre, así que la acumulación deja de tener límite natural. Y Locke no se escandaliza: sostiene que, al aceptar el dinero, los hombres han consentido tácitamente en una posesión desigual de la tierra. Si ese consentimiento vale como consentimiento, y si el segundo límite sobrevive al primero, es lo que sus lectores llevan discutiendo desde entonces.</p>
+<p><strong>Dos objeciones que conviene que sepas.</strong> La primera es la evidente: si los derechos naturales se fundan en que somos criaturas de Dios, ¿qué le queda a quien no cree? Hay quien responde que la teología es solo el andamio y que el edificio se sostiene sin ella; y hay quien sostiene lo contrario, que ninguna versión laica ha conseguido todavía fundamentar la igualdad entre las personas tan bien como lo hacía aquella, y que ese es un problema abierto y no un detalle histórico<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. La segunda es histórica y es una lección de cómo se leen las influencias: se repite mucho que la <em>Declaración de Independencia</em> es Locke con otras palabras, y el propio Jefferson (1743-1826) puso las cosas en su sitio por carta en 1825. Allí, escribió, no había pretendido nada original ni había copiado de ningún escrito en particular: toda la autoridad del texto descansaba en «los sentimientos concordes de la época», expresados en conversaciones, cartas, ensayos y libros elementales de derecho público, «como Aristóteles, Cicerón, Locke, Sidney y otros». Locke está, y que esté ya dice algo; pero está como uno de cuatro nombres, y ni siquiera el primero de la lista.</p>
+<p><strong>Y la teoría no siempre va con la biografía.</strong> Guárdate este caso, porque es de los que enseñan a leer. Locke escribió contra la esclavitud y participó en ella, y las dos cosas están documentadas. Del lado de la teoría: el <em>Primer tratado</em> abre llamándola «un estado del hombre tan vil y miserable» —aunque conviene saber que ahí habla de la sujeción política a un rey absoluto, no de la trata—, y el <em>Segundo</em> solo admite una esclavitud legítima, la del cautivo de una guerra justa que ha perdido el derecho a su propia vida por un acto que merecía la muerte. Ahora fíjate en lo que esa definición deja fuera, porque las deja fuera casi todas: nadie puede venderse a sí mismo como esclavo, ya que no puede dar sobre su vida un poder que él mismo no tiene; el poder del vencedor no alcanza ni a la mujer, ni a los hijos, ni a los bienes del vencido; y los hijos, escribe Locke, «son hombres libres, les pasara lo que les pasara a sus padres». La esclavitud atlántica era hereditaria, comprada y vendida, y no cabe en la teoría de Locke por tres sitios distintos a la vez.</p>
+<p>Del lado de la biografía, en cambio: Locke fue secretario de los Lores Propietarios de Carolina y escribió de su puño el primer borrador de sus Constituciones Fundamentales, cuyo artículo 110 concede a todo hombre libre «poder y autoridad absolutos sobre sus esclavos negros»; y tuvo acciones de la Royal African Company, la compañía de la trata, hasta que las vendió en 1675. Los especialistas discuten qué significa eso, y no se han puesto de acuerdo: unos lo leen como adhesión y otros como el trabajo de un secretario que redacta lo que le encargan. Lo que no hay, y esto sí es seguro, es rectificación: <strong>Locke no se retractó nunca, y la esclavitud racial no aparece mencionada ni una sola vez en toda su obra teórica</strong><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Una teoría puede ser mejor que quien la firma. Eso ni la mejora a ella ni lo excusa a él: son dos preguntas distintas y hay que contestarlas por separado.</p>
+</section>
+<section id="sec-105" class="level2">
+<h2 class="anchored" data-anchor-id="sec-105">§105 · El imperativo categórico kantiano</h2>
+<p>Immanuel Kant (1724-1804) supuso un punto de inflexión en la historia de la Filosofía y, en particular, de la ética. Consideró que todas las éticas anteriores a la suya eran <em>éticas empíricas</em> o <em>materiales</em>, porque estaban orientadas a lograr ciertos objetivos o ciertos bienes. Dicen cosas como: «si quieres ser feliz, haz X, Y o Z». Pero, si resulta que alguien me dice que no quiere ser feliz, ¿qué argumento me queda para convencerlo de que obre moralmente? Este tipo de imperativos o mandatos son hipotéticos, porque dependen de que tengamos ciertos deseos. Debido a esto, según Kant, las éticas materiales no pueden establecer leyes y juicios morales universales.</p>
+<p>Por contra, Kant caracterizó su propia ética como una <em>ética formal</em>, que indica el criterio único por el cual debemos juzgar toda acción moral: el <em>imperativo categórico</em>. Sigue siendo un mandato, pero debe cumplirse siempre, con independencia de los deseos del actor. Nos dice: «Debes hacer X». Y punto.</p>
+<p><strong>Obrar por deber, no solo conforme al deber.</strong> Falta ver de dónde saca Kant el valor moral de una acción, y su respuesta es tajante: no hay nada en el mundo, ni tampoco fuera de él, que pueda llamarse bueno sin restricción salvo una <em>buena voluntad</em>. La inteligencia, el valor, la constancia o la riqueza son excelentes cuando acompañan a una voluntad buena y francamente peligrosos cuando acompañan a una mala; un canalla inteligente y perseverante hace mucho más daño que un canalla torpe. Lo único que vale sin condiciones es querer lo debido <em>porque</em> es debido.</p>
+<p>Y lo aterriza en un tendero. Imagina a un comerciante que jamás cobra de más a un niño que va solo a la compra. Su conducta es impecable, pero pregúntate por qué la mantiene. Si no cobra de más porque le conviene —porque el barrio habla, porque perder la clientela lo arruinaría—, entonces obra <em>conforme</em> al deber, y su honradez vale exactamente lo que valga su interés, ni un céntimo más: el día que engañar le compense, engañará. Solo cuando no cobra de más porque no se debe hacer obra <em>por</em> deber, y solo entonces su acción tiene valor moral. Fíjate en la consecuencia, que es lo que separa a Kant de casi todo lo que llevas leído: dos personas pueden hacer exactamente lo mismo y estar solo una de ellas obrando bien.</p>
+<p><strong>Dos fórmulas, un mismo imperativo.</strong> Kant lo enunció de varias maneras y sostuvo que todas dicen lo mismo, aunque a nosotros nos suenen muy distintas. Vas a ver las dos más usadas: la que manda tratar a las personas como fines, llamada <em>fórmula de la humanidad</em>, y la que manda actuar solo según máximas universalizables, llamada <em>fórmula de la ley universal</em>. La primera es la que reconoces enseguida; la segunda es la que hace el trabajo cuando hay que decidir.</p>
+<p>Kant estableció que debemos tratar a las personas <em>siempre</em> como un fin y no como un medio. Nos indica que debemos tratar a los demás con dignidad y no utilizarlos nunca como instrumentos para lograr nuestros objetivos, porque las personas tenemos valor intrínseco. Una persona vale porque es una persona, con independencia de cualquier otra circunstancia.</p>
+<p>Como ves, este principio no es como una lista concreta de acciones buenas o malas que debamos realizar o evitar, sino que nos sirve para establecer cuál es la acción correcta en cualquier situación en la que nos encontremos. Por ejemplo, si robo el móvil de un compañero de clase, estoy usando a esa persona como mero medio para obtener un fin para mí: mi felicidad o beneficio.</p>
+<p>Kant da otras dos formulaciones del mismo imperativo categórico, una detrás de otra:</p>
+<blockquote class="blockquote">
+<p>Obra solo según aquella máxima por la cual puedas querer que al mismo tiempo se convierta en ley universal.</p>
+<p>Obra como si la máxima de tu acción pudiera convertirse por tu voluntad en una ley universal de la naturaleza.</p>
+<p>—Immanuel Kant, <em>Fundamentación de la metafísica de las costumbres</em>, AA IV, 421</p>
+</blockquote>
+<p>Según esto, antes de actuar debemos preguntarnos si consideramos que cualquier otra persona en estas circunstancias debería hacer lo mismo que estoy a punto de hacer yo. Por ejemplo, si voy a mentir, he de plantearme si me parece razonable que los demás mientan. Rápidamente llegaré a la conclusión de que, si todo el mundo mintiera siempre que le conviniera, nadie volvería a creer a nadie y mentir dejaría de servir para nada, así que yo tampoco debo mentir.</p>
+<p><strong>Cómo se prueba una máxima.</strong> Hagamos ese procedimiento despacio, porque es la herramienta kantiana que se usa. Primero formulas tu <em>máxima</em>, es decir, la regla que estás a punto de seguir, y sé honesto al enunciarla: no «voy a pedir ayuda», sino «prometeré devolver un dinero que sé que no pienso devolver, porque lo necesito». Después la universalizas: imagina un mundo en el que todos hicieran eso mismo en esa misma situación. Y por último compruebas si tu máxima sobrevive a ese mundo.</p>
+<p>La promesa falsa no sobrevive, y el motivo es más fino de lo que parece. Donde todos prometieran sin intención de cumplir, nadie creería una promesa, y entonces prometer ya no serviría para obtener nada: la máxima se destruye a sí misma al universalizarse, porque necesita que los demás <em>no</em> la sigan. Vuelve al ejemplo de la mentira y fíjate en dónde está exactamente la falla, porque el atajo es tentador: lo que descarta la máxima no es que las consecuencias fueran nefastas si todos mintiéramos —ese sería un argumento consecuencialista, del tipo que Kant acaba de rechazar—, sino que la regla se contradice a sí misma en cuanto vale para todos. Una máxima injusta suele delatarse por ahí, porque casi siempre reclama un privilegio: que yo pueda hacer precisamente lo que necesito que los demás no hagan.</p>
+<p><strong>La ley te obliga porque es tuya.</strong> Queda la pregunta incómoda: ¿quién manda ese imperativo? Ni Dios, ni el Estado, ni tus padres. Kant responde que lo manda tu propia razón, y a eso lo llama <em>autonomía</em> —darse uno mismo la ley—, frente a la <em>heteronomía</em> de quien la recibe de fuera. De ahí sale, por fin, la palabra que siempre acompaña a Kant: si eres capaz de darte a ti mismo la ley moral y de obedecerla incluso contra tus ganas, no eres una cosa que pueda tasarse. Las cosas tienen precio y pueden cambiarse por otra equivalente; las personas, sostiene Kant, tienen dignidad, y por eso no hay nada por lo que quepa cambiarlas (<a href="chapters-web/tema-30.html#sec-118">§118</a>).</p>
+</section>
+<section id="sec-106" class="level2">
+<h2 class="anchored" data-anchor-id="sec-106">§106 · Éticas consecuencialistas o teleológicas</h2>
+<p>Cuando reflexionamos sobre si una acción es correcta o incorrecta, damos gran importancia a las consecuencias de esa acción. Sabemos por experiencia que las buenas intenciones por sí solas no garantizan la bondad de los resultados. Puedo obrar con la excelente intención de salvar la vida de alguien que acaba de tener un accidente de coche, pero si no sé cómo mover el cuerpo de esa persona, puede provocarle una parálisis. En consecuencia, debo considerar los resultados prácticos y reales de mis acciones, más allá de mis fines, mis virtudes o el deber.</p>
+<p>Lo que las teorías consecuencialistas plantean es que la conducta moral se establece <em>exclusivamente</em> atendiendo a un análisis de coste-beneficio de las consecuencias de dicha acción. Una acción es moralmente correcta si sus consecuencias son más favorables que desfavorables. En primer lugar, debemos enumerar tanto las buenas como las malas consecuencias de nuestros actos. En segundo lugar, debemos determinar si las consecuencias buenas tienen mayor peso o importancia que las malas. Si las consecuencias buenas sobrepasan las malas, la acción es moralmente apropiada. Si las consecuencias negativas de la acción exceden las positivas, entonces es una acción impropia.</p>
+<p>Esta perspectiva ética tiene la gran ventaja de que las consecuencias de los actos se pueden ver y comprobar, a diferencia de las intenciones. De ahí que podamos aprender cuáles son las acciones buenas gracias a la experiencia, en lugar de depender de intuiciones o de listas de deberes.</p>
+<p>Hay tres tipos de teorías consecuencialistas, dependiendo de quién consideremos que es importante tener en cuenta como objeto del beneficio de las acciones:</p>
+<ol type="1">
+<li><strong>Egoísmo ético.</strong> Considera que una acción es moralmente correcta si sus consecuencias son más favorables que desfavorables <em>solo para el agente que realiza la acción</em>.</li>
+<li><strong>Altruismo ético.</strong> Considera que una acción es moralmente correcta si sus consecuencias son más favorables que desfavorables <em>para cualquiera salvo para el agente que realiza la acción</em>.</li>
+<li><strong>Utilitarismo.</strong> Considera que una acción es moralmente correcta si sus consecuencias son más favorables que desfavorables <em>para todos</em>.</li>
+</ol>
+<p>Veamos cuál sería la acción correcta según esas tres aproximaciones en el siguiente caso. Una mujer viaja en un coche alquilado con chófer por un país en vías de desarrollo cuando presencia un accidente. El coche que circula delante del suyo se sale de la calzada y da varias vueltas de campana en la cuneta. Ella pide a su conductor que pare para asistir a las víctimas, pero en lugar de hacerlo, el chófer acelera para alejarse de la escena del accidente. Inmediatamente el conductor explica a su pasajera que en su país si una víctima de accidente muere, se considera responsable del accidente a la persona asistente, a la que ayuda. Si la viajera se detuviera a ayudar y la víctima del accidente muriera a su cuidado, <em>ella</em> sería la responsable penal de la muerte de esta. De ahí que, en la mayor parte de los casos, las víctimas de los accidentes queden desatendidas, a merced de la inclemencia del tiempo del desierto, y mueran.</p>
+<p>Siguiendo el criterio del <em>egoísmo ético</em>, la mujer, como el chófer hace habitualmente, debe preocuparse exclusivamente por el potencial efecto negativo de enfrentarse al cargo de homicidio si la víctima muere mientras ella la asiste. Así que la actuación correcta es pasar de largo.</p>
+<p>Según el criterio del <em>altruismo ético</em>, la viajera debiera preocuparse de las consecuencias sobre los otros, en concreto de la víctima del accidente. Por lo tanto, la actuación correcta sería pararse a asistir a la víctima del accidente.</p>
+<p>Finalmente, el criterio del <em>utilitarismo</em> indica que la viajera debe sopesar las consecuencias tanto para ella como para la víctima. La respuesta no es tan clara como en los dos casos anteriores y la consideración de cuál sea la acción correcta es más compleja y depende de las circunstancias.</p>
+<p><strong>Un momento con el altruismo ético.</strong> De los tres criterios, este es el que menos se explica y el que más conviene mirar de cerca, porque encierra una sorpresa. Su regla es simple: cuenta las consecuencias para todos <em>menos</em> para ti. La palabra la acuñó en el siglo XIX Auguste Comte (1798-1857), y no como quien pone una etiqueta: sostuvo que el gran problema humano consiste en invertir el orden natural y enseñarnos a <em>vivir para los demás</em>. Comte, pues, sí lo defendió. Lo que casi no vas a encontrar son filósofos que hayan defendido la regla en su forma estricta, la que te manda excluirte a ti del cálculo. Merece la pena preguntarse por qué, porque la respuesta enseña más que la propia doctrina. Al egoísta ético se le reprocha que privilegiarse a uno mismo es arbitrario: si no puedes explicar qué tienes tú de especial, tu preferencia vale lo mismo que preferir a la gente de ojos azules. Pues bien, ese reproche se vuelve entero contra el altruista, porque <em>excluirse</em> uno mismo del cálculo es exactamente igual de arbitrario. Tus intereses son intereses de alguien, y ese alguien eres tú. Añade que el hueco que el altruismo ético parecía ocupar —el de la imparcialidad, el de no darse a uno mismo trato de favor— ya lo ocupa el utilitarismo, que cuenta a todo el mundo con el mismo peso, incluido el agente. De modo que la tabla de tres columnas es más simétrica sobre el papel que en la historia de la Filosofía<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+</section>
+<section id="sec-107" class="level2">
+<h2 class="anchored" data-anchor-id="sec-107">§107 · El utilitarismo: Bentham y Mill</h2>
+<p>En ocasiones es difícil establecer cuáles son las consecuencias beneficiosas y perjudiciales. No todas las consecuencias son siempre claramente de un signo o de otro. La vida es compleja y una misma acción puede tener múltiples consecuencias simultáneas en distintos ámbitos o para distintas personas. Además, podemos tener distintos criterios de lo que constituye un beneficio o una desventaja.</p>
+<p>Jeremy Bentham (1748-1832) fue un notable filósofo utilitarista, el primero en articular una teoría completa desde esa perspectiva. Su propuesta tiene dos aspectos interesantes para nosotros.</p>
+<p><strong>Utilitarismo del acto.</strong> Bentham sugirió en un principio que debíamos evaluar las consecuencias de cada acto que realicemos para considerarlas moralmente correctas o incorrectas.</p>
+<p>Los críticos de Bentham señalan —como ejemplo contrario a la propuesta del filósofo utilitarista— que las actividades de ocio serían moralmente incorrectas, porque la sociedad no se beneficia de que yo pase la tarde viendo películas en Netflix en lugar de haciendo obras de caridad. Sin embargo, este extremo no nos parece razonable.</p>
+<p>Otra consecuencia del pensamiento de Bentham que ha sido criticada es que abre la puerta a que ciertos actos de tortura o esclavitud serían moralmente aceptables si resultaran en un beneficio neto para la sociedad. Por ejemplo, ¿es moralmente correcto torturar a una persona para que nos revele dónde puso una bomba con intención de salvar a las potenciales víctimas de la explosión? Siguiendo el utilitarismo del acto, sí.</p>
+<p><strong>Utilitarismo de la norma.</strong> Utilitaristas como John Stuart Mill (1806-1873) solucionaron algunos de estos problemas por medio del utilitarismo de la norma, según el cual una norma moral o una regla de comportamiento es moralmente correcta si las consecuencias de adoptarla son más favorables que desfavorables para todos. En lugar de juzgar cada acto por separado, podemos juzgar la norma. De ahí que podamos establecer que robar está mal, pues el robo tiene consecuencias desfavorables.</p>
+<p><strong>Utilitarismo hedónico.</strong> En un segundo momento, Bentham planteó que tenemos que medir el placer y el dolor que producen nuestras acciones, que son las únicas consecuencias que importan para determinar si una conducta es moralmente correcta o no. A esto llamamos utilitarismo hedónico<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<p>El problema es que no todas las consecuencias que solemos tener como buenas son placenteras. Fomentar y mantener una relación de amistad no es en todo momento placentero; en ocasiones tenemos que hacer cosas que no nos gustan para hacerlo<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
+<p><strong>Mill: no todos los placeres valen lo mismo.</strong> Ese problema admite otra salida, anterior en el tiempo a las dos que acabas de leer en la nota, y es la que tomó John Stuart Mill. Él había heredado de Bentham el <em>principio de la mayor felicidad</em> —una acción es correcta en la medida en que tiende a producir felicidad e incorrecta en la medida en que tiende a producir lo contrario, contando por igual la de todos los afectados—, y tuvo que defenderlo de una objeción que le hacía mucho daño: si lo único que cuenta es el placer, el utilitarismo es una doctrina digna de cerdos, porque convierte la vida buena en la del que más disfruta. Bentham se lo había puesto fácil a sus críticos al sostener que, quitados los prejuicios, un pasatiempo cualquiera vale tanto como la poesía si produce el mismo placer<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p>
+<p>En lugar de negar que el placer sea la medida, Mill distinguió su <em>cantidad</em> de su <em>calidad</em>. Hay placeres superiores —los de la inteligencia, los sentimientos, la imaginación y el sentido moral— y placeres inferiores, y los primeros valen más aunque vengan con menos disfrute y más esfuerzo. ¿Y quién establece cuál es cuál? Solo pueden hacerlo quienes conocen ambos por experiencia: si casi todos los que han probado los dos prefieren uno de manera constante, aun costándoles más trabajo, esa preferencia es el único dato que hace falta. De ahí su frase más citada: «Es mejor ser un ser humano insatisfecho que un cerdo satisfecho; mejor ser Sócrates insatisfecho que un necio satisfecho»<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>.</p>
+<p>Dale una vuelta antes de darlo por bueno. Mill sostiene que la jerarquía la establece la experiencia de quienes han probado ambas cosas, pero los jueces de su ejemplo se parecen sospechosamente a él: ingleses cultos del siglo XIX. ¿Es un hecho comprobable que la poesía valga más que un buen partido, o es la preferencia de un grupo elevada a criterio? El asunto vuelve en cuanto se pasa de la ética a la política: el mismo Mill defendió que a nadie se le puede imponer su propio bien, lo que casa mal con una tabla de placeres que ordena las vidas de mejor a peor (<a href="chapters-web/tema-31.html#sec-126">§126</a>).</p>
+</section>
+<section id="sec-108" class="level2">
+<h2 class="anchored" data-anchor-id="sec-108">§108 · Egoísmo ético y teoría del contrato social</h2>
+<p>Como hemos visto más arriba, Thomas Hobbes (1588-1679) defendía el egoísmo psicológico, la postura metaética que piensa que todas las acciones humanas están motivadas por el egoísmo.</p>
+<p>Según Hobbes todos buscamos satisfacer nuestros intereses, lo que resulta en una situación de guerra continua de todos contra todos en la que los más fuertes abusan de los más débiles, pero en la que nadie está seguro. Por pura motivación egoísta nos iría mejor si existieran unas normas morales que cumplir que sin ellas, con el fin de no matarnos los unos a los otros. Aun siendo egoísta, me compensa más plegarme a unas normas que establezcan que tú no puedes matarme a mí y yo a ti tampoco que seguir bajo esa «ley de la selva». No mentir, no robar y no matar son normas que pueden ahorrarnos mucho sufrimiento. Pero estas normas solo tienen sentido si existe alguna forma de obligarnos <em>a todos</em> a cumplirlas. En el momento en que no haya una autoridad dotada de fuerza que pueda castigarnos si quebrantamos las normas, volveremos a la anarquía. Es por eso que, por puro egoísmo, aceptamos que exista una autoridad que pueda imponer las normas: el Estado. Hablaremos de esto con más detalle cuando tratemos la Filosofía política (<a href="chapters-web/tema-33.html#sec-130">§130</a>).</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Las llamamos también <em>deontológicas</em>, del griego <em>deo</em> o deber.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Alexander, L. y Moore, M. (2025). Deontological Ethics. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Winter 2025). https://plato.stanford.edu/archives/win2025/entries/ethics-deontological/. Sobre el doble efecto en particular, McIntyre, A. (2023). Doctrine of Double Effect. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Winter 2023). https://plato.stanford.edu/archives/win2023/entries/double-effect/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Tuckness, A. (2026). Locke’s Political Philosophy. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Fall 2026). https://plato.stanford.edu/archives/fall2026/entries/locke-political/<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Locke, <em>Segundo tratado sobre el gobierno civil</em> (1689), IV 23-24, VII 85 y XVI 182-189; <em>Constituciones Fundamentales de Carolina</em> (1670), art. 110; traducciones de Claude, del inglés. Sobre la disputa: Armitage, D. (2004), <em>Political Theory</em>, 32(5), lo lee como adhesión; Brewer, H. (2024), <em>Locke Studies</em>, 24, sostiene que la evidencia manuscrita no lo respalda.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Que Comte acuñó la palabra, en Bourdeau, M. (2026). Auguste Comte. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Spring 2026). https://plato.stanford.edu/archives/spr2026/entries/comte/. La objeción de arbitrariedad contra el egoísmo ético está en Shaver, R. (2023). Egoism. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Spring 2023). https://plato.stanford.edu/archives/spr2023/entries/egoism/; darle la vuelta y aplicarla al altruista es un paso que damos aquí nosotros, no la fuente.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><em>hedone</em> significa «placer» en griego.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>George Edward Moore (1873-1958) propuso una solución para este problema por medio del <em>utilitarismo ideal</em>, según el cual debemos contemplar cualquier consecuencia que reconozcamos intuitivamente como buena o mala, y no solo las que sean placenteras o dolorosas. Por su parte, R. M. Hare (1919-2002) propuso el <em>utilitarismo de la preferencia</em>, que toma en cuenta cualquier consecuencia que satisfaga nuestras preferencias.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>La frase está en <em>The Rationale of Reward</em> (1825) y habla del <em>push-pin</em>, un juego infantil de la época. Que hoy haya que explicar cuál era el juego dice algo a favor de su tesis y algo en contra al mismo tiempo.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p><em>Utilitarianism</em> (1863), capítulo II; traducción de Claude, del original inglés. Mill remata el argumento con una observación algo tramposa y muy eficaz: si el necio o el cerdo opinan lo contrario, es porque solo conocen su lado de la cuestión.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eukeni-acebal\.github\.io\/filosofia-manual\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters-web/tema-26.html" class="pagination-link" aria-label="Tema 26 · La ética estoica">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Tema 26 · La ética estoica</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters-web/tema-28.html" class="pagination-link" aria-label="Tema 28 · La moral amoral de Nietzsche">
+        <span class="nav-page-text"><span class="chapter-title">Tema 28 · La moral amoral de Nietzsche</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

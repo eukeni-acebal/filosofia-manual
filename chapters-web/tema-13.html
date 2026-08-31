@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tema 13 · Percepción, desinformación y posverdad – Filosofía</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters-web/tema-14.html" rel="next">
+<link href="../chapters-web/tema-12.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-bfbad9f2cf9a191a93f038f4342ff68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-2f07765074423308b81dda0734a95584.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bfbad9f2cf9a191a93f038f4342ff68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../quarto-theme/print.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-3.html">Unidad III · Epistemología</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-13.html"><span class="chapter-title">Tema 13 · Percepción, desinformación y posverdad</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Filosofía</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/eukeni-acebal/filosofia-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Filosofía</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/intro-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · ¿Qué es la Filosofía?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 2 · Del mito al logos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 3 · Las ramas de la filosofía y su vigencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 4 · La filosofía y otros campos del saber</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 5 · Herramientas básicas del filósofo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 6 · La disertación filosófica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Platón y Aristóteles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad II · Antropología</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 7 · La naturaleza humana: evolución y hominización</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 8 · Concepciones filosóficas del ser humano</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 9 · Cultura y sociedad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 10 · La personalidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 11 · La identidad personal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Pico y Darwin</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad III · Epistemología</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 12 · El conocimiento y la verdad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-13.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tema 13 · Percepción, desinformación y posverdad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-14.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 14 · Las teorías del conocimiento</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-15.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 15 · El razonamiento y la argumentación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-16.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 16 · El saber científico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-17.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 17 · Conocimiento, poder e interés</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Descartes y Bacon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad IV · Metafísica</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-18.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-19.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 19 · Unidad y pluralidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-20.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 20 · Mente, cuerpo e inteligencia artificial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-21.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 21 · El tiempo, el cambio y la libertad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-22.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 22 · La existencia de Dios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Epicuro y la carta a Meneceo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad V · Ética</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-23.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-24.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 24 · Psicología de la ética</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-25.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 25 · Éticas de la virtud</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-26.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 26 · La ética estoica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-27.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 27 · Éticas del deber y consecuencialistas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-28.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 28 · La moral amoral de Nietzsche</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-29.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 29 · Éticas del cuidado y ética aplicada</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Aristóteles y el término medio</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad VI · Filosofía política</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-30.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 30 · Los derechos humanos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-31.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 31 · La cuestión filosófica de la justicia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-32.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 32 · El origen del poder político</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-33.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 33 · El contrato social</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-34.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 34 · Democracia y Estado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-35.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 35 · Utopías y distopías</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-36.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 36 · Feminismo y perspectiva de género</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Mill y Campoamor</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad VII · Estética</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-37.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 37 · Arte, belleza y gusto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-38.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 38 · Teorías de la belleza y el arte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Aristóteles y Wilde</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/epilogo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Epílogo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/creditos-imagenes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Créditos de las imágenes</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-49" id="toc-sec-49" class="nav-link active" data-scroll-target="#sec-49">§49 · Percepción y memoria</a></li>
+  <li><a href="#sec-50" id="toc-sec-50" class="nav-link" data-scroll-target="#sec-50">§50 · De la escasez a la sobrecarga: información y conocimiento</a></li>
+  <li><a href="#sec-51" id="toc-sec-51" class="nav-link" data-scroll-target="#sec-51">§51 · La desinformación, la sobreinformación y la posverdad</a></li>
+  <li><a href="#sec-52" id="toc-sec-52" class="nav-link" data-scroll-target="#sec-52">§52 · Sesgo de confirmación, cámaras de eco y burbujas</a></li>
+  <li><a href="#sec-53" id="toc-sec-53" class="nav-link" data-scroll-target="#sec-53">§53 · Cómo se forma una opinión: dos casos</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-3.html">Unidad III · Epistemología</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-13.html"><span class="chapter-title">Tema 13 · Percepción, desinformación y posverdad</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Tema 13 · Percepción, desinformación y posverdad</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>Por convención lo dulce y por convención lo amargo; por convención lo caliente, por convención lo frío, por convención el color; pero en realidad, átomos y vacío.</p>
+<p>—Demócrito de Abdera, vía Sexto Empírico, <em>Contra los matemáticos</em>, VII, 135 · traducción de Claude, del griego</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Si combates a todas las sensaciones, no te quedará ni siquiera aquello a lo que referirte para juzgar cuáles de ellas dices que te han engañado.</p>
+<p>—Epicuro, <em>Máximas capitales</em>, 23 · traducción de Claude, del griego</p>
+</blockquote>
+<section id="sec-49" class="level2">
+<h2 class="anchored" data-anchor-id="sec-49">§49 · Percepción y memoria</h2>
+<p><strong>La percepción.</strong> Más allá de la secular discusión sobre si nacemos dotados de algún conocimiento o información o no —recuerda las <em>ideas innatas</em> de los racionalistas o la <em>tabula rasa</em> de los empiristas—, lo cierto es que nuestra consciencia y conocimiento del mundo provienen de nuestra percepción. Llenamos la memoria con aquello que vemos, oímos, olemos, tocamos y, a fin de cuentas, <em>experimentamos</em>.</p>
+<p>Pero no somos unas máquinas de registro pasivas de la realidad. De hecho, la diferencia entre lo que hay frente a nosotros, lo que captan los sentidos y lo que procesamos como percepción es abismal. Hasta el punto en el que cualquier parecido con la realidad puede parecer mera coincidencia.</p>
+<p>Lo que sucede es que las percepciones son el resultado de un largo y complejo procesamiento en el que intervienen no solo nuestros limitados sentidos, que solo perciben una muy reducida parte de lo que sucede ante nosotros, sino que nuestro cerebro añade, completa e interpola información. Y no siempre basado en la relevancia objetiva de la misma, sino en función de las emociones y de la atención.</p>
+<p>¿Podemos fiarnos de nuestros ojos para dotarnos de un conocimiento correcto del mundo sobre el que erigir nuestras ideas, pensamiento y razones? Sabemos que en diversas ocasiones nos fallan. Es el caso de las alucinaciones o de esa persona a la que saludas en la distancia por la calle para descubrir, cuando se acerca, que no era quien tú pensabas y has saludado a un desconocido.</p>
+<p><strong>La memoria.</strong> Una vez que percibimos datos y hechos los almacenamos en nuestra memoria. Una vez allí se convierten en recuerdos, que son la materia prima de nuestros razonamientos y argumentaciones.</p>
+<p>La memoria, sin embargo, no es un registro pasivo y objetivo de la realidad vivida. Disponemos de diversos tipos de memoria que utilizan diversos lugares del cerebro para fijarse, que gestionamos de distinta forma y que olvidamos de forma distinta.</p>
+<p>La memoria, como la percepción, es un <em>constructo</em>, no el registro fidedigno e inequívoco de unos hechos. Cada vez que recordamos algo estamos re-creando, actualizando y agregando detalles, como en el juego del «teléfono escacharrado». Los recuerdos cambian con el tiempo, se desvanecen, olvidamos detalles cruciales, combinamos distintos recuerdos en uno, se ajustan para cuadrar con nuestra narrativa interna y no podemos distinguir los recuerdos reales de recuerdos falsos o incluso implantados. La conexión emocional y la necesidad de dar sentido a las cosas, además, influye decisivamente en qué recordamos y cómo lo hacemos.</p>
+<p>Siendo así, ¿cómo podemos fiarnos de nuestra memoria para razonar correctamente? Sin verificación externa no podemos confiar en que nuestros recuerdos se ajusten a los hechos. Seguro que alguna vez te habrá pasado viendo fotos de hace algunos años que no recordabas que cierta persona había ido a aquella excursión o estabas convencida de que llevabas una ropa distinta, pero la foto te hace refrescar y actualizar la memoria.</p>
+</section>
+<section id="sec-50" class="level2">
+<h2 class="anchored" data-anchor-id="sec-50">§50 · De la escasez a la sobrecarga: información y conocimiento</h2>
+<p>Estamos inmersos en un huracán de información, en gran parte debido a las tecnologías informáticas que ponen delante de nuestros ojos un flujo constante de noticias, vídeos y <em>stories</em> en el que nos sumergimos de forma casi inevitable.</p>
+<p>Pero no siempre fue así. De hecho, vivimos en una época totalmente excepcional, tanto que es casi imposible de concebir. Considera estos hechos y ve visualizando cuán distintas eran las sociedades anteriores a la nuestra.</p>
+<p>Los humanos surgimos hace al menos 250 000 años, y desde entonces hasta el año 1804 aproximadamente no llegamos a los mil millones de pobladores en nuestro planeta, como puedes ver en la siguiente figura.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/t13-poblacion-mundial.jpeg" class="img-fluid figure-img"></p>
+<figcaption>En este gráfico puedes ver la estimación de la población mundial desde la Revolución Neolítica hace 12 000 años hasta hoy. Fíjate que hasta hace menos de un siglo la población humana era escasísima y en cómo la Revolución Industrial trajo un aumento sin precedentes de la población mundial. || Atribución: «Population curve», de El T, dominio público / Wikimedia Commons.</figcaption>
+</figure>
+</div>
+<p>Así que durante casi toda nuestra Historia hemos sido pocos, muy pocos, repartidos por una enorme superficie, comunicándonos cara a cara y viajando a pie o a caballo. Y casi nadie sabía leer: la escritura surgió hacia el 3200 a. e. c.&nbsp;en Mesopotamia, pero la alfabetización general y la educación pública obligatoria son cosa de anteayer. La imprenta de tipos móviles data de 1440; los primeros periódicos diarios, del siglo XVIII; la World Wide Web, de 1991, y el <em>smartphone</em>, de 2007.</p>
+<p>Con todo esto, imagina el acceso a la información que ha tenido la humanidad a lo largo de su historia. O, más bien, su ausencia de acceso. Platón (427-347 a. e. c.) solo habría podido leer unas decenas de libros en su vida. Nosotros tenemos más información en el teléfono móvil —incluidas las obras del propio Platón— que la que seríamos capaces de leer en miles de vidas. En principio, disponer de (casi) todo el conocimiento generado por la humanidad —ciencia, arte, entretenimiento— es algo bueno, ¿verdad? Claro, <em>si todo ese conocimiento fuera verdadero o útil y si lo aprovecháramos debidamente</em>. Y aquí es donde empiezan los problemas.</p>
+<p><strong>La información no es conocimiento.</strong> Disponer de acceso a la <em>información</em> no se traduce automáticamente en individuos más eruditos o más sabios. Que esté ahí no implica que podamos comprenderlo o que tengamos tiempo para aprovecharlo. <em>La información por sí misma no es conocimiento</em>; no lo es hasta que la comprendemos y la integramos. Yo no soy capaz de comprender la mecánica cuántica o matemáticas avanzadas, y pese a que los recursos necesarios para comprenderlas están en Internet, tendré que tener interés y tiempo suficiente para poder aprenderlas… a costa de quitárselo a otros conocimientos o disciplinas. Nadie puede ver una representación de todas y cada una de las obras de teatro que se han escrito, ni escuchar toda la música que se ha grabado ni leer todas las novelas que existen.</p>
+<p><strong>Detrás de toda información hay una intención.</strong> No toda la información a nuestra disposición es desinteresada. Ya sabrás por la asignatura de lengua que el emisor tiene un propósito cuando comunica su mensaje. Esa intención puede ser la de ampliar el conocimiento del receptor y educarlo, pero en tantas ocasiones pretende venderle algo; convencerlo de una idea política o religiosa; diseminar información falsa o tratar de embarrar la verdadera; o, simplemente, aprovecharse de la facilidad de publicar la información para llenar la red de información inútil.</p>
+</section>
+<section id="sec-51" class="level2">
+<h2 class="anchored" data-anchor-id="sec-51">§51 · La desinformación, la sobreinformación y la posverdad</h2>
+<p>A este respecto tenemos los fenómenos de la desinformación, la sobreinformación y la posverdad, que existen desde que existen las personas, pero que han adquirido otra cualidad gracias a los medios de comunicación de masas y a las redes sociales. Los tres son fenómenos muy peligrosos y que pueden sumirnos en la falsedad, el engaño y el prejuicio.</p>
+<p><strong>La desinformación.</strong> Consiste en la diseminación de información falsa a sabiendas de que lo es con la intención de engañar, confundir y manipular tanto las creencias como las emociones y las opiniones de la opinión pública.</p>
+<p>La desinformación se parece mucho al contraespionaje. Cuando en 1944, durante la Segunda Guerra Mundial, los Aliados planearon el desembarco de Normandía, en Francia, sabían que era fundamental que el ejército alemán no supiera de antemano ni el lugar exacto ni la fecha de la mayor operación militar anfibia de la historia. Y de dicho desembarco dependía la victoria aliada; la apuesta y el riesgo eran inmensos. Para averiguar cuándo sería el Día D, los espías alemanes trataban de robar información de los Aliados por todos los medios posibles, que, a su vez, trataban de ocultarla a los ojos de los espías alemanes. Hasta ahí, todo resulta entendible. Pero no era suficiente. Los Aliados crearon publicaciones, transmisiones de radio y toda clase de información falsa <em>para confundir</em> a los espías. Así, la verdadera fecha del Día D no solo la conocían unos pocos generales aliados, sino que los espías se encontraban con muchísima información falsa y que no podían verificar. Los Aliados llegaron a construir un campamento falso al sur de Inglaterra con falsos tanques hinchables de goma, movimientos de tropas y un sinfín de detalles. Eso es desinformación.</p>
+<p>Ahora piensa en cómo los políticos, los líderes de grupos religiosos, los medios de comunicación de masas, las redes sociales y otros agentes interesados diseminan información falsa para ocultar la verdadera o engañarnos. Muchas veces niegan la evidencia, pero tantas otras no se molestan siquiera en hacerlo; en su lugar nos inundan con información falsa y nos dejan sin saber qué pensar, en el mejor de los casos, o llenos de ideas falsas, habitualmente.</p>
+<p>¿Y por qué iban a engañarnos? Los motivos son muy diversos. Por ejemplo, obtener poder, dinero, influencia o estatus.</p>
+<p><strong>La sobreinformación.</strong> Actúa por fatiga. Demasiada información nos puede sumir en la confusión, y no tan solo cuando esta información es falsa, como acabamos de tratar con la desinformación. Aunque la información fuera toda verdadera, un <em>exceso</em> de información acaba haciéndonos insensibles ante esta. Además, en este exceso es más fácil colar falsedades y mentiras; bulos y prejuicios; generalizaciones y sobresimplificaciones.</p>
+<p>Piensa en el exceso de cobertura informativa que se da a algunos temas concretos, que están todo el día en los informativos y en los periódicos. Llega un momento en el que nos hartamos del tema y, en lugar de activarnos ante, por ejemplo, una injusticia social, puede empezar a molestarnos que se le dé tanto protagonismo, lo que nos puede llevar a la pasividad o incluso a oponernos a lo que inicialmente nos parecía injusto.</p>
+<p><strong>La posverdad.</strong> Consiste en la <em>negación de la verdad</em> y de los hechos, y su sustitución por apelaciones identitarias, la factura de «hechos alternativos» y la exacerbación de los sentimientos. Dicho de otra manera, para quien adopta un marco de pensamiento de posverdad importa más lo que crea su grupo, sus propias opiniones y lo que sienta que los datos, los hechos y la verdad.</p>
+<p>El concepto mismo de <em>hechos alternativos</em> constituye un oxímoron que resulta muy chocante. Las cosas han sucedido o no han sucedido, ¿verdad? Naturalmente, podemos comprender que existan distintas <em>interpretaciones</em>, <em>juicios</em> o <em>valoraciones</em> sobre los hechos. O que cada testigo de un hecho tenga versiones distintas de lo que vio porque tenía una perspectiva distinta y todo un sistema perceptivo, cognitivo y axiológico<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> propio. Pero los hechos son, eso, hechos<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Diversos individuos podrán <em>añadir</em> detalles diversos, pero todos tendrán que pertenecer a la categoría de <em>cosas que pasaron</em> o que no pasaron, sin añadir lo que no hubo. Pues bien, los <em>hechos alternativos</em> implican que existen hechos distintos a los que, normalmente la mayoría, conoce. Es decir, tú tienes tus hechos y yo los míos. No se refieren a que yo tenga valores, gustos o filtros propios que generen una <em>opinión</em> distinta sobre unos mismos hechos, sino que <em>los hechos mismos son otros, distintos, ajustados a mi perspectiva, mi identidad o mis sentimientos</em>. Como es comprensible, ni yo ni nadie podemos rebatir <em>tus</em> hechos, ya que no tenemos tus opiniones ni tus creencias. Así que quien defiende una versión alternativa de los hechos está creando una realidad paralela en la que puede esconderse como en una fortaleza en la que no entra el sentido común.</p>
+<p>Esta creación de una realidad paralela suele encajar con una identidad ideológica —política o religiosa, por ejemplo—, por lo que se sostiene en común con otros, los míos, que creen las mismas cosas. En ocasiones surgen por la desconfianza en los poderes tradicionales, incluida la ciencia, que son vistos como interesados —y lo son— y con intención de engañarnos.</p>
+<p>Además, la posverdad apela a los sentimientos y a las emociones. Nuestro sistema cognitivo está conectado con nuestro sistema emocional de forma que reaccionamos ante las ideas. Estar enfadados con alguien u odiarlo aumenta espectacularmente las probabilidades de que rechacemos sus ideas y sus propuestas, incluso aunque pudieran ser beneficiosas para nosotros. De la misma manera, sentirnos parte de un grupo y querer seguir formando parte de él aumenta las probabilidades de que nos creamos sus ideas, incluso cuando son patentemente absurdas o niegan la realidad.</p>
+<p>Los hechos alternativos no suelen aparecer sueltos. En muchas ocasiones están ligados a sistemas alternativos de creencias, como ocurre con tantas teorías de la conspiración. No es extraño que negar que el hombre haya pisado la Luna vaya unido a la creencia de que los extraterrestres están entre nosotros, que las vacunas sirven para controlar a la población o que la Tierra es plana.</p>
+</section>
+<section id="sec-52" class="level2">
+<h2 class="anchored" data-anchor-id="sec-52">§52 · Sesgo de confirmación, cámaras de eco y burbujas</h2>
+<p>¿Cómo es posible que algunos individuos desafíen algunas de las más sólidamente establecidas conclusiones de la ciencia, como que la Tierra es esférica o que evolucionamos por selección natural?</p>
+<p>Podríamos apelar directamente a la ignorancia y a la falta de educación, y eso explicará gran parte de la conspiranoia, pero hay personas muy formadas y educadas que están convencidas de algunos hechos alternativos. En estas personas, como en todos los demás, operan algunos principios que <em>distorsionan</em> nuestra percepción, interpretación y valoración de los hechos.</p>
+<p>En primer lugar, no almacenamos hechos en la mente como pequeños ladrillos en el archivador de nuestra mente. Nuestros recuerdos, nuestros contenidos mentales, no son entidades aisladas de las demás que mantienen su forma, sino que están <em>integradas</em> en sistemas de creencias. Es decir, que nuestras ideas dependen de cómo encajan con las que ya conocíamos y se adaptan a ellas. Además, las nuevas ideas transforman el sistema de creencias, con lo cual hay una relación dinámica entre el conocimiento previo y el recién adquirido.</p>
+<p>En segundo lugar, operan en nosotros multitud de <em>sesgos cognitivos y heurísticos</em> que amplifican algunas de las condiciones en las que los seres humanos recibimos e interpretamos la información y cómo esta se transmite en la era digital. Veremos tres de estas condiciones.</p>
+<p><strong>El sesgo de confirmación.</strong> Lo definiremos más adelante, junto a los demás sesgos cognitivos (<a href="chapters-web/tema-15.html#sec-59">§59</a>); lo que aquí nos importa son sus efectos, que aumentan cuando se trata de creencias que percibimos como importantes —impuestos, interrupción voluntaria del embarazo—, emocionalmente intensas o muy arraigadas.</p>
+<p>El sesgo de confirmación nos mete en un bucle negativo en el que tendemos a confirmar nuestras creencias, ignorar las pruebas de su inadecuación y nos aísla en nuestra propia cámara de eco.</p>
+<p><strong>Las cámaras de eco.</strong> Se producen en los medios de comunicación y en las redes sociales. Consisten en ecosistemas cerrados y aislados de otros ecosistemas en los que la información reverbera, se refuerza y se amplifica al tiempo que escapa al cuestionamiento que provenga del exterior. De ahí su nombre; imagina un túnel en el que gritas y tu voz resuena, repitiendo una y otra vez lo que has dicho. Las cámaras de eco pueden llevar a la polarización y el extremismo social y político.</p>
+<p>No nos introducimos en cámaras de eco necesariamente de forma voluntaria. En ocasiones el ambiente de nuestra socialización puede suponer que nos hayamos criado en una. En todo caso, tampoco suelen ser circunstancias de las que no podamos escapar. Lo difícil es encontrar la manera de romper el círculo por algún lado.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/t13-camara-eco.svg" class="img-fluid figure-img"></p>
+<figcaption>Dentro de la cámara, la misma idea da vueltas de unos a otros y siempre acaba volviendo a ti; las voces distintas llegan al borde y no entran. Fíjate en un detalle: nadie te ha encerrado ahí. La cámara la sostienen los de dentro. || Atribución: figura propia, dibujada para este manual.</figcaption>
+</figure>
+</div>
+<p><strong>La burbuja informativa o de filtro.</strong> Es el resultado de los <em>algoritmos</em> de búsqueda y de los patrones de uso de los usuarios de Internet y de las redes sociales. Como bien sabes, Google, Facebook, Instagram y otros servicios de búsquedas en Internet y de redes sociales realizan perfiles de sus usuarios<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> con el fin de vender <em>publicidad dirigida</em>. Las empresas de publicidad valoran mucho que su mensaje llegue no a todo el mundo, sino a las personas que son su público objetivo o a quienes pueden ser buenos clientes. Para eso necesitan información de quiénes somos, qué intereses tenemos y qué tipo de compradores somos. Las empresas tecnológicas se dedican a recoger toda clase de datos de nuestro uso de Internet y a vendérselo a esas compañías publicitarias, que a su vez hacen los anuncios que pagan sus clientes. Es decir, que parte de los anuncios que ves son distintos a los que veo yo. Pongamos que estoy viendo un vídeo en YouTube y que llega el molesto corte para un par de anuncios. Yo recibiré publicidad sobre productos y servicios para varones cuarentones de mi poder adquisitivo con mis hobbies e intereses. Si el vídeo lo estuvieras viendo tú, las ofertas se ajustarían a tu persona.</p>
+<p>¿Esto qué consecuencias tiene? Si el fenómeno de la burbuja informativa se limitara a la publicidad y el comercio, quizás no demasiadas. Pero la publicidad es solo el ejemplo con el que se entiende bien: afecta a otras muchas áreas de nuestra actividad en Internet, desde las búsquedas hasta las selecciones de noticias que recibimos.</p>
+<p>Lo que vemos en Internet es distinto según quién seamos. No, como hemos tratado hasta ahora, porque nuestros prejuicios y nuestros conocimientos previos afecten a cómo procesamos la información, sino porque antes incluso de llegar a esa fase del proceso de adquisición de nueva información, vemos <em>información distinta</em>: el teléfono móvil y el ordenador nos muestran cosas distintas a ti y a mí. Lo que sucede es que estamos mirando cosas distintas <em>aunque no queramos</em><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p>A diferencia de las cámaras de eco, la burbuja informativa no la construimos nosotros: es una consecuencia de la forma en que Internet y las redes sociales están configuradas. En una cámara de eco hay decisiones —tuyas o del ambiente en que te criaste— y, si las buscas, puedes verlas y romper el círculo; la burbuja la levanta un algoritmo, y ni la elegiste ni la ves.</p>
+<p>En todo caso, se trata de un fenómeno novísimo y aún falta mucha investigación al respecto, por lo que debemos tomar este concepto con cierta distancia, por el momento.</p>
+</section>
+<section id="sec-53" class="level2">
+<h2 class="anchored" data-anchor-id="sec-53">§53 · Cómo se forma una opinión: dos casos</h2>
+<p><strong>¿Puedo evitar la influencia de todo esto?</strong> Puede que todos estos factores —desinformación, sobreinformación, posverdad, sesgo de confirmación, cámaras de eco y burbujas informativas— se te hagan bola. Algunos se parecen a otros, aunque cada cual sea distinto, y <em>todos operan a la vez</em>. No se trata de que concluyas que todo Internet es un fraude ni que estamos manipulados por fuerzas que no controlamos: se trata de que <em>tengas noticia</em> de estos fenómenos y empieces a ver cómo afectan a tus creencias y opiniones. Solo así podrás combatirlos, si quieres.</p>
+<p><strong>El caso del cambio climático.</strong> Veamos ahora un ejemplo en el que podrás ver cómo interactúan todos estos factores para configurar nuestros juicios sobre los hechos.</p>
+<p><em>El cambio climático de origen humano</em> es un caso extraño: no hay discusión científica que valga —el consenso se apoya en miles de estudios independientes y en los informes del IPCC desde 1988—, y sin embargo la conversación pública sigue pareciendo una pelea entre dos bandos con las mismas cartas. Ese desajuste entre <em>lo que se sabe</em> y <em>lo que se discute</em> es justamente el objeto de este epígrafe.</p>
+<p>Plantéate qué sabes del asunto y de dónde lo has sacado. ¿Está ocurriendo? ¿Lo causamos nosotros? ¿Es grave? ¿Quién sale ganando si te lo crees, y quién si no? Fíjate ahora en cómo actúan los factores que hemos tratado:</p>
+<ul>
+<li><em>Desinformación</em>. No es solo ruido espontáneo: hubo campañas pagadas. Las grandes petroleras conocían por sus propios estudios internos, ya en los años setenta y ochenta, el efecto que tendrían las emisiones, y financiaron después durante décadas a quienes sembraban dudas. La estrategia —y a veces las mismas agencias— era la que la industria del tabaco había usado para retrasar la relación entre fumar y el cáncer: no hace falta demostrar que la ciencia se equivoca; basta con que parezca que aún no se ha decidido.</li>
+<li><em>Sobreinformación</em>. Cada ola de calor, cada cumbre del clima, cada informe, cada gráfico y cada portada. El volumen es tal que se vuelve ruido, y el ruido cansa: mucha gente acaba desconectando de un problema del que oye hablar todos los días.</li>
+<li><em>Posverdad</em>. «El clima siempre ha cambiado» es una frase verdadera empleada para sostener algo falso. Cuando el terreno se desplaza de los datos al relato, deja de importar qué está pasando y pasa a importar qué dice de ti creerlo o no creerlo.</li>
+<li><em>Sesgo de confirmación</em>. Un invierno especialmente frío te confirmará que todo es una exageración; un verano tórrido, lo contrario. Cada uno se queda con la anécdota que le encaja y descarta la que no.</li>
+<li><em>Cámaras de eco</em>. Las cuentas que sigues, los medios que ya conocías y el grupo en el que participas repiten el mismo argumento; nada de fuera entra, y lo que no entra parece que no existe.</li>
+<li><em>Burbujas informativas</em>. Los algoritmos aprenden qué vídeos y qué titulares te retienen, y te sirven más de lo mismo hasta que tu pantalla parece el mundo entero.</li>
+</ul>
+<p>Y fíjate bien en lo que acabamos de hacer: no hemos discutido <em>si</em> el cambio climático es real —de eso se ocupa la ciencia, y ya lo ha hecho—, sino cómo se ha formado tu opinión sobre él.</p>
+<p><strong>El caso de Ceuta.</strong> El anterior te enseña cómo se forma una opinión cuando el conocimiento ya está asentado y la conversación pública, en cambio, sigue pareciendo un empate. Este enseña otra cosa: cómo se forma una opinión <em>mientras los hechos todavía se están moviendo</em>.</p>
+<p>El 30 de julio de 2026, decenas de miles de personas cruzaron a Ceuta desde Marruecos en cuestión de horas. Entre lo que puso aquello en marcha había una creencia: que España había abierto la frontera y que no habría devoluciones. Era falsa. Y lo que interesa aquí es de dónde salía, porque no era una mentira inventada, sino un hecho verdadero mal leído. Un mes antes, el 29 de junio, el Tribunal Supremo había establecido que a quien es interceptado en el mar no se le puede aplicar el rechazo en frontera y que hay que seguir <em>otro</em> procedimiento de devolución; la sentencia decía cuál es el procedimiento correcto y advertía expresamente de que eso no impide devolver a nadie<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. El salto del «hay que hacerlo de otra manera» al «no lo van a hacer» no lo dio ningún tribunal: lo dio la cadena de mensajes que llevó la noticia<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<p>Ya conoces la figura: es la misma de «el clima siempre ha cambiado», una afirmación verdadera puesta a sostener algo falso. Lo que cambia es la velocidad, y aquí se puede medir: la sentencia se hizo pública el 8 de julio y circuló tres semanas casi sin eco, unas diez publicaciones al día; el 30 de julio se publicaron seiscientas noventa y cinco.</p>
+<p>Fíjate en tres cosas que este caso enseña y el anterior no:</p>
+<ul>
+<li><em>Las cifras no cuadran, y ninguna miente.</em> Sesenta mil, setenta mil, ochenta mil, según la fuente y según el día en que se contara. No eran versiones interesadas: eran estimaciones de momentos distintos hechas con métodos distintos. Ver cómo una cifra se consolida enseña más sobre cómo se sabe algo que recibirla ya consolidada.</li>
+<li><em>Los bulos circularon en las dos direcciones.</em> Hacia quienes cruzaban y hacia el público español y europeo, con vídeos antiguos, grabaciones de otros países e imágenes generadas con inteligencia artificial.</li>
+<li><em>El patrón dominante no era inventar una imagen, sino tomar una real y cambiarle el contexto.</em> Es el bulo que ningún detector automático encuentra, porque la imagen es auténtica: lo falso es el pie.</li>
+</ul>
+<p>Y hay una cuarta, que es la más difícil. Días después circuló el informe de una empresa privada de análisis de fuentes abiertas que concluía que la movilización había sido una operación coordinada. Puede que sí y puede que no —eso, cuando leas esto, quizá ya se sepa—; lo que aquí importa es qué haces tú con una tesis así mientras no se sabe. Preguntar quién la firma, con qué método y qué gana con que te la creas no es desconfiar por sistema: es el <em>ad verecundiam</em> (<a href="chapters-web/tema-15.html#sec-59">§59</a>) mirado por dentro.</p>
+<p>Y otra vez lo mismo: no hemos preguntado si aquello estuvo bien o mal, ni qué debería hacer nadie. Hemos preguntado cómo te enteraste, qué diste por hecho sin comprobarlo y cómo sabrás, dentro de un año, si te habías equivocado.</p>
+<p>Ahora trata de hacer <em>tu propio análisis</em> de otros temas: la avalancha de bulos durante la pandemia de COVID-19, que la Organización Mundial de la Salud llamó <em>infodemia</em>; una guerra que esté sucediendo mientras lees esto; el movimiento antivacunas; tu decisión de comer o no carne; o tu convicción de que la Tierra es esférica.</p>
+<p><strong>Condiciones para contrarrestarlos.</strong> Ten en cuenta que todos estos efectos no funcionan en la misma medida para todos todo el tiempo. Podemos contrarrestar temporalmente o incluso anular muchos de ellos, para lo que deben darse las siguientes condiciones:</p>
+<ul>
+<li>Conocer la existencia de todos estos y otros mecanismos cognitivos y de la influencia que tienen en nuestras posturas, opiniones e ideas.</li>
+<li>Realizar el esfuerzo cognitivo de pararnos a analizar cuáles y cómo operan sobre nosotros en cada uno de los asuntos concretos que consideremos.</li>
+<li>Querer tener la opinión mejor formada posible y no dar por hecho que ya hemos alcanzado el conocimiento definitivo sobre ningún tema.</li>
+<li>Consultar distintas fuentes, aunque inicialmente nos causen rechazo, para formarnos una idea más completa de los fenómenos, aunque nuestra comprensión siempre será incompleta.</li>
+<li>Someterse voluntariamente a «dietas» de medios y redes sociales, elegir con cuidado a quién seguimos y en qué redes participamos, y conocer los medios informáticos que reducen nuestra exposición a las burbujas.</li>
+<li>Aumentar nuestros conocimientos generales, para poder calibrar mejor la calidad de las fuentes y disponer de herramientas cognitivas para procesar mejor la información.</li>
+</ul>
+<p>Este es, en fin, el nuevo paradigma del conocimiento en el que nos toca desenvolvernos y al que tendremos que adaptarnos, ya que tiene enorme influencia en nuestro pensamiento, nuestro comportamiento y lo que nos acontece.</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Es decir, que tiene sus propios valores, que influyen también en lo que percibimos y en cómo lo recordamos.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Sin embargo, el término <em>hecho</em> sugiere artificiosidad, que alguien haya actuado para <em>hacer</em> algo, a diferencia del término <em>dato</em>, que sugiere algo <em>dado</em>, no creado.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Más aún: Google tiene un dossier tuyo aunque nunca hayas usado su buscador ni su correo. ¿Cómo? Porque tu manera de navegar tiene patrones distintivamente tuyos y tu <em>hardware</em>, rasgos que lo distinguen de los demás. ¿Y si te vas a un <em>cibercafé</em> de Nepal? Mala suerte: detectará que alguien en Nepal entra en las páginas en las que sueles entrar tú y seguirá engrosando su dossier. Y las webs que visitas te rastrean con código oculto en la publicidad.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Puedes hacer la prueba con un amigo que se conecte desde otra red, que viva en otro país o que tenga una edad muy distinta a la tuya: buscad lo mismo en Google y comparad. No todos los resultados diferirán en el mismo grado —depende de los temas y de las palabras—, pero las palabras, al menos para el experimento, han de ser las mismas. Prueba con «viaje a Egipto».<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Tribunal Supremo, Sala de lo Contencioso-Administrativo, Sección Quinta, sentencia núm. 814/2026, de 29 de junio de 2026 (recurso de casación 3795/2025; ECLI:ES:TS:2026:2965), hecha pública el 8 de julio: la disposición adicional décima de la Ley de Extranjería no ampara el rechazo en frontera de quien es interceptado en el mar, y procede el cauce del artículo 58.3, sin que esa calificación impida la devolución inmediata si se respeta el procedimiento reglamentario.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>El recorrido está documentado. <em>Maldita.es</em> analizó 1.171 publicaciones en árabe sobre la sentencia entre el 8 y el 31 de julio de 2026, de 727 usuarios distintos, y encontró que un mismo texto —«no habrá expulsión inmediata de los migrantes que lleguen a nado»—, que omitía justamente el procedimiento de devolución, se compartió 215 veces el día 30. <em>Maldita.es</em>, «La sentencia del Tribunal Supremo sobre las “devoluciones en caliente” en Ceuta y Melilla: preguntas y respuestas» (5-08-2026) y «De la sentencia del Tribunal Supremo sobre Ceuta a la idea de una frontera abierta» (6-08-2026). https://maldita.es/investigaciones/20260806/tribunal-supremo-sentencia-ceuta-marruecos-facebook/<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eukeni-acebal\.github\.io\/filosofia-manual\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters-web/tema-12.html" class="pagination-link" aria-label="Tema 12 · El conocimiento y la verdad">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Tema 12 · El conocimiento y la verdad</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters-web/tema-14.html" class="pagination-link" aria-label="Tema 14 · Las teorías del conocimiento">
+        <span class="nav-page-text"><span class="chapter-title">Tema 14 · Las teorías del conocimiento</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

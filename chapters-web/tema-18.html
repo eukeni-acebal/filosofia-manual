@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tema 18 · La naturaleza de lo real – Filosofía</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters-web/tema-19.html" rel="next">
+<link href="../unidad-4.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-bfbad9f2cf9a191a93f038f4342ff68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-2f07765074423308b81dda0734a95584.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bfbad9f2cf9a191a93f038f4342ff68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../quarto-theme/print.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-4.html">Unidad IV · Metafísica</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-18.html"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Filosofía</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/eukeni-acebal/filosofia-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Filosofía</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/intro-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · ¿Qué es la Filosofía?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 2 · Del mito al logos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 3 · Las ramas de la filosofía y su vigencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 4 · La filosofía y otros campos del saber</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 5 · Herramientas básicas del filósofo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 6 · La disertación filosófica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Platón y Aristóteles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad II · Antropología</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 7 · La naturaleza humana: evolución y hominización</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 8 · Concepciones filosóficas del ser humano</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 9 · Cultura y sociedad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 10 · La personalidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 11 · La identidad personal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Pico y Darwin</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad III · Epistemología</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 12 · El conocimiento y la verdad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-13.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 13 · Percepción, desinformación y posverdad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-14.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 14 · Las teorías del conocimiento</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-15.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 15 · El razonamiento y la argumentación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-16.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 16 · El saber científico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-17.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 17 · Conocimiento, poder e interés</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Descartes y Bacon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad IV · Metafísica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-18.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-19.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 19 · Unidad y pluralidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-20.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 20 · Mente, cuerpo e inteligencia artificial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-21.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 21 · El tiempo, el cambio y la libertad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-22.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 22 · La existencia de Dios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Epicuro y la carta a Meneceo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad V · Ética</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-23.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-24.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 24 · Psicología de la ética</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-25.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 25 · Éticas de la virtud</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-26.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 26 · La ética estoica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-27.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 27 · Éticas del deber y consecuencialistas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-28.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 28 · La moral amoral de Nietzsche</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-29.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 29 · Éticas del cuidado y ética aplicada</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Aristóteles y el término medio</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad VI · Filosofía política</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-30.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 30 · Los derechos humanos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-31.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 31 · La cuestión filosófica de la justicia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-32.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 32 · El origen del poder político</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-33.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 33 · El contrato social</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-34.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 34 · Democracia y Estado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-35.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 35 · Utopías y distopías</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-36.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 36 · Feminismo y perspectiva de género</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Mill y Campoamor</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../unidad-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unidad VII · Estética</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-37.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 37 · Arte, belleza y gusto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/tema-38.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 38 · Teorías de la belleza y el arte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/lectura-7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura · Aristóteles y Wilde</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/epilogo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Epílogo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters-web/creditos-imagenes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Créditos de las imágenes</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-69" id="toc-sec-69" class="nav-link active" data-scroll-target="#sec-69">§69 · ¿Qué cuenta como real?</a></li>
+  <li><a href="#sec-70" id="toc-sec-70" class="nav-link" data-scroll-target="#sec-70">§70 · Apariencia y realidad: esencialismo, procesualismo y relación</a></li>
+  <li><a href="#sec-71" id="toc-sec-71" class="nav-link" data-scroll-target="#sec-71">§71 · El problema del saber metafísico</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-4.html">Unidad IV · Metafísica</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-18.html"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>Los hombres hacen un nombre con dos nombres cuyos significados son contradictorios, como este: «cuerpo incorpóreo», o —lo que es lo mismo— «sustancia incorpórea». Siempre que una afirmación es falsa, los dos nombres de que se compone, unidos y hechos uno, no significan nada en absoluto.</p>
+<p>—Thomas Hobbes, <em>Leviatán</em>, I, 4 · traducción de Claude, del inglés</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Lo que se dice de la existencia absoluta de las cosas no pensantes, sin relación alguna con el ser percibidas, me resulta perfectamente ininteligible. Su ser es ser percibidas, y no es posible que tengan existencia alguna fuera de las mentes o cosas pensantes que las perciben.</p>
+<p>—George Berkeley, <em>Principios del conocimiento humano</em>, I, 3 · traducción de Claude, del inglés</p>
+</blockquote>
+<section id="sec-69" class="level2">
+<h2 class="anchored" data-anchor-id="sec-69">§69 · ¿Qué cuenta como real?</h2>
+<p>Te acabas de despertar de un sueño tan vívido que no estás segura de si lo que has vivido es real o no. Las sensaciones eran intensas y la historia que has soñado es muy verosímil, pero sabes que todo ocurrió en un sueño. A medida que vas despertando, la vigilia se lleva rápidamente los restos de tus sensaciones oníricas. Sin embargo, todavía puedes recordar las conversaciones, los colores y los sucesos que bien podrían haber acontecido. ¿Sucedió o no? ¿Puede recordarse algo que no ha sucedido? Si lo has soñado, el sueño ha existido, pero ¿son de la misma naturaleza un sueño imaginado que el recuerdo de un hecho real?</p>
+<hr>
+<p>Ayer saliste de fiesta con tus amigos y hoy, domingo, habéis quedado para tomar algo tranquilamente y recordar la juerga. A medida que cada cual relata la experiencia te das cuenta no solo de que la valoráis de forma distinta —uno se divirtió como nunca, para otro fue un día divertido como tantos otros, para un tercero fue soporífero, mientras que un cuarto tuvo una muy mala noche—, sino que parece que habéis vivido sucesos distintos. Uno cree que la pelea la empezaron los de otra cuadrilla, otro que fue la tuya y tú no te acuerdas de que hubo una pelea, siquiera. ¿Qué sucedió en realidad? ¿Quién tiene la razón, uno, todos o ninguno?</p>
+<p>Súmales los dos casos con que se abrió la unidad —la aldea de Uganda y Spiderman— y tienes cuatro maneras muy distintas de que algo cuente, o deje de contar, como real.</p>
+</section>
+<section id="sec-70" class="level2">
+<h2 class="anchored" data-anchor-id="sec-70">§70 · Apariencia y realidad: esencialismo, procesualismo y relación</h2>
+<p>Llamamos <em>realidad</em> a aquello que <em>existe verdaderamente</em> en oposición a <em>irrealidad</em> o, incluso, <em>ficción</em>. <em>La</em> realidad es el conjunto de cosas que son verdaderamente. Y lo que <em>es</em> lo identificamos con lo que <em>existe</em>, aunque sean categorías distintas.</p>
+<p><strong>Realidad y apariencia.</strong> Es muy difícil hablar del <em>ser</em> y de la <em>realidad</em>, tanto como del conocimiento y la verdad, si no más. Por un lado puede parecernos que lo que es, es, y que ya está, que no hay más vueltas que darle. Pero el lenguaje, con toda su utilidad para comunicarnos y entendernos, tiene muchas limitaciones y podemos enredarnos en él y perdernos en las palabras. A fin de cuentas, piense yo lo que piense sobre la realidad, lo cierto es que hay una realidad, un mundo, del que yo formo parte, que es ajeno a mi voluntad y a lo que yo piense y sepa —o crea saber— sobre él, ¿no es cierto? Quizás no haya realidad más allá de mi propia mente. O puedo pensar que, la haya o no, es irrelevante, ya que no puedo conocerla o experimentarla.</p>
+<p>A estas cuestiones las llamamos <em>el problema de lo real</em> y los filósofos han propuesto tres tipos de planteamientos básicos al respecto.</p>
+<section id="el-esencialismo" class="level3">
+<h3 class="anchored" data-anchor-id="el-esencialismo">El esencialismo</h3>
+<p>El esencialismo defiende que cada cosa tiene una <em>esencia</em>, que es aquello que la hace ser lo que es. Un caballo es un caballo <em>porque</em> contiene la esencia de un caballo. Por eso identificamos como caballos seres que son más grandes o más pequeños; tordo, alazán o pinto; más o menos veloces. Todos <em>comparten</em> una esencia, que es <em>independiente</em> de sus características particulares, pero que no podemos confundir con la esencia de un perro, aunque también estos sean cuadrúpedos o los haya marrones. Además, por eso un caballo al que hayan amputado una pata no deja de ser un caballo: su esencia no depende de los avatares de su vida, y ser o no caballo no depende exclusivamente de tener o no cuatro patas o de que le tiñamos el pelo de rosa. Así, la realidad está compuesta por objetos <em>estáticos</em> a los que los cambios les resultan accidentales y no afectan a su esencia.</p>
+<p><strong>Platón</strong> (427-347 a. e. c.). Pensaba que <em>todos los objetos de una categoría compartían una única esencia</em>. Es decir, que el caballo A y el caballo B tenían la misma esencia y que eran, en el fondo, lo mismo. Más aún: esta esencia <em>existía</em> con independencia de la existencia del caballo A y del caballo B. Es decir, aunque ambos murieran, su esencia común seguiría existiendo. A fin de cuentas, tú puedes seguir visualizando caballos aunque todos los ejemplares de caballo del mundo desaparecieran, y seguirías comprendiendo qué es un caballo, ¿no es así? Para Platón, eso indicaba que las esencias existían al margen de la realidad material, que existían en una dimensión distinta de la realidad a la que percibimos con los sentidos y que está compuesta por materia. A esta otra dimensión de la realidad la llamó el <em>mundo inteligible</em> —porque puede captarse con la inteligencia y no con los ojos— o <em>mundo de las Formas</em>, que es como llamaba a las esencias. Estas esencias son eternas, inmutables y causas de las cosas del mundo material; sin ellas, no existirían las cosas y objetos del mundo que percibimos con los sentidos. Así, el mundo de las Formas es <em>más real</em> que el mundo material.</p>
+<p><strong>Aristóteles</strong> (384-322 a. e. c.). El discípulo de Platón, sin embargo, refutó la teoría de su maestro. Le parecía que este había inventado el mundo de las Formas para resolver el eterno problema metafísico de la unidad y del cambio (<a href="chapters-web/tema-21.html#sec-78">§78</a>), pero que tan solo había complicado las cosas sin haberlo zanjado. Para Aristóteles cada una de las cosas que existen tiene una esencia, ciertamente, pero esa esencia que hace ser a cada caballo o cada perro individual caballo o perro está incluida en el individuo mismo. Es decir, que no hay una esencia en el mundo de las Formas que dote de <em>caballeidad</em> a los caballos que ves en un prado, sino que cada uno de ellos es una unión temporal de una esencia de caballo y de la materia propia de un caballo, conjunto al cual denominó <em>sustancia</em>. Así, lo que nosotros llamamos cosa u objeto es para Aristóteles una <em>sustancia primaria</em>, que existe por sí misma y que es única, irrepetible y particular. Si un caballo muere, su materia se descompone y su esencia desaparece.</p>
+<p><strong>El nominalismo.</strong> En oposición al esencialismo, postula que no existen propiedades esenciales y que todo objeto es individual y distinto al resto. Este es el <em>problema de los universales</em>, que trataremos un poco más adelante (<a href="chapters-web/tema-19.html#sec-74">§74</a>).</p>
+</section>
+<section id="el-procesualismo" class="level3">
+<h3 class="anchored" data-anchor-id="el-procesualismo">El procesualismo</h3>
+<p>El procesualismo defiende que no es que las cosas sean, sino que <em>devienen</em>. La realidad no es tanto un conjunto estático de todas las sustancias, sino algo en constante cambio, caracterizado, por lo tanto, por el dinamismo; es decir, la <em>totalidad de los procesos</em> que hay.</p>
+<p>Los <em>procesos</em> son acontecimientos que implican cambio. Los procesos interactúan constantemente y así es como <em>llegan a ser</em> o <em>devienen</em> las cosas. Un cambio constante implica la continua creación y destrucción: para que unas cosas lleguen a ser, otras deben dejar de ser lo que son.</p>
+<p>Un gran ejemplo del procesualismo en el origen mismo de la Filosofía es Heráclito de Éfeso (h. 540-h. 480 a. e. c.), de quien nos ha llegado que no podemos bañarnos dos veces en el mismo río, ya que cuando nos sumergimos en él la segunda vez, ya no lleva la misma agua<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Para él, el elemento fundamental de la realidad era el fuego, que está en continuo cambio y que transforma sin descanso el combustible en llama, luz y calor.</p>
+<p>Otros procesualistas ilustres fueron Hegel, Friedrich Nietzsche y, sobre todo, Alfred North Whitehead, y cada uno llevó el devenir a un sitio distinto.</p>
+<p><strong>Georg W. F. Hegel</strong> (1770-1831). Lo llevó a la historia y al pensamiento. Para él nada verdadero está quieto, y lo que lo mueve no es un empujón que venga de fuera: cada determinación, examinada a fondo, resulta ser parcial y acaba contradiciéndose a sí misma, y de esa contradicción propia nace la siguiente, que no la borra, sino que la conserva dentro, cancelada y guardada a la vez. A ese movimiento lo llamamos <em>dialéctica</em>, y no describe solo cómo discutimos, sino cómo avanza la realidad entera<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Fíjate en lo que eso supone, porque es fuerte: una contradicción deja de ser un error que hay que corregir y pasa a ser el modo en que las cosas se mueven.</p>
+<p><strong>Friedrich Nietzsche</strong> (1844-1900). Fue más lejos y atacó la raíz. La costumbre de buscar detrás de lo que cambia algo que permanezca —una esencia, un alma, un mundo verdadero— no es para él un descubrimiento, sino un consuelo: nos da miedo un mundo que fluye y nos inventamos otro que no se mueva. Su sospecha llega hasta la gramática, y ahí es donde más te va a costar quitártela de encima: cuando dices «el rayo brilla», la frase te hace creer que hay un rayo <em>y además</em> un brillar suyo, cuando el rayo no es otra cosa que el brillar<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p><strong>Alfred North Whitehead</strong> (1861-1947). Convirtió la intuición en un sistema completo. Matemático antes que filósofo, propuso que los ladrillos últimos del mundo no son cosas, sino acontecimientos: los llamó <em>ocasiones actuales</em>, unidades mínimas de acontecer que surgen, recogen lo que les llega de las anteriores y se agotan enseguida. Lo que tú llamas «una piedra» sería entonces una larguísima sucesión de esas ocasiones, tan parecidas entre sí y tan seguidas que desde fuera parece algo quieto. La piedra no <em>es</em>: la piedra <em>va ocurriendo</em>, solo que despacio.</p>
+<p>Ninguno de los tres niega que tu mesa esté ahí. Lo que niegan es que la mesa sea lo primero. Para el esencialista hay una mesa que a veces cambia; para el procesualista lo que hay es cambio, y «mesa» es el nombre que le damos a un tramo de cambio lo bastante lento como para que nos dé tiempo a apoyar el codo.</p>
+</section>
+<section id="la-aproximación-relacional" class="level3">
+<h3 class="anchored" data-anchor-id="la-aproximación-relacional">La aproximación relacional</h3>
+<p>La aproximación relacional se asemeja a la procesualista en su anti-esencialismo, pero define lo real a partir de las relaciones entre las cosas, no como procesos dinámicos.</p>
+<p>Para verlo, empieza por un caso que ya conoces: ser el hermano mayor. ¿Dónde está exactamente esa propiedad tuya? En ti no, desde luego: si tu hermana desapareciera, dejarías de ser el mayor sin que te cambiara ni un átomo. En ella tampoco. Está <em>entre</em> los dos, y aun así es lo bastante real como para organizar media convivencia familiar. Con ser el jefe, con estar a la izquierda o con valer cinco euros pasa lo mismo: un billete no lleva el valor dentro como lleva la tinta, sino que lo tiene porque entre todos se lo damos (<a href="chapters-web/tema-09.html#sec-34">§34</a>).</p>
+<p><strong>El paso que da la teoría.</strong> Hasta ahí te lo concede cualquiera. Lo propio de esta aproximación es sostener que <em>también</em> lo que parecía tener sus propiedades por dentro las tiene por fuera. El caso que abrió la discusión es el espacio. Para Isaac Newton (1642-1727), el espacio es una especie de recipiente que seguiría existiendo aunque lo vaciáramos de todo cuerpo. Para Gottfried W. Leibniz (1646-1716), eso no dice nada: el espacio no es una cosa, sino el orden en que los cuerpos están situados unos respecto de otros, de modo que sin cuerpos no hay orden y sin orden no hay espacio. Pregúntale a Leibniz dónde está el universo entero y no te entenderá la pregunta, porque «dónde» solo significa algo dentro del universo.</p>
+<p><strong>Hasta el fondo.</strong> La versión fuerte lleva ese razonamiento hasta las partículas: un electrón no sería un objeto que tiene sus propiedades y además se relaciona, sino un nudo de relaciones, porque la masa, la carga y el espín son maneras de comportarse <em>frente a</em> otras cosas y no se dejan describir de otro modo. El físico Carlo Rovelli (1956- ) defiende una lectura así de la mecánica cuántica: las propiedades de un sistema no serían absolutas, sino relativas al sistema con el que interactúa<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p><strong>La objeción que hay que hacerle.</strong> Si todo son relaciones, ¿qué es lo que se relaciona? Una relación sin términos se parece demasiado a un matrimonio sin cónyuges. El relacionista contesta que la pregunta arrastra justo el prejuicio que él discute —que primero hay cosas y luego se relacionan—, pero conviene que sepas que la objeción sigue viva y que esta es, de las tres aproximaciones, la más joven y la menos asentada.</p>
+</section>
+</section>
+<section id="sec-71" class="level2">
+<h2 class="anchored" data-anchor-id="sec-71">§71 · El problema del saber metafísico</h2>
+<p>Llevamos todo el tema hablando de esencias, de procesos y de relaciones, y toca hacerse la pregunta incómoda: ¿son conocimiento los enunciados de la metafísica? Cuando el esencialista sostiene que hay una esencia de caballo, o el procesualista que lo real es puro devenir, ¿están afirmando algo verdadero o falso sobre el mundo, como quien afirma que el agua hierve a cien grados? No es una pregunta de aguafiestas: dos de las críticas más serias que ha recibido la Filosofía apuntan exactamente ahí.</p>
+<p><strong>La crítica kantiana.</strong> Sabes ya que, para Immanuel Kant (1724-1804), conocemos siempre bajo las condiciones que ponen nuestra sensibilidad y nuestro entendimiento, y que la cosa en sí nos queda fuera del alcance (<a href="chapters-web/tema-14.html#sec-54">§54</a>). Para la metafísica, la consecuencia es demoledora. Al preguntar por lo que está <em>más allá</em> de toda experiencia posible —el alma, dios, el mundo tomado como un todo—, la razón sigue trabajando con sus conceptos, pero ya sin nada que llevarse a la boca, y se enreda. El síntoma son las <em>antinomias</em>: pares de tesis contrarias —el mundo tuvo un comienzo en el tiempo, el mundo no lo tuvo— que se demuestran <em>las dos</em> con argumentos de aspecto impecable<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Cuando una disciplina prueba con la misma solvencia una cosa y su contraria, lo que falla no es el argumento: es la disciplina. Ojo con la conclusión, porque no dice que la metafísica sea falsa: dice que no puede ser <em>ciencia</em>.</p>
+<p><strong>El rechazo positivista.</strong> Un siglo y medio después, el grupo de filósofos, matemáticos y científicos reunido en torno a Viena en los años veinte —el Círculo de Viena— fue mucho más lejos. Su criterio era este: un enunciado tiene sentido si es una verdad de la lógica o de las matemáticas, o si puede contrastarse con la experiencia; lo que no pasa por una de esas dos puertas, no pasa por ninguna. Ya te topaste con el verificacionismo como método de la ciencia (<a href="chapters-web/tema-05.html#sec-17">§17</a>); aquí no es un método, es la frontera misma del sentido. Y fíjate en la conclusión, porque no es la que esperas: los enunciados de la metafísica no son falsos —para ser falso hay que decir algo—, es que <em>no dicen nada</em>. No hay que refutarlos: hay que retirarlos<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<p><strong>La réplica, en dos golpes.</strong> El primero es que el criterio se hunde solo: no es una verdad de la lógica y no hay experiencia que pueda verificarlo, así que, medido con su propia vara, el criterio verificacionista tampoco dice nada<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. El segundo importa más: «no científico» no significa «sin sentido». Que algo caiga fuera de lo observable lo deja fuera de la ciencia (<a href="chapters-web/tema-16.html#sec-64">§64</a>), no fuera de lo pensable. Y tienes un ejemplo que se explica solo: cuando Demócrito (h. 460-h. 370 a. e. c.) sostuvo que la realidad se compone de partículas indivisibles y de vacío, no había ni podía haber experimento que lo comprobara, así que aquello era metafísica pura; hoy es física<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. Una idea que nace sin manera de contrastarse puede estar, sencillamente, esperando a que la ciencia aprenda a contrastarla.</p>
+<p><strong>Entonces, ¿por qué dedicarle una unidad entera?</strong> Fíjate primero en que esos dos golpes van contra Viena, no contra Kant: su objeción sigue en pie, y esta unidad la da por buena, porque no vas a demostrar cómo es el mundo en sí. Lo que no se sostiene es el salto de ahí a «entonces no dice nada». Y estas preguntas no se dejan sin contestar: en cuanto abres la boca para decir qué hay, qué cambia y qué permanece —y lo hace la física, y lo haces tú cada mañana—, ya has contestado a alguna de ellas sin darte cuenta. La metafísica no añade un piso más al edificio del conocimiento: baja a revisar los cimientos que las demás ciencias dan por puestos para poder ponerse a trabajar. Puedes hacerlo a ciegas o puedes hacerlo con cuidado, y esta unidad no es más que el intento de hacerlo con cuidado.</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>La frase, tal como se repite, es Platón resumiéndolo (<em>Crátilo</em> 402a). Del propio Heráclito se conserva algo más fino: «a quienes entran en los mismos ríos les corren aguas distintas» (fr. B12). La diferencia no es pequeña: Platón hace del río algo que no dura; Heráclito, algo que dura <em>precisamente porque</em> cambia, igual que tú sigues siendo tú sin conservar ni una célula de hace años.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Desconfía del esquema «tesis-antítesis-síntesis» que se le atribuye en todas partes: el vocabulario es de Fichte y de sus divulgadores, Hegel no lo usó para describir su propia filosofía y llamaba «esquema sin vida» a ese uso mecánico de la triplicidad.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>El ejemplo está en <em>La genealogía de la moral</em> I 13. Conviene el matiz: Nietzsche no construyó un sistema del proceso como el de Whitehead ni se lo propuso, y los especialistas no suelen contarlo entre los filósofos procesuales; lo que aporta a esta serie es la sospecha de que la creencia en lo permanente tiene raíces que no son teóricas.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Rovelli, C. (1996). Relational Quantum Mechanics. <em>International Journal of Theoretical Physics</em>, 35, 1637-1678. Es una de las interpretaciones de la mecánica cuántica más discutidas hoy, lo que no quiere decir que sea la mayoritaria: ninguna lo es. Se trae aquí como ejemplo de posición metafísica, no como física establecida.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Grier, M. (2022). Kant’s Critique of Metaphysics. En E. N. Zalta (Ed.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Fall 2022). https://plato.stanford.edu/archives/fall2022/entries/kant-metaphysics/<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Uebel, T. (2024). Vienna Circle. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Summer 2024). https://plato.stanford.edu/archives/sum2024/entries/vienna-circle/<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Los propios positivistas lo vieron venir. Alfred J. Ayer (1910-1989) sostuvo que el criterio era una <em>definición</em> de «tener sentido», y por tanto analítico; Rudolf Carnap (1891-1970), que no era una tesis, sino una propuesta para organizar el lenguaje de la ciencia. Pero una propuesta se acepta o se rechaza: no obliga a nadie. Creath, R. (2026). Logical Empiricism. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em> (ed.&nbsp;Summer 2026). https://plato.stanford.edu/archives/sum2026/entries/logical-empiricism/<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>El átomo de la física actual no es el de Demócrito: se parte, y sus componentes también. Lo que la ciencia acabó dando por bueno no fue su teoría, sino su apuesta —que hay unidades últimas y vacío entre ellas—, que durante veintitrés siglos no fue otra cosa que metafísica.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eukeni-acebal\.github\.io\/filosofia-manual\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../unidad-4.html" class="pagination-link" aria-label="Unidad IV · Metafísica">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Unidad IV · Metafísica</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters-web/tema-19.html" class="pagination-link" aria-label="Tema 19 · Unidad y pluralidad">
+        <span class="nav-page-text"><span class="chapter-title">Tema 19 · Unidad y pluralidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
