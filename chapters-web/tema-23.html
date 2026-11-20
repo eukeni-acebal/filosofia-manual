@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,18 +40,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="../unidad-5.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fc20a56aadcab808120179de1ae02e97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ee624aba7dd1a522a65201b5a843d75b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-fc20a56aadcab808120179de1ae02e97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b29469c5149ea663b658181c1cab893f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1eae7551a8b327b748a04a3a7b98b1fb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b29469c5149ea663b658181c1cab893f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -114,7 +115,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../quarto-theme/print.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Saltar al contenido principal</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -137,6 +138,7 @@ window.Quarto = {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -166,13 +168,19 @@ window.Quarto = {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -266,6 +274,7 @@ window.Quarto = {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -280,13 +289,13 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Barra de herramientas">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-5.html">Unidad V · Ética</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-23.html"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Hilo de Ariadna"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-5.html">Unidad V · Ética</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-23.html"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -297,17 +306,14 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Sitio web"><div class="quarto-sidebar-header"><div class="sidebar-header-item">
+<p><a href="https://arete.eukeniacebal.net/es/">Areté</a></p>
+</div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Filosofía</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://arete.eukeniacebal.net/es/" title="Colección Areté" class="quarto-navigation-tool px-1" aria-label="Colección Areté"><i class="bi bi-house-door"></i></a>
-    <a href="https://arete.eukeniacebal.net/filosofia-testuliburua/" title="Euskarazko bertsioa" class="quarto-navigation-tool px-1" aria-label="Euskarazko bertsioa"><i class="bi bi-translate"></i></a>
-    <a href="https://github.com/eukeni-acebal/filosofia-manual/releases/latest/download/filosofia-manual.pdf" title="Descargar el PDF" class="quarto-navigation-tool px-1" aria-label="Descargar el PDF"><i class="bi bi-file-earmark-pdf"></i></a>
-    <a href="mailto:arete.eukeni@gmail.com?subject=Errata%20o%20sugerencia%20%C2%B7%20Filosof%C3%ADa%201" title="Avisar de una errata" class="quarto-navigation-tool px-1" aria-label="Avisar de una errata"><i class="bi bi-envelope"></i></a>
-    <a href="https://github.com/eukeni-acebal/filosofia-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+        <div class="sidebar-tools-main">
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro" aria-label="Alternar modo oscuro"><i class="bi"></i></button>
 </div>
     </div>
       </div>
@@ -331,12 +337,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección: Unidad I · La reflexión filosófica en torno a la propia Filosofía">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · ¿Qué es la Filosofía?</span></a>
@@ -377,12 +383,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad II · Antropología</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Unidad II · Antropología</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección: Unidad II · Antropología">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 7 · La naturaleza humana: evolución y hominización</span></a>
@@ -418,12 +424,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad III · Epistemología</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Unidad III · Epistemología</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar sección: Unidad III · Epistemología">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 12 · El conocimiento y la verdad</span></a>
@@ -464,12 +470,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad IV · Metafísica</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Unidad IV · Metafísica</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Alternar sección: Unidad IV · Metafísica">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-18.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></a>
@@ -505,12 +511,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad V · Ética</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Unidad V · Ética</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="true" aria-label="Alternar sección: Unidad V · Ética">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-23.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a>
@@ -556,12 +562,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad VI · Filosofía política</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Unidad VI · Filosofía política</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="true" aria-label="Alternar sección: Unidad VI · Filosofía política">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-30.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 30 · Los derechos humanos</span></a>
@@ -607,12 +613,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad VII · Estética</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-7-label">Unidad VII · Estética</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="true" aria-label="Alternar sección: Unidad VII · Estética">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-37.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 37 · Arte, belleza y gusto</span></a>
@@ -642,11 +648,17 @@ window.Quarto = {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<ul>
+<li><a href="https://arete.eukeniacebal.net/filosofia-testuliburua/" lang="eu" hreflang="eu">Euskaraz</a></li>
+<li><a href="https://github.com/eukeni-acebal/filosofia-manual/releases/latest/download/filosofia-manual.pdf">Descargar PDF</a></li>
+<li><a href="mailto:arete.eukeni@gmail.com?subject=Errata%20o%20sugerencia%20%C2%B7%20Filosof%C3%ADa%201">Escríbeme</a></li>
+</ul>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
@@ -657,10 +669,10 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-5.html">Unidad V · Ética</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-23.html"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Hilo de Ariadna"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-5.html">Unidad V · Ética</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-23.html"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></h1>
 </div>
@@ -692,7 +704,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="sec-88">§88 · Moral y ética</h2>
 <p><strong>Qué es una moral.</strong> Una <strong>moral</strong> es un conjunto o código de normas, reglas y valores que regulan lo que está bien y lo que está mal para un individuo, grupo o sociedad<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. De ahí que solamos hablar de moral cristiana, código moral caballeresco, moral judía, moral islámica, código moral de los antiguos griegos, la moral de Ana. Aunque podemos hablar de morales individuales, la mayor parte de las veces nos referiremos a la moral como <em>fenómeno cultural</em>, y, por lo tanto, ligado a una sociedad o religión.</p>
 <p>Simplificando mucho, pero sin alejarnos demasiado de lo que es, la moral es una <em>lista de acciones consideradas buenas o malas unidas a la prescripción o prohibición de realizarlas</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Así, «matar es malo/no debes matar», «pagar impuestos es bueno/debes pagar impuestos» o «mentir a tus padres es malo/no debes mentir a tus padres». Si unimos todas las prescripciones y todas las prohibiciones de la lista, tendremos un <em>código</em> o <em>conjunto de normas</em>. A ese código o conjunto de normas llamamos moral.</p>
-<p><strong>Qué es la ética.</strong> La <strong>ética</strong> es la rama de la filosofía que se ocupa de las morales: las ordena, las examina y discute con razones qué normas se sostienen y cuáles no<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Por eso oirás hablar de ética médica, teoría ética, ética de la felicidad o ética de la empresa. Como disciplina filosófica, la ética está ligada a la <em>reflexión</em> sobre los actos de las personas y sobre las normas y valores morales. Es decir, que la ética analiza, estudia y juzga las normas morales. Sin moral no existiría ética, pues carecería de objeto. Por eso verás que a la ética se la llame también <em>filosofía moral</em>, como ya se dijo al presentar las ramas de la filosofía (<a href="chapters-web/tema-03.html#sec-09">§09</a>): al lado de la distinción que acabamos de hacer el nombre suena raro, pero es correcto, porque ahí el adjetivo dice de qué trata y no de qué está hecha. Es filosofía <em>sobre</em> la moral, igual que la filosofía de la ciencia no es ciencia.</p>
+<p><strong>Qué es la ética.</strong> La <strong>ética</strong> es la rama de la filosofía que se ocupa de las morales: las ordena, las examina y discute con razones qué normas se sostienen y cuáles no<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Por eso oirás hablar de ética médica, teoría ética, ética de la felicidad o ética de la empresa. Como disciplina filosófica, la ética está ligada a la <em>reflexión</em> sobre los actos de las personas y sobre las normas y valores morales. Es decir, que la ética analiza, estudia y juzga las normas morales. Sin moral no existiría ética, pues carecería de objeto. Por eso verás que a la ética se la llame también <em>filosofía moral</em>, como ya se dijo al presentar las ramas de la filosofía (<a href="../chapters-web/tema-03.html#sec-09">§09</a>): al lado de la distinción que acabamos de hacer el nombre suena raro, pero es correcto, porque ahí el adjetivo dice de qué trata y no de qué está hecha. Es filosofía <em>sobre</em> la moral, igual que la filosofía de la ciencia no es ciencia.</p>
 <p><strong>En qué se diferencian: la fundamentación.</strong> Ética y moral hablan de un tema común —las acciones y los valores humanos en tanto que buenos o malos, prescritos o prohibidos—, y la diferencia fundamental entre ambas estriba en qué dicen sobre ello y cómo.</p>
 <p>La moral nos dice <em>concretamente</em> qué es lo que una persona, grupo o sociedad consideran bueno y qué consideran malo. La ética intenta explicarnos qué criterios utiliza dicha moral para realizar esas distinciones, en qué consiste la bondad o por qué hay que practicarla. La moral nos habla directamente sobre qué hacer y qué no y la ética reflexiona sobre las justificaciones.</p>
 <p>La <strong>fundamentación</strong> de la moral puede ser religiosa —esto es bueno porque lo mandan Dios o la divinidad—, tradicional —siempre hemos hecho esto así—, naturalista —hemos de imitar la naturaleza, que es el orden debido de las cosas—, o de otros tipos. La ética, sin embargo, solo puede fundamentarse en la razón y en razones. Cuando tu dios, tus padres, tu profesor o tu cultura te dice que robar está mal, siempre puedes preguntar por qué está mal. En ese momento estás realizando una pregunta ética, es decir <em>sobre</em> la norma moral. Si la persona a la que interpelas responde con alguna de las justificaciones que acabo de mencionar, seguirá inmersa en un discurso moral. Pero si trata de argumentar con la razón y por medio de razones, entonces estará haciendo ética.</p>
@@ -700,9 +712,9 @@ window.Quarto = {
 </section>
 <section id="sec-89" class="level2">
 <h2 class="anchored" data-anchor-id="sec-89">§89 · La libertad, condición de la moral</h2>
-<p><strong>Sin libertad no hay nada que juzgar.</strong> Antes de entrar en las teorías éticas conviene pararse en algo que damos por supuesto cada vez que juzgamos a alguien. Cuando dices que tu amiga se portó mal contigo no estás describiendo lo que pasó: estás dando por hecho algo más, y es que podría haberse portado de otra manera. Quita esa suposición y mira qué queda en pie. El mérito se vuelve absurdo, porque felicitar a alguien por hacer lo único que podía hacer se parece bastante a felicitar a una piedra por caer. La culpa se vuelve cruel. El castigo se queda sin más justificación que su utilidad. Y el perdón pierde su objeto, porque ya no hay nada que perdonar. La moral entera cuelga de ese supuesto, así que toca preguntarse si se sostiene. El determinismo y el indeterminismo ya los has estudiado y no vamos a repetirlos (<a href="chapters-web/tema-21.html#sec-80">§80</a>); lo que nos ocupa ahora es lo propiamente ético, que es otra cosa: qué le ocurre a la responsabilidad según cuál de aquellas respuestas des por buena.</p>
+<p><strong>Sin libertad no hay nada que juzgar.</strong> Antes de entrar en las teorías éticas conviene pararse en algo que damos por supuesto cada vez que juzgamos a alguien. Cuando dices que tu amiga se portó mal contigo no estás describiendo lo que pasó: estás dando por hecho algo más, y es que podría haberse portado de otra manera. Quita esa suposición y mira qué queda en pie. El mérito se vuelve absurdo, porque felicitar a alguien por hacer lo único que podía hacer se parece bastante a felicitar a una piedra por caer. La culpa se vuelve cruel. El castigo se queda sin más justificación que su utilidad. Y el perdón pierde su objeto, porque ya no hay nada que perdonar. La moral entera cuelga de ese supuesto, así que toca preguntarse si se sostiene. El determinismo y el indeterminismo ya los has estudiado y no vamos a repetirlos (<a href="../chapters-web/tema-21.html#sec-80">§80</a>); lo que nos ocupa ahora es lo propiamente ético, que es otra cosa: qué le ocurre a la responsabilidad según cuál de aquellas respuestas des por buena.</p>
 <p><strong>Las tres posiciones.</strong> Son tres, y no dos grados de una misma cosa. El <em>determinismo duro</em> acepta que todo cuanto ocurre está determinado por causas anteriores, tus decisiones incluidas, y saca la conclusión que parece seguirse: entonces no somos libres, y nadie es responsable de nada. El <em>libertarismo</em> recorre el camino inverso: puesto que somos libres —y de eso, dice, tenemos mejor evidencia que de cualquier tesis sobre la física del universo—, el determinismo tiene que ser falso justo en el punto en que decidimos. Nada tiene que ver con el <em>libertarismo</em> político, que es otra cosa y se llama igual por casualidad. Y el <em>compatibilismo</em> se niega a elegir: sostiene que ser libre y estar determinado no se estorban, de modo que, fuera verdadero el determinismo o no, seguiríamos siendo libres y responsables; a quien además afirma que el determinismo <em>es</em> verdadero se le llama <em>determinista blando</em>. Fíjate en que las dos primeras comparten un supuesto, y por eso a las dos se las llama <em>incompatibilistas</em>: dan por bueno que libertad y determinismo no caben juntos. Lo que las separa es cuál de los dos sacrifican<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
-<p><strong>Lo que el compatibilista cambia.</strong> Suena a trampa y no lo es. Ya viste en qué consiste su jugada —redefinir «libre» como <em>actuar por causas tuyas y sin coacción</em>— y con qué ejemplo, el del preso y el de quien elige qué estudiar (<a href="chapters-web/tema-21.html#sec-80">§80</a>). Lo que aquí importa es el precio y la ganancia de esa jugada. Para el incompatibilista, un acto es libre si podías haber hecho otra cosa; para el compatibilista, esa condición sobra. Y si sobra, el determinismo deja de amenazar la responsabilidad. Aquí entra el experimento mental que más ha hecho por esta posición, que Harry Frankfurt (1929-2023) propuso en 1969 y que después se ha contado mil veces así. Imagina que alguien te implanta un dispositivo capaz de intervenir en tu decisión si vas a votar lo que a él no le conviene, y que no hace nada si vas a votar lo que quiere. Votas por tu cuenta lo que él quería y el dispositivo no llega a activarse. No podías haber hecho otra cosa, y sin embargo la decisión fue tuya de principio a fin. Si el caso funciona, «poder haber hecho otra cosa» no es lo que te hace responsable, y entonces el determinismo deja de ser una amenaza<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<p><strong>Lo que el compatibilista cambia.</strong> Suena a trampa y no lo es. Ya viste en qué consiste su jugada —redefinir «libre» como <em>actuar por causas tuyas y sin coacción</em>— y con qué ejemplo, el del preso y el de quien elige qué estudiar (<a href="../chapters-web/tema-21.html#sec-80">§80</a>). Lo que aquí importa es el precio y la ganancia de esa jugada. Para el incompatibilista, un acto es libre si podías haber hecho otra cosa; para el compatibilista, esa condición sobra. Y si sobra, el determinismo deja de amenazar la responsabilidad. Aquí entra el experimento mental que más ha hecho por esta posición, que Harry Frankfurt (1929-2023) propuso en 1969 y que después se ha contado mil veces así. Imagina que alguien te implanta un dispositivo capaz de intervenir en tu decisión si vas a votar lo que a él no le conviene, y que no hace nada si vas a votar lo que quiere. Votas por tu cuenta lo que él quería y el dispositivo no llega a activarse. No podías haber hecho otra cosa, y sin embargo la decisión fue tuya de principio a fin. Si el caso funciona, «poder haber hecho otra cosa» no es lo que te hace responsable, y entonces el determinismo deja de ser una amenaza<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
 <p><strong>La neurociencia entra en la discusión.</strong> Vas a oír muchas veces que «la ciencia ha demostrado que no somos libres», y casi siempre detrás está el mismo experimento. En 1983, Benjamin Libet (1916-2007) pidió a unos voluntarios que flexionaran un dedo cuando quisieran y que anotaran el instante en que sintieron la voluntad de hacerlo, siguiendo un punto que giraba como la aguja de un reloj. Encontró que la actividad eléctrica del cerebro —el llamado <em>potencial de disposición</em>— empezaba unos 350 milisegundos antes de ese instante, y que ese instante caía a su vez unos 200 milisegundos antes del movimiento: todo el asunto ocurre en poco más de medio segundo. La conclusión que se popularizó fue que el cerebro decide primero y la conciencia se entera después<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. Ahora fíjate en todo lo que ese experimento <em>no</em> dice. Flexionar un dedo en un momento arbitrario no es una decisión moral deliberada, que es de lo que aquí se trata. Alfred Mele (1951-) ha argumentado que ese potencial no es la causa del acto ni una decisión ya tomada, sino a lo sumo el rastro de un impulso que puede acabar en decisión o no, y que la intención consciente, la que llega después, sí hace trabajo causal<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. Y en 2012 un grupo de neurocientíficos propuso algo más incómodo todavía: que el potencial podría ser un artefacto del método, el efecto de promediar fluctuaciones espontáneas alineándolas hacia atrás desde el movimiento<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. Que un experimento no demuestre lo que se le atribuye no lo convierte en malo; te enseña a pedir que la conclusión se ajuste a lo medido.</p>
 <p><strong>Qué está en juego.</strong> Esto no es un juego de salón, y se ve en cuanto miras un juzgado. Castigar a alguien <em>porque se lo merece</em> —y no para protegernos, ni para que escarmiente, ni para reinsertarlo— es lo que se llama <em>retribución</em>. No es la única justificación del castigo que necesita un reo libre en sentido fuerte, porque censurar a alguien o pedirle que se arrepienta presuponen lo mismo; pero sí es la que se agota en ese merecimiento y se queda sin nada en cuanto lo pierdes. Quien niega esa libertad no se queda sin respuesta: puede seguir encerrando a quien es peligroso por el mismo derecho por el que aislamos a quien tiene una enfermedad contagiosa, sin culparlo por ello. Es el llamado <em>modelo de cuarentena</em>, y no es una puerta abierta: quien lo defiende añade que, igual que con el enfermo, solo cabe la restricción mínima imprescindible y con obligación de tratar<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>. Cambia también la educación, porque premiar y castigar presupone lo mismo que el juzgado; y cambia, sobre todo, la manera de mirar a quien hace daño. Antes de decidir dónde te colocas, hazte la pregunta al derecho y al revés: ¿estarías dispuesto a aplicarte a ti mismo la conclusión que sacas para los demás?</p>
 </section>
@@ -710,13 +722,13 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="sec-90">§90 · Metaética: objetivismo y relativismo</h2>
 <p>La <strong>metaética</strong> da un paso atrás y pregunta por lo que cualquier discusión moral da por supuesto sin decirlo. No pregunta si mentir está mal: pregunta qué clase de cosa es que algo «esté mal», si eso puede ser verdadero o falso, cómo llegaríamos a saberlo y por qué habría de movernos<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>.</p>
 <p><strong>Tres pisos, y este es el de abajo.</strong> La ética se estudia en tres niveles y conviene que sepas en cuál estás. La <em>metaética</em> no propone ninguna norma: examina de qué están hechas. La <em>ética normativa</em> sí se moja y ofrece criterios para decidir qué está bien: es a lo que se dedican las grandes teorías éticas que estudiarás a continuación, una por cada gran respuesta. Y la <em>ética aplicada</em> baja esos criterios a casos concretos y discutidos, que es el último tema. El orden no es caprichoso: discutir qué norma es la buena sin saber qué clase de cosa pretende ser una norma es discutir a ciegas.</p>
-<p>Las preguntas de la metaética se agrupan en cuatro familias. Las <em>metafísicas</em>: ¿hay hechos morales ahí fuera, o solo opiniones nuestras? Son las que ocupan el resto de este tema. Las <em>epistemológicas</em>: si los hubiera, ¿cómo los conoceríamos? Las <em>semánticas</em>: ¿qué hacemos exactamente al decir «esto está mal»<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>? Y las <em>psicológicas</em>: ¿por qué actuar moralmente? (<a href="chapters-web/tema-24.html#sec-91">§91</a>).</p>
+<p>Las preguntas de la metaética se agrupan en cuatro familias. Las <em>metafísicas</em>: ¿hay hechos morales ahí fuera, o solo opiniones nuestras? Son las que ocupan el resto de este tema. Las <em>epistemológicas</em>: si los hubiera, ¿cómo los conoceríamos? Las <em>semánticas</em>: ¿qué hacemos exactamente al decir «esto está mal»<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>? Y las <em>psicológicas</em>: ¿por qué actuar moralmente? (<a href="../chapters-web/tema-24.html#sec-91">§91</a>).</p>
 <p><strong>Objetivismo moral.</strong> El debate se mueve entre dos polos. Uno de ellos defiende que las normas morales son verdades eternas, absolutas, inmutables y universales, en tanto que afectan a todos los seres racionales de todos los tiempos. El caso extremo de esta concepción lo representa <strong>Platón</strong>, que pensaba que los valores morales tenían una existencia separada de las acciones humanas, que eran «cosas», aunque fueran cosas <em>inmateriales</em>. De la misma manera en que no inventamos las matemáticas y que <span class="math inline">\(1 + 1 = 2\)</span>, sino que lo <em>descubrimos</em>, los valores morales no son una invención humana, sino que los descubrimos utilizando nuestra razón.</p>
 <p>El <strong>voluntarismo</strong> es otro tipo de objetivismo, propio de pensadores cristianos medievales como Guillermo de Ockham (c.&nbsp;1287-1347) y Juan Duns Escoto (c.&nbsp;1266-1308). Lo que hace buena una acción, sostienen, es que Dios la quiera, y no al revés: la norma sale de su <em>voluntad</em> y no de su intelecto, de modo que no podemos alcanzarla ni analizarla razonando<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>. La objeción es tan vieja como Platón, que la plantea en el <em>Eutifrón</em>: si algo está bien <em>porque</em> Dios lo manda, podría haber mandado lo contrario y hoy sería obligatorio; y si lo manda <em>porque</em> está bien, la bondad no la pone el mandato.</p>
-<p><strong>Relativismo moral.</strong> La postura opuesta niega el carácter objetivo de los valores y las normas morales. Se atribuye a los sofistas; con los escépticos conviene ser más cuidadoso, porque negar que haya conocimiento moral no es lo mismo que decir que la verdad moral cambia con el grupo (<a href="chapters-web/tema-14.html#sec-56">§56</a>). No rechazan la existencia o la conveniencia de los valores morales, pero en lugar de considerarlos entidades por sí mismas o pensamientos de Dios, piensan que son estrictamente <em>invenciones humanas</em>. A su vez, hay dos tipos de relativismo moral.</p>
-<p><em>Relativismo individual.</em> El relativismo individual sostiene que cada individuo puede crear su propio criterio moral; en los libros de filosofía lo encontrarás más a menudo con el nombre de <em>subjetivismo</em>, reservando «relativismo» para cuando lo relativo es el grupo. Friedrich Nietzsche (1844-1900) defendía que el <em>superhombre</em> crea su propia moral, distinta de la moral de esclavos propia de la masa. A Nietzsche le dedicaremos un tema entero más adelante (<a href="chapters-web/tema-28.html#sec-109">§109</a>).</p>
-<p><em>Relativismo cultural.</em> La versión más extendida entiende que <em>la moralidad es un producto de la sociedad</em>, no de un individuo, y que por lo tanto la moral cambia de una sociedad a otra y de un tiempo a otro. Sus consecuencias para la convivencia ya las estudiaste al hablar de la diversidad cultural (<a href="chapters-web/tema-09.html#sec-37">§37</a>); lo que aquí se discute es otra cosa, la verdad de los juicios. En esa tradición suelen citarse los sofistas, Michel de Montaigne (1533-1592) y el sociólogo William Graham Sumner (1840-1910), que le dio su formulación moderna en <em>Folkways</em> (1906)<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>.</p>
-<p><strong>Dos cosas que se confunden, y no son la misma.</strong> Que las sociedades discrepen en materia moral, y mucho, es un hecho observable: se le llama <em>relativismo descriptivo</em>. Que no haya verdad moral por encima de los grupos, de modo que lo correcto lo sea solo <em>para</em> uno de ellos, es una tesis filosófica: el <em>relativismo metaético</em>, que es el que aquí nos ocupa. Del hecho no se sigue la tesis: que dos personas discrepen sobre la edad del universo no prueba que el universo no tenga edad. Para pasar de lo uno a lo otro hace falta un argumento más —que ese desacuerdo no pueda resolverse razonando, ni siquiera en principio—, y ahí es donde se pelean de verdad relativistas y objetivistas<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>. Fíjate en lo que acabas de hacer, porque es lo que se te pedirá una y otra vez: mirar si de las premisas se sigue de verdad la conclusión (<a href="chapters-web/tema-15.html#sec-59">§59</a>).</p>
+<p><strong>Relativismo moral.</strong> La postura opuesta niega el carácter objetivo de los valores y las normas morales. Se atribuye a los sofistas; con los escépticos conviene ser más cuidadoso, porque negar que haya conocimiento moral no es lo mismo que decir que la verdad moral cambia con el grupo (<a href="../chapters-web/tema-14.html#sec-56">§56</a>). No rechazan la existencia o la conveniencia de los valores morales, pero en lugar de considerarlos entidades por sí mismas o pensamientos de Dios, piensan que son estrictamente <em>invenciones humanas</em>. A su vez, hay dos tipos de relativismo moral.</p>
+<p><em>Relativismo individual.</em> El relativismo individual sostiene que cada individuo puede crear su propio criterio moral; en los libros de filosofía lo encontrarás más a menudo con el nombre de <em>subjetivismo</em>, reservando «relativismo» para cuando lo relativo es el grupo. Friedrich Nietzsche (1844-1900) defendía que el <em>superhombre</em> crea su propia moral, distinta de la moral de esclavos propia de la masa. A Nietzsche le dedicaremos un tema entero más adelante (<a href="../chapters-web/tema-28.html#sec-109">§109</a>).</p>
+<p><em>Relativismo cultural.</em> La versión más extendida entiende que <em>la moralidad es un producto de la sociedad</em>, no de un individuo, y que por lo tanto la moral cambia de una sociedad a otra y de un tiempo a otro. Sus consecuencias para la convivencia ya las estudiaste al hablar de la diversidad cultural (<a href="../chapters-web/tema-09.html#sec-37">§37</a>); lo que aquí se discute es otra cosa, la verdad de los juicios. En esa tradición suelen citarse los sofistas, Michel de Montaigne (1533-1592) y el sociólogo William Graham Sumner (1840-1910), que le dio su formulación moderna en <em>Folkways</em> (1906)<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>.</p>
+<p><strong>Dos cosas que se confunden, y no son la misma.</strong> Que las sociedades discrepen en materia moral, y mucho, es un hecho observable: se le llama <em>relativismo descriptivo</em>. Que no haya verdad moral por encima de los grupos, de modo que lo correcto lo sea solo <em>para</em> uno de ellos, es una tesis filosófica: el <em>relativismo metaético</em>, que es el que aquí nos ocupa. Del hecho no se sigue la tesis: que dos personas discrepen sobre la edad del universo no prueba que el universo no tenga edad. Para pasar de lo uno a lo otro hace falta un argumento más —que ese desacuerdo no pueda resolverse razonando, ni siquiera en principio—, y ahí es donde se pelean de verdad relativistas y objetivistas<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>. Fíjate en lo que acabas de hacer, porque es lo que se te pedirá una y otra vez: mirar si de las premisas se sigue de verdad la conclusión (<a href="../chapters-web/tema-15.html#sec-59">§59</a>).</p>
 
 
 </section>
@@ -742,19 +754,131 @@ window.Quarto = {
 </section>
 
 </main> <!-- /main -->
+<!--
+  CORNISA MÓVIL (D259, 2026-11-20) · colección Areté
+  En pantallas estrechas Quarto ya pinta una barra superior fija con el hilo
+  de Ariadna: la parte y el título del tema. Al leer un tema largo en el móvil
+  eso no dice dónde estás. Este guion pone en esa misma barra el tema y el
+  apartado (§) que tienes delante, como la cornisa de un libro impreso, y lo
+  actualiza al hacer scroll.
+
+  Cómo: un IntersectionObserver vigila los h2 del cuerpo. Cada vez que uno
+  cruza la línea que hay a un quinto de la altura de la pantalla, la cornisa
+  toma el último h2 que ya ha pasado por encima de esa línea. La zona vigilada
+  empieza muy por encima de la pantalla, para que un scroll rápido que salta
+  un apartado entero también avise. No escucha cada píxel de scroll.
+
+  Dónde se ve: solo cuando la barra superior existe, que desde D259 es por
+  debajo de 768 px (custom.scss esconde la barra a partir de ese ancho,
+  porque ahí la barra lateral ya está fija). En escritorio no hace nada
+  visible. El aspecto —una o dos líneas recortadas con puntos suspensivos—
+  vive en custom.scss, sección «CORNISA MÓVIL».
+
+  Quarto pega este fichero al final de cada página (`include-after-body` en
+  los seis _quarto.yml); no se publica como fichero aparte. Ninguna sintaxis
+  nueva en el Markdown (D43).
+-->
+<script>
+(function () {
+  "use strict";
+  var barra = document.querySelector(".quarto-secondary-nav .container-fluid");
+  var cuerpo = document.getElementById("quarto-document-content");
+  var h1 = cuerpo && cuerpo.querySelector("header h1.title, h1.title");
+  if (!barra || !h1 || document.querySelector(".arete-portada")) return;
+
+  var texto = function (el) {
+    var c = el.cloneNode(true);
+    c.querySelectorAll(".anchorjs-link, .header-section-number").forEach(function (x) { x.remove(); });
+    return c.textContent.replace(/\s+/g, " ").trim();
+  };
+
+  var tema = texto(h1);
+  var titulos = Array.prototype.slice.call(cuerpo.querySelectorAll("section.level2 > h2"));
+
+  var cornisa = document.createElement("div");
+  cornisa.className = "arete-cornisa";
+  cornisa.setAttribute("aria-hidden", "true");   // el hilo de Ariadna de Quarto sigue ahí para los lectores de pantalla
+  var lineaTema = document.createElement("span");
+  lineaTema.className = "arete-cornisa__tema";
+  lineaTema.textContent = tema;
+  var lineaSeccion = document.createElement("span");
+  lineaSeccion.className = "arete-cornisa__seccion";
+  cornisa.appendChild(lineaTema);
+  cornisa.appendChild(lineaSeccion);
+
+  var hilo = barra.querySelector(".quarto-page-breadcrumbs");
+  barra.insertBefore(cornisa, hilo ? hilo.nextSibling : barra.firstChild.nextSibling);
+  document.body.classList.add("arete-con-cornisa");
+
+  var actual = null;
+  var pinta = function () {
+    var limite = window.innerHeight * 0.2, elegido = null;
+    for (var i = 0; i < titulos.length; i++) {
+      if (titulos[i].getBoundingClientRect().top <= limite) elegido = titulos[i];
+      else break;
+    }
+    if (elegido === actual) return;
+    actual = elegido;
+    lineaSeccion.textContent = elegido ? texto(elegido) : "";
+    cornisa.classList.toggle("arete-cornisa--seccion", !!elegido);
+  };
+
+  if (titulos.length && "IntersectionObserver" in window) {
+    var vigia = new IntersectionObserver(pinta, { rootMargin: "100000px 0px -80% 0px" });
+    titulos.forEach(function (t) { vigia.observe(t); });
+  }
+  window.addEventListener("hashchange", function () { setTimeout(pinta, 60); });
+  pinta();
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Alternar modo oscuro");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Alternar modo oscuro");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -833,7 +957,8 @@ window.Quarto = {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -842,8 +967,69 @@ window.Quarto = {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -857,6 +1043,7 @@ window.Quarto = {
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1019,44 +1206,54 @@ window.Quarto = {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1155,7 +1352,10 @@ window.Quarto = {
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Código desplazable","output":"Salida desplazable"};
+  </script>
+<nav class="page-navigation" aria-label="Página">
   <div class="nav-page nav-page-previous">
       <a href="../unidad-5.html" class="pagination-link" aria-label="Unidad V · Ética">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Unidad V · Ética</span>

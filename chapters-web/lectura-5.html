@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,18 +40,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="../chapters-web/tema-29.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fc20a56aadcab808120179de1ae02e97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ee624aba7dd1a522a65201b5a843d75b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-fc20a56aadcab808120179de1ae02e97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b29469c5149ea663b658181c1cab893f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1eae7551a8b327b748a04a3a7b98b1fb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b29469c5149ea663b658181c1cab893f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../quarto-theme/print.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Saltar al contenido principal</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -108,6 +109,7 @@ ul.task-list li input[type="checkbox"] {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -137,13 +139,19 @@ ul.task-list li input[type="checkbox"] {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -237,6 +245,7 @@ ul.task-list li input[type="checkbox"] {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -251,13 +260,13 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Barra de herramientas">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-5.html">Unidad V · Ética</a></li><li class="breadcrumb-item"><a href="../chapters-web/lectura-5.html"><span class="chapter-title">Lectura · Aristóteles y el término medio</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Hilo de Ariadna"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-5.html">Unidad V · Ética</a></li><li class="breadcrumb-item"><a href="../chapters-web/lectura-5.html"><span class="chapter-title">Lectura · Aristóteles y el término medio</span></a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -268,17 +277,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Sitio web"><div class="quarto-sidebar-header"><div class="sidebar-header-item">
+<p><a href="https://arete.eukeniacebal.net/es/">Areté</a></p>
+</div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Filosofía</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://arete.eukeniacebal.net/es/" title="Colección Areté" class="quarto-navigation-tool px-1" aria-label="Colección Areté"><i class="bi bi-house-door"></i></a>
-    <a href="https://arete.eukeniacebal.net/filosofia-testuliburua/" title="Euskarazko bertsioa" class="quarto-navigation-tool px-1" aria-label="Euskarazko bertsioa"><i class="bi bi-translate"></i></a>
-    <a href="https://github.com/eukeni-acebal/filosofia-manual/releases/latest/download/filosofia-manual.pdf" title="Descargar el PDF" class="quarto-navigation-tool px-1" aria-label="Descargar el PDF"><i class="bi bi-file-earmark-pdf"></i></a>
-    <a href="mailto:arete.eukeni@gmail.com?subject=Errata%20o%20sugerencia%20%C2%B7%20Filosof%C3%ADa%201" title="Avisar de una errata" class="quarto-navigation-tool px-1" aria-label="Avisar de una errata"><i class="bi bi-envelope"></i></a>
-    <a href="https://github.com/eukeni-acebal/filosofia-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+        <div class="sidebar-tools-main">
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro" aria-label="Alternar modo oscuro"><i class="bi"></i></button>
 </div>
     </div>
       </div>
@@ -302,12 +308,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección: Unidad I · La reflexión filosófica en torno a la propia Filosofía">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · ¿Qué es la Filosofía?</span></a>
@@ -348,12 +354,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad II · Antropología</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Unidad II · Antropología</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección: Unidad II · Antropología">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 7 · La naturaleza humana: evolución y hominización</span></a>
@@ -389,12 +395,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad III · Epistemología</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Unidad III · Epistemología</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar sección: Unidad III · Epistemología">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 12 · El conocimiento y la verdad</span></a>
@@ -435,12 +441,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad IV · Metafísica</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Unidad IV · Metafísica</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Alternar sección: Unidad IV · Metafísica">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-18.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></a>
@@ -476,12 +482,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad V · Ética</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Unidad V · Ética</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="true" aria-label="Alternar sección: Unidad V · Ética">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-23.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a>
@@ -527,12 +533,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad VI · Filosofía política</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Unidad VI · Filosofía política</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="true" aria-label="Alternar sección: Unidad VI · Filosofía política">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-30.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 30 · Los derechos humanos</span></a>
@@ -578,12 +584,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad VII · Estética</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-7-label">Unidad VII · Estética</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="true" aria-label="Alternar sección: Unidad VII · Estética">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-37.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 37 · Arte, belleza y gusto</span></a>
@@ -613,17 +619,23 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<ul>
+<li><a href="https://arete.eukeniacebal.net/filosofia-testuliburua/" lang="eu" hreflang="eu">Euskaraz</a></li>
+<li><a href="https://github.com/eukeni-acebal/filosofia-manual/releases/latest/download/filosofia-manual.pdf">Descargar PDF</a></li>
+<li><a href="mailto:arete.eukeni@gmail.com?subject=Errata%20o%20sugerencia%20%C2%B7%20Filosof%C3%ADa%201">Escríbeme</a></li>
+</ul>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-5.html">Unidad V · Ética</a></li><li class="breadcrumb-item"><a href="../chapters-web/lectura-5.html"><span class="chapter-title">Lectura · Aristóteles y el término medio</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Hilo de Ariadna"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-5.html">Unidad V · Ética</a></li><li class="breadcrumb-item"><a href="../chapters-web/lectura-5.html"><span class="chapter-title">Lectura · Aristóteles y el término medio</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-title">Lectura · Aristóteles y el término medio</span></h1>
 </div>
@@ -642,7 +654,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>La ficha.</strong> Aristóteles (384-322 a. e. c.) no escribió la <em>Ética a Nicómaco</em> para el público: son los materiales de sus clases en el Liceo, y se nota en lo apretado de la prosa, que no explica dos veces nada<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. El pasaje que sigue es el corazón del libro II y contiene la definición de virtud que la tradición repetirá durante dos mil años, casi siempre a medias. Ya has visto la doctrina explicada (<a href="chapters-web/tema-25.html#sec-96">§96</a>); aquí la lees dicha por él, con las cautelas que la explicación suele perder por el camino.</p>
+<p><strong>La ficha.</strong> Aristóteles (384-322 a. e. c.) no escribió la <em>Ética a Nicómaco</em> para el público: son los materiales de sus clases en el Liceo, y se nota en lo apretado de la prosa, que no explica dos veces nada<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. El pasaje que sigue es el corazón del libro II y contiene la definición de virtud que la tradición repetirá durante dos mil años, casi siempre a medias. Ya has visto la doctrina explicada (<a href="../chapters-web/tema-25.html#sec-96">§96</a>); aquí la lees dicha por él, con las cautelas que la explicación suele perder por el camino.</p>
 <p><strong>La traducción.</strong> Es propia y directa del griego, hecha para este manual sobre el texto fijado por Ingram Bywater<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, que es la edición crítica de referencia; se publica bajo la misma licencia que el resto del libro. Sí hay una versión castellana libre de derechos, la que Patricio de Azcárate publicó en 1873 dentro de sus <em>Obras de Aristóteles</em>; pero su castellano es el de hace siglo y medio, y en un texto tan apretado como este cada palabra envejecida cuesta un párrafo de explicación. Las versiones modernas siguen protegidas. Los corchetes […] marcan lo omitido.</p>
 <blockquote class="blockquote">
 <p>En todo lo que es continuo y divisible se puede tomar una parte mayor, una menor y una igual, y eso o bien respecto de la cosa misma o bien respecto de nosotros; y lo igual es un término medio entre el exceso y el defecto. Llamo medio de la cosa a lo que dista lo mismo de cada uno de los dos extremos, que es uno y el mismo para todos; y medio respecto de nosotros, a lo que ni sobra ni falta, que no es uno solo ni el mismo para todos. Por ejemplo: si diez es mucho y dos es poco, se toma el seis como medio de la cosa, porque excede y es excedido en la misma cantidad; ese es el medio según la proporción aritmética.</p>
@@ -662,8 +674,8 @@ ul.task-list li input[type="checkbox"] {
 <li><em>Lo ilimitado y lo limitado.</em> Los pitagóricos ordenaban la realidad en pares de opuestos y ponían el bien del lado de lo limitado, lo que tiene forma y medida, y el mal del lado de lo que no la tiene. Aristóteles toma prestada la idea para explicar una asimetría que le interesa: hay una manera de dar en el blanco y muchas de fallarlo. La frase en cursiva con la que remata el párrafo no es suya: es un verso de un poeta al que no nombra.</li>
 </ul>
 <p><strong>Medio no es mediocre.</strong> Este es el malentendido que hay que despejar antes de discutir nada. El texto no recomienda la tibieza ni quedarse a mitad de camino: dice, con todas las letras, que la virtud es un término medio <em>en cuanto a lo que es</em> y un extremo <em>en cuanto a lo bien hecho</em>. Es decir, que el valiente está en medio entre el cobarde y el temerario, pero no está a medio camino de ser bueno: es lo más bueno que se puede ser en materia de miedo. Quien lea el término medio como una invitación a no exagerar ha leído la mitad de la frase.</p>
-<p><strong>El medio se mide, pero no con regla.</strong> Fíjate en el trabajo que hace el ejemplo del entrenador. Aristóteles necesita que el medio sea <em>medible</em> —si no, su ética no distingue nada— y a la vez que no sea <em>calculable</em> con una fórmula, porque entonces bastaría un manual y no haría falta ninguna virtud. La solución es el medio «respecto de nosotros», que existe de verdad y es distinto para cada cual. El precio de esa solución es que hace falta alguien capaz de verlo en cada caso, y ese alguien es el hombre prudente de la definición, la <em>phronesis</em> que ya conoces (<a href="chapters-web/tema-26.html#sec-100">§100</a>). Ahí es donde muchos lectores se bajan, y con motivo.</p>
-<p><strong>Dónde se le acaba la regla.</strong> El último párrafo es el más honrado del pasaje y el que más se cita en su contra. Aristóteles reconoce que su criterio no vale para todo: hay acciones que están mal por lo que son, y de las que no existe versión moderada. Es una excepción que salva la teoría de la caricatura, pero le abre otro frente, porque si algunas cosas están mal sin más, la ética de la virtud está admitiendo que hay reglas que no dependen de quién las mire, y esa es la clase de cosa que las éticas del deber dirán que ella no sabe fundamentar. Léelo teniendo delante las objeciones que ya viste (<a href="chapters-web/tema-25.html#sec-97">§97</a>).</p>
+<p><strong>El medio se mide, pero no con regla.</strong> Fíjate en el trabajo que hace el ejemplo del entrenador. Aristóteles necesita que el medio sea <em>medible</em> —si no, su ética no distingue nada— y a la vez que no sea <em>calculable</em> con una fórmula, porque entonces bastaría un manual y no haría falta ninguna virtud. La solución es el medio «respecto de nosotros», que existe de verdad y es distinto para cada cual. El precio de esa solución es que hace falta alguien capaz de verlo en cada caso, y ese alguien es el hombre prudente de la definición, la <em>phronesis</em> que ya conoces (<a href="../chapters-web/tema-26.html#sec-100">§100</a>). Ahí es donde muchos lectores se bajan, y con motivo.</p>
+<p><strong>Dónde se le acaba la regla.</strong> El último párrafo es el más honrado del pasaje y el que más se cita en su contra. Aristóteles reconoce que su criterio no vale para todo: hay acciones que están mal por lo que son, y de las que no existe versión moderada. Es una excepción que salva la teoría de la caricatura, pero le abre otro frente, porque si algunas cosas están mal sin más, la ética de la virtud está admitiendo que hay reglas que no dependen de quién las mire, y esa es la clase de cosa que las éticas del deber dirán que ella no sabe fundamentar. Léelo teniendo delante las objeciones que ya viste (<a href="../chapters-web/tema-25.html#sec-97">§97</a>).</p>
 <p><strong>El trabajo.</strong> Las dos primeras preguntas son de comprensión; las dos siguientes te piden analizar cómo está construido el argumento; las dos últimas, llevarlo a otro sitio y mojarte.</p>
 <ol type="1">
 <li>Aristóteles distingue dos términos medios y dice que la virtud está en uno de los dos. Explica la diferencia con el ejemplo del entrenador y di, con el texto, por qué el otro no le sirve.</li>
@@ -671,7 +683,7 @@ ul.task-list li input[type="checkbox"] {
 <li>La virtud es a la vez un término medio y un extremo. Explica cómo pueden ser verdad las dos cosas sin contradicción, y qué se pierde exactamente cuando alguien se queda solo con la primera mitad.</li>
 <li>La definición remata diciendo que el medio lo determina la razón «y aquello con lo que lo determinaría el hombre prudente». Formula con toda su fuerza la objeción de que eso es definir la virtud por el virtuoso, y después dale la mejor respuesta que se te ocurra. No hace falta que la respuesta te convenza.</li>
 <li>Elige una de las acciones que, según el texto, no admiten medio, y comprueba el criterio: explica por qué no funciona decir «robar la cantidad justa, a quien toca y cuando toca». Después busca un caso que le ponga las cosas difíciles a Aristóteles y decide si su criterio aguanta.</li>
-<li>La objeción moderna más seria a esta ética no es que se equivoque, sino que no te dice qué hacer (<a href="chapters-web/tema-25.html#sec-97">§97</a>). Después de leer el texto, ¿te ha dado Aristóteles una guía para decidir o solo un retrato de quien ya sabe decidir? Toma partido y defiéndelo sobre una decisión concreta que hayas tenido que tomar tú. Dedica al menos una frase a la mejor objeción contra tu propia postura, y no la despaches: contéstala o reconoce que no puedes.</li>
+<li>La objeción moderna más seria a esta ética no es que se equivoque, sino que no te dice qué hacer (<a href="../chapters-web/tema-25.html#sec-97">§97</a>). Después de leer el texto, ¿te ha dado Aristóteles una guía para decidir o solo un retrato de quien ya sabe decidir? Toma partido y defiéndelo sobre una decisión concreta que hayas tenido que tomar tú. Dedica al menos una frase a la mejor objeción contra tu propia postura, y no la despaches: contéstala o reconoce que no puedes.</li>
 </ol>
 
 
@@ -684,19 +696,131 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
+<!--
+  CORNISA MÓVIL (D259, 2026-11-20) · colección Areté
+  En pantallas estrechas Quarto ya pinta una barra superior fija con el hilo
+  de Ariadna: la parte y el título del tema. Al leer un tema largo en el móvil
+  eso no dice dónde estás. Este guion pone en esa misma barra el tema y el
+  apartado (§) que tienes delante, como la cornisa de un libro impreso, y lo
+  actualiza al hacer scroll.
+
+  Cómo: un IntersectionObserver vigila los h2 del cuerpo. Cada vez que uno
+  cruza la línea que hay a un quinto de la altura de la pantalla, la cornisa
+  toma el último h2 que ya ha pasado por encima de esa línea. La zona vigilada
+  empieza muy por encima de la pantalla, para que un scroll rápido que salta
+  un apartado entero también avise. No escucha cada píxel de scroll.
+
+  Dónde se ve: solo cuando la barra superior existe, que desde D259 es por
+  debajo de 768 px (custom.scss esconde la barra a partir de ese ancho,
+  porque ahí la barra lateral ya está fija). En escritorio no hace nada
+  visible. El aspecto —una o dos líneas recortadas con puntos suspensivos—
+  vive en custom.scss, sección «CORNISA MÓVIL».
+
+  Quarto pega este fichero al final de cada página (`include-after-body` en
+  los seis _quarto.yml); no se publica como fichero aparte. Ninguna sintaxis
+  nueva en el Markdown (D43).
+-->
+<script>
+(function () {
+  "use strict";
+  var barra = document.querySelector(".quarto-secondary-nav .container-fluid");
+  var cuerpo = document.getElementById("quarto-document-content");
+  var h1 = cuerpo && cuerpo.querySelector("header h1.title, h1.title");
+  if (!barra || !h1 || document.querySelector(".arete-portada")) return;
+
+  var texto = function (el) {
+    var c = el.cloneNode(true);
+    c.querySelectorAll(".anchorjs-link, .header-section-number").forEach(function (x) { x.remove(); });
+    return c.textContent.replace(/\s+/g, " ").trim();
+  };
+
+  var tema = texto(h1);
+  var titulos = Array.prototype.slice.call(cuerpo.querySelectorAll("section.level2 > h2"));
+
+  var cornisa = document.createElement("div");
+  cornisa.className = "arete-cornisa";
+  cornisa.setAttribute("aria-hidden", "true");   // el hilo de Ariadna de Quarto sigue ahí para los lectores de pantalla
+  var lineaTema = document.createElement("span");
+  lineaTema.className = "arete-cornisa__tema";
+  lineaTema.textContent = tema;
+  var lineaSeccion = document.createElement("span");
+  lineaSeccion.className = "arete-cornisa__seccion";
+  cornisa.appendChild(lineaTema);
+  cornisa.appendChild(lineaSeccion);
+
+  var hilo = barra.querySelector(".quarto-page-breadcrumbs");
+  barra.insertBefore(cornisa, hilo ? hilo.nextSibling : barra.firstChild.nextSibling);
+  document.body.classList.add("arete-con-cornisa");
+
+  var actual = null;
+  var pinta = function () {
+    var limite = window.innerHeight * 0.2, elegido = null;
+    for (var i = 0; i < titulos.length; i++) {
+      if (titulos[i].getBoundingClientRect().top <= limite) elegido = titulos[i];
+      else break;
+    }
+    if (elegido === actual) return;
+    actual = elegido;
+    lineaSeccion.textContent = elegido ? texto(elegido) : "";
+    cornisa.classList.toggle("arete-cornisa--seccion", !!elegido);
+  };
+
+  if (titulos.length && "IntersectionObserver" in window) {
+    var vigia = new IntersectionObserver(pinta, { rootMargin: "100000px 0px -80% 0px" });
+    titulos.forEach(function (t) { vigia.observe(t); });
+  }
+  window.addEventListener("hashchange", function () { setTimeout(pinta, 60); });
+  pinta();
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Alternar modo oscuro");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Alternar modo oscuro");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -775,7 +899,8 @@ ul.task-list li input[type="checkbox"] {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -784,8 +909,69 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -799,6 +985,7 @@ ul.task-list li input[type="checkbox"] {
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -961,44 +1148,54 @@ ul.task-list li input[type="checkbox"] {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1097,7 +1294,10 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Código desplazable","output":"Salida desplazable"};
+  </script>
+<nav class="page-navigation" aria-label="Página">
   <div class="nav-page nav-page-previous">
       <a href="../chapters-web/tema-29.html" class="pagination-link" aria-label="Tema 29 · Éticas del cuidado y ética aplicada">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Tema 29 · Éticas del cuidado y ética aplicada</span></span>

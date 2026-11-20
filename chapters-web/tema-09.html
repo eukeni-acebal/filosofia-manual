@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,18 +40,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="../chapters-web/tema-08.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fc20a56aadcab808120179de1ae02e97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ee624aba7dd1a522a65201b5a843d75b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-fc20a56aadcab808120179de1ae02e97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b29469c5149ea663b658181c1cab893f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1eae7551a8b327b748a04a3a7b98b1fb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b29469c5149ea663b658181c1cab893f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../quarto-theme/print.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Saltar al contenido principal</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -108,6 +109,7 @@ ul.task-list li input[type="checkbox"] {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -137,13 +139,19 @@ ul.task-list li input[type="checkbox"] {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -237,6 +245,7 @@ ul.task-list li input[type="checkbox"] {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -251,13 +260,13 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Barra de herramientas">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-2.html">Unidad II · Antropología</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-09.html"><span class="chapter-title">Tema 9 · Cultura y sociedad</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Hilo de Ariadna"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-2.html">Unidad II · Antropología</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-09.html"><span class="chapter-title">Tema 9 · Cultura y sociedad</span></a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -268,17 +277,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Sitio web"><div class="quarto-sidebar-header"><div class="sidebar-header-item">
+<p><a href="https://arete.eukeniacebal.net/es/">Areté</a></p>
+</div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Filosofía</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://arete.eukeniacebal.net/es/" title="Colección Areté" class="quarto-navigation-tool px-1" aria-label="Colección Areté"><i class="bi bi-house-door"></i></a>
-    <a href="https://arete.eukeniacebal.net/filosofia-testuliburua/" title="Euskarazko bertsioa" class="quarto-navigation-tool px-1" aria-label="Euskarazko bertsioa"><i class="bi bi-translate"></i></a>
-    <a href="https://github.com/eukeni-acebal/filosofia-manual/releases/latest/download/filosofia-manual.pdf" title="Descargar el PDF" class="quarto-navigation-tool px-1" aria-label="Descargar el PDF"><i class="bi bi-file-earmark-pdf"></i></a>
-    <a href="mailto:arete.eukeni@gmail.com?subject=Errata%20o%20sugerencia%20%C2%B7%20Filosof%C3%ADa%201" title="Avisar de una errata" class="quarto-navigation-tool px-1" aria-label="Avisar de una errata"><i class="bi bi-envelope"></i></a>
-    <a href="https://github.com/eukeni-acebal/filosofia-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+        <div class="sidebar-tools-main">
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro" aria-label="Alternar modo oscuro"><i class="bi"></i></button>
 </div>
     </div>
       </div>
@@ -302,12 +308,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección: Unidad I · La reflexión filosófica en torno a la propia Filosofía">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · ¿Qué es la Filosofía?</span></a>
@@ -348,12 +354,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad II · Antropología</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Unidad II · Antropología</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección: Unidad II · Antropología">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 7 · La naturaleza humana: evolución y hominización</span></a>
@@ -389,12 +395,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad III · Epistemología</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Unidad III · Epistemología</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar sección: Unidad III · Epistemología">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 12 · El conocimiento y la verdad</span></a>
@@ -435,12 +441,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad IV · Metafísica</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Unidad IV · Metafísica</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Alternar sección: Unidad IV · Metafísica">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-18.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></a>
@@ -476,12 +482,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad V · Ética</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Unidad V · Ética</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="true" aria-label="Alternar sección: Unidad V · Ética">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-23.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a>
@@ -527,12 +533,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad VI · Filosofía política</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Unidad VI · Filosofía política</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="true" aria-label="Alternar sección: Unidad VI · Filosofía política">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-30.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 30 · Los derechos humanos</span></a>
@@ -578,12 +584,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad VII · Estética</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-7-label">Unidad VII · Estética</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="true" aria-label="Alternar sección: Unidad VII · Estética">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-37.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 37 · Arte, belleza y gusto</span></a>
@@ -613,11 +619,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<ul>
+<li><a href="https://arete.eukeniacebal.net/filosofia-testuliburua/" lang="eu" hreflang="eu">Euskaraz</a></li>
+<li><a href="https://github.com/eukeni-acebal/filosofia-manual/releases/latest/download/filosofia-manual.pdf">Descargar PDF</a></li>
+<li><a href="mailto:arete.eukeni@gmail.com?subject=Errata%20o%20sugerencia%20%C2%B7%20Filosof%C3%ADa%201">Escríbeme</a></li>
+</ul>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
@@ -631,10 +643,10 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-2.html">Unidad II · Antropología</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-09.html"><span class="chapter-title">Tema 9 · Cultura y sociedad</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Hilo de Ariadna"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-2.html">Unidad II · Antropología</a></li><li class="breadcrumb-item"><a href="../chapters-web/tema-09.html"><span class="chapter-title">Tema 9 · Cultura y sociedad</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-title">Tema 9 · Cultura y sociedad</span></h1>
 </div>
@@ -683,9 +695,9 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>La sociedad no es la suma de quienes la formamos.</strong> Émile Durkheim (1858-1917) llamó <em>hechos sociales</em> a las maneras de obrar y de pensar que existen fuera de cada individuo y se le imponen: el idioma que hablas, el dinero con que pagas, la edad a la que se espera que estudies, el turno que respetas en la cola del supermercado. No los inventaste tú, nadie te consultó y no puedes derogarlos por tu cuenta; y, si los incumples, notas la presión —una mirada, una risa, una multa—. De ahí su tesis, discutida desde entonces: los hechos sociales han de explicarse por otros hechos sociales y no por la psicología de cada cual, porque la tasa de suicidios de un país varía poco de un año a otro aunque las personas que lo componen no sean las mismas.</p>
 <p><strong>Pero tampoco es un ser con voluntad propia.</strong> Cuando decimos «la sociedad exige» o «el mercado castiga» usamos una taquigrafía cómoda y algo peligrosa: ahí no hay nadie que exija ni castigue. Max Weber (1864-1920) insistió en que las colectividades deben tratarse como resultado y modo de organización de los actos de personas concretas, exigencia que hoy se llama <em>individualismo metodológico</em>: explicar lo social mostrando cómo surge de lo que la gente hace<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. La disputa sigue abierta y admite un punto intermedio razonable: no hay cambio social sin cambio en las personas —lo social <em>depende</em> de ellas—, y aun así explicar una huelga hablando solo de individuos puede ser tan inútil como explicar un atasco entrevistando a un conductor.</p>
 <p><strong>Las instituciones son lo que hace que una sociedad dure.</strong> Llamamos <em>institución</em> a una forma social compleja que se reproduce a sí misma: la familia, la escuela, el hospital, el juzgado, el dinero, la empresa, el Estado<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Y se reproduce porque no está hecha de personas, sino de <em>puestos</em>, cada uno con sus reglas y con un fin: existe el puesto de juez y el de alumna, y el puesto sigue ahí cuando quien lo ocupaba se jubila o aprueba. Esa es la diferencia con una cuadrilla de amigos, que desaparece con sus miembros. Tu instituto ha sobrevivido a todos los alumnos que has visto pasar y te sobrevivirá a ti.</p>
-<p><strong>Una institución se sostiene porque la aceptamos.</strong> ¿Por qué vale veinte euros un billete de veinte euros? No por el papel: podrías fabricar uno idéntico y no valdría nada. John Searle (1932-2025) lo dijo con una fórmula sencilla: en un contexto dado, algo <em>cuenta como</em> otra cosa porque colectivamente lo aceptamos —este papel cuenta como dinero, esta persona cuenta como árbitro, esta línea en el suelo cuenta como frontera—. Los hechos que dependen de esa aceptación se llaman <em>hechos institucionales</em>, frente a los hechos <em>brutos</em>, que son verdad los acepte alguien o no: que el billete pese un gramo es un hecho bruto; que valga veinte, no<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Fíjate en la consecuencia: lo que se sostiene por aceptación puede venirse abajo. Pregúntale a quien ha vivido una hiperinflación, o mira a un árbitro al que ya nadie obedece. Y fíjate en la otra, que es metafísica y te espera en la Unidad IV: el valor del billete no está <em>en</em> el billete, sino entre nosotros, y hay quien sostiene que con todo lo demás pasa lo mismo (<a href="chapters-web/tema-18.html#sec-70">§70</a>).</p>
-<p><strong>Qué añade la mirada filosófica.</strong> La sociología describe y explica: cuántos somos, cómo se reparte la renta, qué instituciones cambian y a qué ritmo. La filosofía llega después con tres preguntas que ninguna encuesta contesta. La primera es <em>qué clase de cosa</em> es una sociedad: si además de personas existen grupos, clases y Estados, y en qué sentido existen; de eso se ocupa la <em>ontología social</em>, y es lo que hemos estado rondando en los párrafos anteriores. La segunda es si una institución está <em>justificada</em>: que una norma se cumpla no dice absolutamente nada sobre si debe cumplirse, y esa distancia entre lo que hay y lo que debería haber es el terreno entero de la filosofía política (<a href="chapters-web/tema-31.html#sec-124">§124</a>), que se pregunta de dónde saca su autoridad quien manda (<a href="chapters-web/tema-33.html#sec-130">§130</a>). La tercera es si los conceptos con los que describimos la sociedad son los adecuados: cuando una estadística clasifica a alguien como «inmigrante de segunda generación», ¿mide un grupo que ya existía o fabrica el grupo que dice medir?</p>
-<p>No vamos a contestarlas aquí: te esperan enteras en la Unidad VI (<a href="chapters-web/tema-31.html#sec-121">§121</a>). Quédate de momento con lo que cambia al añadir la palabra «sociedad» al título del tema: una sociedad no es solo algo que se describe, es también algo que se justifica o no se justifica. Y antes de llegar tan lejos falta una pregunta más modesta, que es la del apartado siguiente: ¿cómo entra un recién nacido en todo esto?</p>
+<p><strong>Una institución se sostiene porque la aceptamos.</strong> ¿Por qué vale veinte euros un billete de veinte euros? No por el papel: podrías fabricar uno idéntico y no valdría nada. John Searle (1932-2025) lo dijo con una fórmula sencilla: en un contexto dado, algo <em>cuenta como</em> otra cosa porque colectivamente lo aceptamos —este papel cuenta como dinero, esta persona cuenta como árbitro, esta línea en el suelo cuenta como frontera—. Los hechos que dependen de esa aceptación se llaman <em>hechos institucionales</em>, frente a los hechos <em>brutos</em>, que son verdad los acepte alguien o no: que el billete pese un gramo es un hecho bruto; que valga veinte, no<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Fíjate en la consecuencia: lo que se sostiene por aceptación puede venirse abajo. Pregúntale a quien ha vivido una hiperinflación, o mira a un árbitro al que ya nadie obedece. Y fíjate en la otra, que es metafísica y te espera en la Unidad IV: el valor del billete no está <em>en</em> el billete, sino entre nosotros, y hay quien sostiene que con todo lo demás pasa lo mismo (<a href="../chapters-web/tema-18.html#sec-70">§70</a>).</p>
+<p><strong>Qué añade la mirada filosófica.</strong> La sociología describe y explica: cuántos somos, cómo se reparte la renta, qué instituciones cambian y a qué ritmo. La filosofía llega después con tres preguntas que ninguna encuesta contesta. La primera es <em>qué clase de cosa</em> es una sociedad: si además de personas existen grupos, clases y Estados, y en qué sentido existen; de eso se ocupa la <em>ontología social</em>, y es lo que hemos estado rondando en los párrafos anteriores. La segunda es si una institución está <em>justificada</em>: que una norma se cumpla no dice absolutamente nada sobre si debe cumplirse, y esa distancia entre lo que hay y lo que debería haber es el terreno entero de la filosofía política (<a href="../chapters-web/tema-31.html#sec-124">§124</a>), que se pregunta de dónde saca su autoridad quien manda (<a href="../chapters-web/tema-33.html#sec-130">§130</a>). La tercera es si los conceptos con los que describimos la sociedad son los adecuados: cuando una estadística clasifica a alguien como «inmigrante de segunda generación», ¿mide un grupo que ya existía o fabrica el grupo que dice medir?</p>
+<p>No vamos a contestarlas aquí: te esperan enteras en la Unidad VI (<a href="../chapters-web/tema-31.html#sec-121">§121</a>). Quédate de momento con lo que cambia al añadir la palabra «sociedad» al título del tema: una sociedad no es solo algo que se describe, es también algo que se justifica o no se justifica. Y antes de llegar tan lejos falta una pregunta más modesta, que es la del apartado siguiente: ¿cómo entra un recién nacido en todo esto?</p>
 </section>
 <section id="sec-35" class="level2">
 <h2 class="anchored" data-anchor-id="sec-35">§35 · Socialización y enculturación</h2>
@@ -713,7 +725,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Los rasgos culturales no están atados para siempre a la geografía y varían mucho con el tiempo: hasta las culturas en apariencia más conservadoras se transforman. Eso, unido a la migración —una de las grandes características de nuestra especie—, hace que las culturas rara vez se desarrollen aisladas<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. Lo habitual es el contacto por comercio, guerra o migración; y, cada vez más, que en una misma ciudad convivan personas de orígenes muy distintos. Cuando las otras culturas ya no son noticia de viajeros, sino vecinas, se plantea la convivencia: ¿cómo deben relacionarse personas de culturas diversas?, ¿cómo tratar a las minorías?</p>
 <p><strong>Etnocentrismo.</strong> Una etnia es un grupo que comparte cultura y se reconoce como distinto de otros<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. El etnocentrismo consiste en tomar la cultura propia como norma y juzgar a las demás desde ella. Normalmente el etnocentrista considera que su cultura es <em>mejor</em>: si mis costumbres son las correctas, las demás estarán equivocadas, y los otros serán bárbaros o primitivos.</p>
 <p><strong>Relativismo cultural.</strong> Sostiene que no podemos —ni debemos— juzgar otras culturas con nuestros valores, porque cada una es fruto de su historia y circunstancias: lo correcto solo lo es <em>dentro</em> de cada grupo. Se opone frontalmente al etnocentrismo y concibe cada cultura como un universo propio; el idioma, por ejemplo, no es solo una herramienta, sino que trae insertos conceptos y juicios sobre la realidad. Llevada al extremo, esta postura considera las culturas <em>inconmensurables</em>: ni siquiera podríamos entender de veras lo que piensan los miembros de otra, porque viven en universos distintos. De ahí que toda cultura tenga valor en sí misma y que no quepa hablar de valores morales universales.</p>
-<p><strong>Universalismo cultural.</strong> Frente al relativismo, defiende que existen principios y valores universales desde los que evaluar todas las culturas —la ajena y la propia—, a los que todas deberían adherirse. No busca una cultura mundial única, sino unos mínimos morales. Su reflejo son los Derechos Humanos (<a href="chapters-web/tema-30.html#sec-118">§118</a>), que atribuyen a toda persona dignidad y derechos inalienables —aunque algunos relativistas los critican como expresión de la moral occidental—. En esta línea, existen <em>universales culturales</em>: elementos presentes en todas las culturas sin excepción, como los nombres propios, la familia, la división por edades, el matrimonio, el pensamiento mágico, la poesía o los adornos corporales.</p>
+<p><strong>Universalismo cultural.</strong> Frente al relativismo, defiende que existen principios y valores universales desde los que evaluar todas las culturas —la ajena y la propia—, a los que todas deberían adherirse. No busca una cultura mundial única, sino unos mínimos morales. Su reflejo son los Derechos Humanos (<a href="../chapters-web/tema-30.html#sec-118">§118</a>), que atribuyen a toda persona dignidad y derechos inalienables —aunque algunos relativistas los critican como expresión de la moral occidental—. En esta línea, existen <em>universales culturales</em>: elementos presentes en todas las culturas sin excepción, como los nombres propios, la familia, la división por edades, el matrimonio, el pensamiento mágico, la poesía o los adornos corporales.</p>
 </section>
 <section id="sec-38" class="level2">
 <h2 class="anchored" data-anchor-id="sec-38">§38 · Modelos de gestión de la diversidad</h2>
@@ -722,7 +734,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Asimilacionismo.</strong> Las minorías o los inmigrantes deben adoptar las normas y valores de la cultura dominante, abandonando los propios, hasta volverse culturalmente indistinguibles de los nativos. Francia es un ejemplo, con su promoción del francés y de una identidad dominante. Puede entenderse desde el etnocentrismo o desde el universalismo, e incluso imponerse por ley; una forma más suave propone resocializar a los inmigrantes añadiendo valores nuevos sin reemplazar los originales.</p>
 <p><strong>Segregación o aislamiento.</strong> Las minorías son a veces obligadas por ley a vivir separadas de la cultura dominante —los guetos judíos en Europa hasta el III Reich—, o empujadas a ello por su economía o por el deseo de vivir cerca de sus allegados. Con frecuencia, además, ven limitados sus derechos y oportunidades.</p>
 <p><strong>Integración selectiva.</strong> Algunas políticas eligen a los inmigrantes por su formación, su conocimiento del idioma, las necesidades del empleo o su «compatibilidad» percibida con la cultura dominante.</p>
-<p><strong>Pluralismo cultural.</strong> Busca el equilibrio entre multiculturalismo y asimilacionismo: reconoce el valor de la diversidad y, a la vez, la importancia de una cultura cívica compartida. Estimula mantener la identidad propia junto con el respeto a la democracia (<a href="chapters-web/tema-34.html#sec-136">§136</a>), el imperio de la ley y los Derechos Humanos, e incentiva la participación activa de los inmigrantes en la vida del país de acogida. Alemania es su modelo.</p>
+<p><strong>Pluralismo cultural.</strong> Busca el equilibrio entre multiculturalismo y asimilacionismo: reconoce el valor de la diversidad y, a la vez, la importancia de una cultura cívica compartida. Estimula mantener la identidad propia junto con el respeto a la democracia (<a href="../chapters-web/tema-34.html#sec-136">§136</a>), el imperio de la ley y los Derechos Humanos, e incentiva la participación activa de los inmigrantes en la vida del país de acogida. Alemania es su modelo.</p>
 
 
 </section>
@@ -742,19 +754,131 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
+<!--
+  CORNISA MÓVIL (D259, 2026-11-20) · colección Areté
+  En pantallas estrechas Quarto ya pinta una barra superior fija con el hilo
+  de Ariadna: la parte y el título del tema. Al leer un tema largo en el móvil
+  eso no dice dónde estás. Este guion pone en esa misma barra el tema y el
+  apartado (§) que tienes delante, como la cornisa de un libro impreso, y lo
+  actualiza al hacer scroll.
+
+  Cómo: un IntersectionObserver vigila los h2 del cuerpo. Cada vez que uno
+  cruza la línea que hay a un quinto de la altura de la pantalla, la cornisa
+  toma el último h2 que ya ha pasado por encima de esa línea. La zona vigilada
+  empieza muy por encima de la pantalla, para que un scroll rápido que salta
+  un apartado entero también avise. No escucha cada píxel de scroll.
+
+  Dónde se ve: solo cuando la barra superior existe, que desde D259 es por
+  debajo de 768 px (custom.scss esconde la barra a partir de ese ancho,
+  porque ahí la barra lateral ya está fija). En escritorio no hace nada
+  visible. El aspecto —una o dos líneas recortadas con puntos suspensivos—
+  vive en custom.scss, sección «CORNISA MÓVIL».
+
+  Quarto pega este fichero al final de cada página (`include-after-body` en
+  los seis _quarto.yml); no se publica como fichero aparte. Ninguna sintaxis
+  nueva en el Markdown (D43).
+-->
+<script>
+(function () {
+  "use strict";
+  var barra = document.querySelector(".quarto-secondary-nav .container-fluid");
+  var cuerpo = document.getElementById("quarto-document-content");
+  var h1 = cuerpo && cuerpo.querySelector("header h1.title, h1.title");
+  if (!barra || !h1 || document.querySelector(".arete-portada")) return;
+
+  var texto = function (el) {
+    var c = el.cloneNode(true);
+    c.querySelectorAll(".anchorjs-link, .header-section-number").forEach(function (x) { x.remove(); });
+    return c.textContent.replace(/\s+/g, " ").trim();
+  };
+
+  var tema = texto(h1);
+  var titulos = Array.prototype.slice.call(cuerpo.querySelectorAll("section.level2 > h2"));
+
+  var cornisa = document.createElement("div");
+  cornisa.className = "arete-cornisa";
+  cornisa.setAttribute("aria-hidden", "true");   // el hilo de Ariadna de Quarto sigue ahí para los lectores de pantalla
+  var lineaTema = document.createElement("span");
+  lineaTema.className = "arete-cornisa__tema";
+  lineaTema.textContent = tema;
+  var lineaSeccion = document.createElement("span");
+  lineaSeccion.className = "arete-cornisa__seccion";
+  cornisa.appendChild(lineaTema);
+  cornisa.appendChild(lineaSeccion);
+
+  var hilo = barra.querySelector(".quarto-page-breadcrumbs");
+  barra.insertBefore(cornisa, hilo ? hilo.nextSibling : barra.firstChild.nextSibling);
+  document.body.classList.add("arete-con-cornisa");
+
+  var actual = null;
+  var pinta = function () {
+    var limite = window.innerHeight * 0.2, elegido = null;
+    for (var i = 0; i < titulos.length; i++) {
+      if (titulos[i].getBoundingClientRect().top <= limite) elegido = titulos[i];
+      else break;
+    }
+    if (elegido === actual) return;
+    actual = elegido;
+    lineaSeccion.textContent = elegido ? texto(elegido) : "";
+    cornisa.classList.toggle("arete-cornisa--seccion", !!elegido);
+  };
+
+  if (titulos.length && "IntersectionObserver" in window) {
+    var vigia = new IntersectionObserver(pinta, { rootMargin: "100000px 0px -80% 0px" });
+    titulos.forEach(function (t) { vigia.observe(t); });
+  }
+  window.addEventListener("hashchange", function () { setTimeout(pinta, 60); });
+  pinta();
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Alternar modo oscuro");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Alternar modo oscuro");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -833,7 +957,8 @@ ul.task-list li input[type="checkbox"] {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -842,8 +967,69 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -857,6 +1043,7 @@ ul.task-list li input[type="checkbox"] {
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1019,44 +1206,54 @@ ul.task-list li input[type="checkbox"] {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1155,7 +1352,10 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Código desplazable","output":"Salida desplazable"};
+  </script>
+<nav class="page-navigation" aria-label="Página">
   <div class="nav-page nav-page-previous">
       <a href="../chapters-web/tema-08.html" class="pagination-link" aria-label="Tema 8 · Concepciones filosóficas del ser humano">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Tema 8 · Concepciones filosóficas del ser humano</span></span>

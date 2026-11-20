@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,18 +40,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="../chapters-web/tema-36.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fc20a56aadcab808120179de1ae02e97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ee624aba7dd1a522a65201b5a843d75b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-fc20a56aadcab808120179de1ae02e97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b29469c5149ea663b658181c1cab893f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1eae7551a8b327b748a04a3a7b98b1fb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b29469c5149ea663b658181c1cab893f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../quarto-theme/print.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Saltar al contenido principal</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -108,6 +109,7 @@ ul.task-list li input[type="checkbox"] {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -137,13 +139,19 @@ ul.task-list li input[type="checkbox"] {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -237,6 +245,7 @@ ul.task-list li input[type="checkbox"] {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -251,13 +260,13 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Barra de herramientas">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-6.html">Unidad VI · Filosofía política</a></li><li class="breadcrumb-item"><a href="../chapters-web/lectura-6.html"><span class="chapter-title">Lectura · Mill y Campoamor</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Hilo de Ariadna"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-6.html">Unidad VI · Filosofía política</a></li><li class="breadcrumb-item"><a href="../chapters-web/lectura-6.html"><span class="chapter-title">Lectura · Mill y Campoamor</span></a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -268,17 +277,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Sitio web"><div class="quarto-sidebar-header"><div class="sidebar-header-item">
+<p><a href="https://arete.eukeniacebal.net/es/">Areté</a></p>
+</div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Filosofía</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://arete.eukeniacebal.net/es/" title="Colección Areté" class="quarto-navigation-tool px-1" aria-label="Colección Areté"><i class="bi bi-house-door"></i></a>
-    <a href="https://arete.eukeniacebal.net/filosofia-testuliburua/" title="Euskarazko bertsioa" class="quarto-navigation-tool px-1" aria-label="Euskarazko bertsioa"><i class="bi bi-translate"></i></a>
-    <a href="https://github.com/eukeni-acebal/filosofia-manual/releases/latest/download/filosofia-manual.pdf" title="Descargar el PDF" class="quarto-navigation-tool px-1" aria-label="Descargar el PDF"><i class="bi bi-file-earmark-pdf"></i></a>
-    <a href="mailto:arete.eukeni@gmail.com?subject=Errata%20o%20sugerencia%20%C2%B7%20Filosof%C3%ADa%201" title="Avisar de una errata" class="quarto-navigation-tool px-1" aria-label="Avisar de una errata"><i class="bi bi-envelope"></i></a>
-    <a href="https://github.com/eukeni-acebal/filosofia-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+        <div class="sidebar-tools-main">
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro" aria-label="Alternar modo oscuro"><i class="bi"></i></button>
 </div>
     </div>
       </div>
@@ -302,12 +308,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Unidad I · La reflexión filosófica en torno a la propia Filosofía</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección: Unidad I · La reflexión filosófica en torno a la propia Filosofía">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · ¿Qué es la Filosofía?</span></a>
@@ -348,12 +354,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad II · Antropología</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Unidad II · Antropología</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección: Unidad II · Antropología">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 7 · La naturaleza humana: evolución y hominización</span></a>
@@ -389,12 +395,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad III · Epistemología</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Unidad III · Epistemología</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar sección: Unidad III · Epistemología">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 12 · El conocimiento y la verdad</span></a>
@@ -435,12 +441,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad IV · Metafísica</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Unidad IV · Metafísica</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Alternar sección: Unidad IV · Metafísica">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-18.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 18 · La naturaleza de lo real</span></a>
@@ -476,12 +482,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad V · Ética</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Unidad V · Ética</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="true" aria-label="Alternar sección: Unidad V · Ética">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-23.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 23 · Ética y moral: conceptos y metaética</span></a>
@@ -527,12 +533,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad VI · Filosofía política</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Unidad VI · Filosofía política</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="true" aria-label="Alternar sección: Unidad VI · Filosofía política">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-30.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 30 · Los derechos humanos</span></a>
@@ -578,12 +584,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../unidad-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad VII · Estética</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-7-label">Unidad VII · Estética</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="true" aria-label="Alternar sección: Unidad VII · Estética">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters-web/tema-37.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 37 · Arte, belleza y gusto</span></a>
@@ -613,17 +619,23 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<ul>
+<li><a href="https://arete.eukeniacebal.net/filosofia-testuliburua/" lang="eu" hreflang="eu">Euskaraz</a></li>
+<li><a href="https://github.com/eukeni-acebal/filosofia-manual/releases/latest/download/filosofia-manual.pdf">Descargar PDF</a></li>
+<li><a href="mailto:arete.eukeni@gmail.com?subject=Errata%20o%20sugerencia%20%C2%B7%20Filosof%C3%ADa%201">Escríbeme</a></li>
+</ul>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-6.html">Unidad VI · Filosofía política</a></li><li class="breadcrumb-item"><a href="../chapters-web/lectura-6.html"><span class="chapter-title">Lectura · Mill y Campoamor</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Hilo de Ariadna"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unidad-6.html">Unidad VI · Filosofía política</a></li><li class="breadcrumb-item"><a href="../chapters-web/lectura-6.html"><span class="chapter-title">Lectura · Mill y Campoamor</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-title">Lectura · Mill y Campoamor</span></h1>
 </div>
@@ -642,7 +654,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>La ficha.</strong> John Stuart Mill (1806-1873) publicó <em>Sobre la libertad</em> en 1859 y no volvió a tocarlo. Lo había escrito con Harriet Taylor Mill (1807-1858), que murió en Aviñón en noviembre de 1858, poco más de un mes después de que él se jubilara tras casi treinta y cinco años en la Compañía de las Indias Orientales, donde llegó a examinador jefe de la correspondencia: un cargo equivalente al de subsecretario de Estado, desde el que se despachaba la administración colonial británica en la India<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. El libro se lo dedicó a ella. De Mill conoces al utilitarista que sostiene que no todos los placeres valen lo mismo (<a href="chapters-web/tema-27.html#sec-107">§107</a>); lo que sigue es un intento distinto y más ambicioso: trazar una raya, una sola, que diga cuándo la sociedad puede meterse en la vida de alguien y cuándo no. Sesenta y cinco años después de que él llevara a los Comunes la petición de sufragio femenino de 1866, y con la raya ya trazada, todavía había que discutir a quién se le aplicaba. <strong>Clara Campoamor</strong> (1888-1972) era abogada y una de las dos únicas mujeres con escaño en las Cortes Constituyentes de la República; la otra era <strong>Victoria Kent</strong> (1889-1987), también abogada. El 1 de octubre de 1931 la Cámara discutía el artículo 34 del proyecto de Constitución —el 36 del texto que acabó promulgándose—, que reconocía a los ciudadanos «de uno y otro sexo» los mismos derechos electorales. Contra concederlo ya habló, entre otros, el partido de la propia Campoamor. Y habló Victoria Kent, que no negaba la capacidad de las españolas, sino la oportunidad del momento. El artículo se aprobó aquella tarde por 161 votos contra 121.</p>
+<p><strong>La ficha.</strong> John Stuart Mill (1806-1873) publicó <em>Sobre la libertad</em> en 1859 y no volvió a tocarlo. Lo había escrito con Harriet Taylor Mill (1807-1858), que murió en Aviñón en noviembre de 1858, poco más de un mes después de que él se jubilara tras casi treinta y cinco años en la Compañía de las Indias Orientales, donde llegó a examinador jefe de la correspondencia: un cargo equivalente al de subsecretario de Estado, desde el que se despachaba la administración colonial británica en la India<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. El libro se lo dedicó a ella. De Mill conoces al utilitarista que sostiene que no todos los placeres valen lo mismo (<a href="../chapters-web/tema-27.html#sec-107">§107</a>); lo que sigue es un intento distinto y más ambicioso: trazar una raya, una sola, que diga cuándo la sociedad puede meterse en la vida de alguien y cuándo no. Sesenta y cinco años después de que él llevara a los Comunes la petición de sufragio femenino de 1866, y con la raya ya trazada, todavía había que discutir a quién se le aplicaba. <strong>Clara Campoamor</strong> (1888-1972) era abogada y una de las dos únicas mujeres con escaño en las Cortes Constituyentes de la República; la otra era <strong>Victoria Kent</strong> (1889-1987), también abogada. El 1 de octubre de 1931 la Cámara discutía el artículo 34 del proyecto de Constitución —el 36 del texto que acabó promulgándose—, que reconocía a los ciudadanos «de uno y otro sexo» los mismos derechos electorales. Contra concederlo ya habló, entre otros, el partido de la propia Campoamor. Y habló Victoria Kent, que no negaba la capacidad de las españolas, sino la oportunidad del momento. El artículo se aprobó aquella tarde por 161 votos contra 121.</p>
 <p><strong>La traducción, y por qué el segundo texto no la necesita.</strong> La de Mill es de Claude y directa del inglés, hecha para este manual sobre un texto que está en dominio público desde hace más de siglo y medio; esta versión se publica bajo la misma licencia que el resto del libro. Hay una castellana libre de derechos —la de Lorenzo Benito y de Endara (1855-1932), Madrid, 1890—, pero no se hizo desde el inglés, sino sobre la versión francesa de Charles Dupont-White (1860), y traducir desde ahí sería traducir una traducción<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Los corchetes […] marcan lo omitido: en Mill, un solo tramo del capítulo I, entre el enunciado del principio y la esfera propia de la libertad<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. El texto de Campoamor <strong>no se traduce, porque no hace falta</strong>: es castellano hablado, tomado del acta taquigráfica de la sesión, con las acotaciones del taquígrafo entre paréntesis y en cursiva. Se ha acentuado según la norma de hoy y no se ha tocado nada más.</p>
 <blockquote class="blockquote">
 <p>El objeto de este ensayo es afirmar un principio muy sencillo, con derecho a regir por entero el trato de la sociedad con el individuo en todo lo que sea imposición y control, tanto si el medio empleado es la fuerza física en forma de penas legales como si es la coacción moral de la opinión pública. El principio es este: el único fin que autoriza a los seres humanos, individual o colectivamente, a interferir en la libertad de acción de cualquiera de ellos es la propia defensa. El único propósito para el que cabe ejercer legítimamente poder sobre un miembro de una comunidad civilizada, contra su voluntad, es evitar un daño a otros. Su propio bien, físico o moral, no es justificación bastante. No se le puede obligar legítimamente a hacer algo o a abstenerse de hacerlo porque sea mejor para él, porque vaya a hacerle más feliz o porque, en opinión de los demás, sea lo sensato o incluso lo justo. Son buenas razones para hacerle reproches, para razonar con él, para persuadirlo o para rogarle, pero no para obligarlo ni para causarle mal alguno si hace otra cosa. Para que eso quede justificado, la conducta de la que se le quiere apartar tiene que ser tal que previsiblemente cause mal a algún otro. De la conducta de cualquiera, la única parte de la que responde ante la sociedad es la que afecta a los demás. En lo que solo le concierne a él, su independencia es, de derecho, absoluta. Sobre sí mismo, sobre su propio cuerpo y su propia mente, el individuo es soberano.</p>
@@ -668,10 +680,10 @@ ul.task-list li input[type="checkbox"] {
 <li><em>Obstinada.</em> En el original, <em>perverse</em>. En el inglés del siglo XIX significa terco, empeñado en llevar la contraria; no «perverso», que es lo que parece. Falso amigo, y de los que cambian el sentido de la frase: Mill está diciendo que ni siquiera la terquedad autoriza a nadie a intervenir.</li>
 <li><em>Lazareto.</em> Edificio donde se encerraba en cuarentena al que llegaba de fuera, por si traía una enfermedad, hasta comprobar que no la traía. Campoamor la usa contra los que piden aplazar: al varón se le reconocen sus derechos el mismo día en que llega la República y a los de la mujer se les pone una cuarentena. El argumento entero de la oportunidad cabe, y se hunde, en esa palabra.</li>
 <li><em>Refluye.</em> Refluir es volver hacia atrás una corriente. La pregunta que Campoamor construye con esa palabra es si las consecuencias de una ley hecha solo por una mitad se le vuelven encima igual a la otra, que no ha podido votarla. Fíjate en que es una pregunta de hecho y no de principio: se contesta mirando.</li>
-<li><em>Detentar.</em> Retener algo que no te pertenece. Campoamor pide perdón por la palabra antes de decirla, y es lo único por lo que pide perdón en todo lo que vas a leer: sabe exactamente lo que está diciendo. No acusa a los diputados de tener un derecho y usarlo mal, sino de no tenerlo. Es, en una palabra, la distinción entre legalidad y legitimidad que ya viste (<a href="chapters-web/tema-31.html#sec-124">§124</a>).</li>
+<li><em>Detentar.</em> Retener algo que no te pertenece. Campoamor pide perdón por la palabra antes de decirla, y es lo único por lo que pide perdón en todo lo que vas a leer: sabe exactamente lo que está diciendo. No acusa a los diputados de tener un derecho y usarlo mal, sino de no tenerlo. Es, en una palabra, la distinción entre legalidad y legitimidad que ya viste (<a href="../chapters-web/tema-31.html#sec-124">§124</a>).</li>
 </ul>
 <p><strong>Dónde está la línea, exactamente.</strong> El principio de Mill parece una navaja y no lo es. Míralo en el párrafo de la esfera propia de la libertad: dice «que solo la afecta a ella» y acto seguido se corrige, «quiero decir directamente y en primera instancia», porque «todo lo que afecta a alguien puede afectar a otros <em>a través de</em> él». Ahí está la juntura, y ahí se le puede romper el criterio. Si esa vía indirecta cuenta, casi nada es asunto exclusivo de nadie y el principio no protege gran cosa; si no cuenta, hay que decir por qué, y Mill lo aplaza para más adelante. No es una objeción de ahora: su primer traductor al francés, Charles Dupont-White (1807-1878), que era amigo suyo y admiraba el ensayo, escribió un año después que, a medida que Mill explica su pensamiento, las excepciones «aparecen, invaden el asunto, y el principio único de hace un momento disminuye a ojos vistas»<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Decide tú si un principio puede permitirse eso y seguir siendo uno solo.</p>
-<p><strong>Lo que el principio no da.</strong> Mill sostiene que sobre sí mismo el individuo es soberano, y no era un hipócrita al escribirlo: la petición de sufragio que has visto en este mismo tema, la de 1866, la llevó él a los Comunes. Fíjate, aun así, en lo que su principio por sí solo no alcanza a dar. Dice cuándo la sociedad no puede meterse contigo; no dice quién decide qué cuenta como daño ni quién escribe la ley que lo declara. Esa segunda pregunta es exactamente la de Campoamor: la legislación «se elabora aquí para los dos sexos, pero solamente dirigida y matizada por uno». Un criterio impecable, aplicado por una sola mitad, sigue siendo el criterio de esa mitad. Entre tener un derecho reconocido y tener voz para decir cuál es hay una distancia, y por ahí pasa también la raya entre la libertad negativa y la positiva (<a href="chapters-web/tema-31.html#sec-126">§126</a>).</p>
+<p><strong>Lo que el principio no da.</strong> Mill sostiene que sobre sí mismo el individuo es soberano, y no era un hipócrita al escribirlo: la petición de sufragio que has visto en este mismo tema, la de 1866, la llevó él a los Comunes. Fíjate, aun así, en lo que su principio por sí solo no alcanza a dar. Dice cuándo la sociedad no puede meterse contigo; no dice quién decide qué cuenta como daño ni quién escribe la ley que lo declara. Esa segunda pregunta es exactamente la de Campoamor: la legislación «se elabora aquí para los dos sexos, pero solamente dirigida y matizada por uno». Un criterio impecable, aplicado por una sola mitad, sigue siendo el criterio de esa mitad. Entre tener un derecho reconocido y tener voz para decir cuál es hay una distancia, y por ahí pasa también la raya entre la libertad negativa y la positiva (<a href="../chapters-web/tema-31.html#sec-126">§126</a>).</p>
 <p><strong>El debate no era el que parece.</strong> Contra Campoamor no hablaba solo una Cámara de hombres. Poco antes había hablado Victoria Kent, la otra diputada, pidiendo que el voto femenino se aplazara: no por capacidad, dijo, «es cuestión de oportunidad para la República», porque temía que las españolas, sin años de convivencia con el nuevo régimen, votaran contra él. Su intervención está en las mismas páginas del <em>Diario de Sesiones</em>, dos antes que esta. Campoamor le contesta en la primera frase y le contesta con respeto: comprende «la tortura de su espíritu». Ten ese dato delante todo el rato, porque rompe el esquema fácil. La discusión no era hombres contra mujeres: era si un derecho se reconoce porque es un derecho o cuando conviene reconocerlo. Y el desenlace no ordena las cosas, las complica: en 1933 ganó la derecha —cuánto tuvo que ver el voto de las mujeres es cosa que los historiadores siguen discutiendo—, y Campoamor perdió el escaño en aquellas elecciones, las primeras en que votaron las españolas. Murió en el exilio.</p>
 <p><strong>Humboldt, en los dos extremos.</strong> Campoamor cierra su discurso citando a Humboldt: madurar para la libertad se hace caminando dentro de ella. Mill abrió <em>Sobre la libertad</em> con un epígrafe del mismo autor, Wilhelm von Humboldt (1767-1835), sobre la importancia absoluta del desarrollo humano en su mayor diversidad posible<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Dos textos separados por setenta y dos años, escritos en dos lenguas y para dos cosas distintas, terminan agarrándose al mismo sitio. Eso no prueba nada por sí solo, pero dice de dónde viene el argumento que los dos están usando.</p>
 <p><strong>El trabajo.</strong> Las dos lecturas comparten un solo bloque, porque aquí el ejercicio <em>es</em> la comparación. Las dos primeras preguntas son de comprensión, una de cada texto; las dos siguientes te piden analizar cómo está construido cada argumento; las dos últimas, llevarlo a otro sitio y mojarte.</p>
@@ -680,8 +692,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Campoamor va contestando, una a una, a las razones que se habían dado contra el voto de las mujeres. Enumera cuatro de esas razones tal como ella las recoge y di con qué contesta a cada una: con un dato, con un principio o devolviendo la pregunta. Una de las tres columnas te va a quedar más llena que las otras: dilo y di cuál.</li>
 <li>Mill escribe que la esfera propia de la libertad abarca lo que «solo la afecta a ella», y a renglón seguido se corrige: «quiero decir directamente y en primera instancia». Explica qué le obliga a corregirse y qué le costaría no hacerlo. Después pon un caso tuyo en el que no tengas claro de qué lado cae.</li>
 <li>«Detentado» no es un insulto: es una tesis, y Campoamor sabe que lo es porque se para a pedir perdón por la palabra. Reconstruye el argumento en el que encaja —qué les reconoce a los diputados, qué les niega, y en qué se apoya para negárselo—. Después compáralo con lo que Mill necesita cuando dice que su principio vale igual contra las penas legales y contra la coacción de la opinión pública.</li>
-<li>Ya sabes que la ley y la legitimidad no son lo mismo, y viste el ejemplo del tráfico de drogas (<a href="chapters-web/tema-31.html#sec-124">§124</a>). Aplica el principio del daño a una ley que obliga a llevar casco en moto: ¿la permite? Contesta y después vuelve a contestar suponiendo que a los heridos los atiende una sanidad pagada por todos. Si tu respuesta cambia, explica qué frase del texto de Mill lo permite; si no cambia, explica por qué esa consideración no entra.</li>
-<li>Kent no negaba el derecho: pedía esperar a que el momento fuera bueno. Mill escribe que sobre sí mismo el individuo es soberano y que la única libertad que merece ese nombre es buscar el propio bien a la propia manera (<a href="chapters-web/tema-34.html#sec-136">§136</a>). ¿Le sirve a Campoamor el principio de Mill para contestar a Kent, o necesita algo que Mill no le da? Toma partido y defiéndelo. Dedica al menos una frase a la mejor objeción contra tu propia postura, y no la despaches: contéstala o reconoce que no puedes.</li>
+<li>Ya sabes que la ley y la legitimidad no son lo mismo, y viste el ejemplo del tráfico de drogas (<a href="../chapters-web/tema-31.html#sec-124">§124</a>). Aplica el principio del daño a una ley que obliga a llevar casco en moto: ¿la permite? Contesta y después vuelve a contestar suponiendo que a los heridos los atiende una sanidad pagada por todos. Si tu respuesta cambia, explica qué frase del texto de Mill lo permite; si no cambia, explica por qué esa consideración no entra.</li>
+<li>Kent no negaba el derecho: pedía esperar a que el momento fuera bueno. Mill escribe que sobre sí mismo el individuo es soberano y que la única libertad que merece ese nombre es buscar el propio bien a la propia manera (<a href="../chapters-web/tema-34.html#sec-136">§136</a>). ¿Le sirve a Campoamor el principio de Mill para contestar a Kent, o necesita algo que Mill no le da? Toma partido y defiéndelo. Dedica al menos una frase a la mejor objeción contra tu propia postura, y no la despaches: contéstala o reconoce que no puedes.</li>
 </ol>
 
 
@@ -698,19 +710,131 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
+<!--
+  CORNISA MÓVIL (D259, 2026-11-20) · colección Areté
+  En pantallas estrechas Quarto ya pinta una barra superior fija con el hilo
+  de Ariadna: la parte y el título del tema. Al leer un tema largo en el móvil
+  eso no dice dónde estás. Este guion pone en esa misma barra el tema y el
+  apartado (§) que tienes delante, como la cornisa de un libro impreso, y lo
+  actualiza al hacer scroll.
+
+  Cómo: un IntersectionObserver vigila los h2 del cuerpo. Cada vez que uno
+  cruza la línea que hay a un quinto de la altura de la pantalla, la cornisa
+  toma el último h2 que ya ha pasado por encima de esa línea. La zona vigilada
+  empieza muy por encima de la pantalla, para que un scroll rápido que salta
+  un apartado entero también avise. No escucha cada píxel de scroll.
+
+  Dónde se ve: solo cuando la barra superior existe, que desde D259 es por
+  debajo de 768 px (custom.scss esconde la barra a partir de ese ancho,
+  porque ahí la barra lateral ya está fija). En escritorio no hace nada
+  visible. El aspecto —una o dos líneas recortadas con puntos suspensivos—
+  vive en custom.scss, sección «CORNISA MÓVIL».
+
+  Quarto pega este fichero al final de cada página (`include-after-body` en
+  los seis _quarto.yml); no se publica como fichero aparte. Ninguna sintaxis
+  nueva en el Markdown (D43).
+-->
+<script>
+(function () {
+  "use strict";
+  var barra = document.querySelector(".quarto-secondary-nav .container-fluid");
+  var cuerpo = document.getElementById("quarto-document-content");
+  var h1 = cuerpo && cuerpo.querySelector("header h1.title, h1.title");
+  if (!barra || !h1 || document.querySelector(".arete-portada")) return;
+
+  var texto = function (el) {
+    var c = el.cloneNode(true);
+    c.querySelectorAll(".anchorjs-link, .header-section-number").forEach(function (x) { x.remove(); });
+    return c.textContent.replace(/\s+/g, " ").trim();
+  };
+
+  var tema = texto(h1);
+  var titulos = Array.prototype.slice.call(cuerpo.querySelectorAll("section.level2 > h2"));
+
+  var cornisa = document.createElement("div");
+  cornisa.className = "arete-cornisa";
+  cornisa.setAttribute("aria-hidden", "true");   // el hilo de Ariadna de Quarto sigue ahí para los lectores de pantalla
+  var lineaTema = document.createElement("span");
+  lineaTema.className = "arete-cornisa__tema";
+  lineaTema.textContent = tema;
+  var lineaSeccion = document.createElement("span");
+  lineaSeccion.className = "arete-cornisa__seccion";
+  cornisa.appendChild(lineaTema);
+  cornisa.appendChild(lineaSeccion);
+
+  var hilo = barra.querySelector(".quarto-page-breadcrumbs");
+  barra.insertBefore(cornisa, hilo ? hilo.nextSibling : barra.firstChild.nextSibling);
+  document.body.classList.add("arete-con-cornisa");
+
+  var actual = null;
+  var pinta = function () {
+    var limite = window.innerHeight * 0.2, elegido = null;
+    for (var i = 0; i < titulos.length; i++) {
+      if (titulos[i].getBoundingClientRect().top <= limite) elegido = titulos[i];
+      else break;
+    }
+    if (elegido === actual) return;
+    actual = elegido;
+    lineaSeccion.textContent = elegido ? texto(elegido) : "";
+    cornisa.classList.toggle("arete-cornisa--seccion", !!elegido);
+  };
+
+  if (titulos.length && "IntersectionObserver" in window) {
+    var vigia = new IntersectionObserver(pinta, { rootMargin: "100000px 0px -80% 0px" });
+    titulos.forEach(function (t) { vigia.observe(t); });
+  }
+  window.addEventListener("hashchange", function () { setTimeout(pinta, 60); });
+  pinta();
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Alternar modo oscuro");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Alternar modo oscuro");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -789,7 +913,8 @@ ul.task-list li input[type="checkbox"] {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -798,8 +923,69 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -813,6 +999,7 @@ ul.task-list li input[type="checkbox"] {
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -975,44 +1162,54 @@ ul.task-list li input[type="checkbox"] {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1111,7 +1308,10 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Código desplazable","output":"Salida desplazable"};
+  </script>
+<nav class="page-navigation" aria-label="Página">
   <div class="nav-page nav-page-previous">
       <a href="../chapters-web/tema-36.html" class="pagination-link" aria-label="Tema 36 · Feminismo y perspectiva de género">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Tema 36 · Feminismo y perspectiva de género</span></span>
